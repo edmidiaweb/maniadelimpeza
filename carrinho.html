@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Finalizar Pedido | Mania de Limpeza</title>
+</head>
+<body class="bg-gray-50 p-4">
+    <div class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-lg border border-indigo-50">
+        
+        <!-- Botão Voltar -->
+        <a href="index.html" class="inline-flex items-center text-indigo-600 font-bold mb-6 hover:text-indigo-800 transition">
+            <i class="fas fa-arrow-left mr-2"></i> Voltar ao Catálogo
+        </a>
+
+        <h2 class="text-lg font-bold mb-3 text-indigo-900">Seu Pedido</h2>
+        <div id="listaItens" class="space-y-2 mb-6 border-b border-indigo-50 pb-4 text-sm text-gray-600"></div>
+
+        <div class="space-y-3 mb-6">
+            <input type="text" id="rua" placeholder="Rua" class="w-full p-2 border border-gray-200 rounded focus:border-indigo-500 outline-none">
+            <input type="text" id="numero" placeholder="Nº da casa" class="w-full p-2 border border-gray-200 rounded focus:border-indigo-500 outline-none">
+            <input type="text" id="referencia" placeholder="Ponto de referência" class="w-full p-2 border border-gray-200 rounded focus:border-indigo-500 outline-none">
+            
+            <select id="bairro" onchange="calcularTudo()" class="w-full p-2 border border-gray-200 rounded focus:border-indigo-500 outline-none">
+                <option value="" data-frete="0">Selecione seu Bairro</option>
+                <optgroup label="Frete R$ 5,00"><option value="Coronel" data-frete="5.00">Coronel</option><option value="Umuarama" data-frete="5.00">Umuarama</option><option value="Guapiranga" data-frete="5.00">Guapiranga</option><option value="Sabauna" data-frete="5.00">Sabauna</option><option value="Iemanja" data-frete="5.00">Iemanja</option><option value="America" data-frete="5.00">America</option></optgroup>
+                <optgroup label="Frete R$ 9,00"><option value="Belas Artes" data-frete="9.00">Belas Artes</option><option value="Corumbá" data-frete="9.00">Corumbá</option><option value="Ieda" data-frete="9.00">Ieda</option></optgroup>
+                <optgroup label="Frete R$ 12,00"><option value="Praia dos Sonhos" data-frete="12.00">Praia dos Sonhos</option><option value="Cibratel 1" data-frete="12.00">Cibratel 1</option><option value="Chacara Cibratel 2" data-frete="12.00">Chacara Cibratel 2</option></optgroup>
+                <option value="Outros" data-frete="0">Outros (Consultar)</option>
+            </select>
+
+            <select id="pagamento" onchange="verificarPag()" class="w-full p-2 border border-gray-200 rounded focus:border-indigo-500 outline-none">
+                <option value="Pix">Pix</option>
+                <option value="Dinheiro">Dinheiro</option>
+            </select>
+            <input type="text" id="troco" placeholder="Troco para quanto?" class="w-full p-2 border border-gray-200 rounded hidden focus:border-indigo-500 outline-none">
+        </div>
+
+        <div id="financeiro" class="space-y-1 mb-6 text-sm bg-indigo-50 p-3 rounded-lg border border-indigo-100">
+            <div class="flex justify-between"><span>Subtotal:</span> <span id="subtotal">R$ 0,00</span></div>
+            <div class="flex justify-between"><span>Frete:</span> <span id="valFrete">R$ 0,00</span></div>
+            <div class="flex justify-between font-bold text-base border-t border-indigo-200 pt-1 text-indigo-900"><span>Total:</span> <span id="totalGeral">R$ 0,00</span></div>
+        </div>
+
+        <button onclick="confirmar()" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition">Enviar Pedido</button>
+    </div>
+
+    <script>
+        const carrinho = JSON.parse(localStorage.getItem('meuCarrinho')) || [];
+        
+        function carregarLista() {
+            document.getElementById('listaItens').innerHTML = carrinho.map(i => `<div class="flex justify-between"><span>${i.qtd}x ${i.nome}</span> <span>R$ ${(i.valor * i.qtd).toFixed(2)}</span></div>`).join('');
+            calcularTudo();
+        }
+
+        function calcularTudo() {
+            const subtotal = carrinho.reduce((acc, i) => acc + (i.valor * i.qtd), 0);
+            const frete = parseFloat(document.getElementById('bairro').options[document.getElementById('bairro').selectedIndex].dataset.frete) || 0;
+            document.getElementById('subtotal').innerText = `R$ ${subtotal.toFixed(2)}`;
+            document.getElementById('valFrete').innerText = `R$ ${frete.toFixed(2)}`;
+            document.getElementById('totalGeral').innerText = `R$ ${(subtotal + frete).toFixed(2)}`;
+        }
+
+        function verificarPag() { 
+            document.getElementById('troco').classList.toggle('hidden', document.getElementById('pagamento').value !== 'Dinheiro'); 
+        }
+
+        function confirmar() {
+            const b = document.getElementById('bairro');
+            const rua = document.getElementById('rua').value;
+            const num = document.getElementById('numero').value;
+            const ref = document.getElementById('referencia').value;
+            const pag = document.getElementById('pagamento').value;
+            const troco = document.getElementById('troco').value;
+            
+            if(!rua || !num || !b.value) return alert("Por favor, preencha Rua, Número e Bairro!");
+            
+            let msg = `🛍️ *Novo Pedido - Mania de Limpeza*\n\n` +
+                      `*Itens:* ${carrinho.map(i => `\n- ${i.qtd}x ${i.nome}`).join("")}\n\n` +
+                      `📍 *Endereço:* ${rua}, ${num}\n` +
+                      `🚩 *Ref:* ${ref}\n` +
+                      `🏘️ *Bairro:* ${b.value}\n\n` +
+                      `💳 *Pagamento:* ${pag}${pag === 'Dinheiro' && troco ? ' (Troco para R$ ' + troco + ')' : ''}`;
+
+            if(pag === 'Pix') msg += "\n\n⚠️ *Atenção:* A entrega só será iniciada após o envio do comprovante.\n*Chave Pix:* 13991727089";
+
+            window.open(`https://wa.me/5513991727089?text=${encodeURIComponent(msg)}`);
+        }
+
+        carregarLista();
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mania de Limpeza Express</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Carrinho fixo no canto inferior esquerdo para mobile */
+        .cart-container { 
+            position: fixed; 
+            bottom: 10px; 
+            left: 10px; 
+            width: calc(100% - 20px); 
+            z-index: 100; 
+        }
+        /* Em desktop, deixa de ser fixo e ocupa o espaço da div à esquerda */
+        @media (min-width: 768px) {
+            .cart-container { 
+                position: sticky; 
+                top: 80px; 
+                width: 100%; 
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 pb-48 md:pb-10">
+
+    <header class="bg-indigo-700 text-white p-4 shadow-lg sticky top-0 z-50">
+        <h1 class="text-lg font-bold">Mania de Limpeza Express</h1>
+    </header>
+
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-6 p-4">
+        
+        <aside class="w-full md:w-1/4 order-2 md:order-1">
+            <div class="cart-container bg-white p-4 shadow-2xl border border-gray-200 rounded-lg">
+                <h2 class="font-bold text-sm mb-2">Meu Carrinho</h2>
+                <div id="cartList" class="overflow-y-auto max-h-[15vh] md:max-h-[50vh] text-xs">
+                    <p class="text-gray-400">Vazio...</p>
+                </div>
+                <div class="border-t pt-2 mt-2">
+                    <p class="font-bold text-sm">Total: <span id="labelTotal">R$ 0.00</span></p>
+                    <button onclick="finalizarPedido()" class="w-full mt-2 bg-green-600 text-white py-1 rounded font-bold text-xs">
+                        Finalizar Pedido
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="w-full md:w-3/4 order-1 md:order-2">
+            <div id="container-produtos" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                </div>
+        </main>
+
+    </div>
+
+    <script>
+        let dbProdutos = [];
+        let carrinho = [];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await carregarProdutos();
+        });
+
+        async function carregarProdutos() {
+            try {
+                const response = await fetch('produtos.json');
+                dbProdutos = await response.json();
+                renderizar();
+            } catch (erro) { console.error(erro); }
+        }
+
+        function renderizar() {
+            const container = document.getElementById('container-produtos');
+            container.innerHTML = ''; 
+            dbProdutos.forEach(item => {
+                const nome = item.Produto || item.n || "Produto";
+                const preco = item["Valor de venda (R$)"] || item["Valor de venda"] || item.v || 0;
+                const card = document.createElement('div');
+                card.className = "bg-white p-3 rounded shadow border border-gray-100 text-center";
+                card.innerHTML = `
+                    <p class="font-bold text-xs truncate">${nome}</p>
+                    <p class="text-indigo-600 font-bold text-sm my-1">R$ ${parseFloat(preco).toFixed(2)}</p>
+                    <button onclick="adicionar('${nome}', ${preco})" class="w-full bg-indigo-600 text-white text-[10px] py-1 rounded">Adicionar</button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function adicionar(nome, valor) {
+            const itemExistente = carrinho.find(item => item.n === nome);
+            if (itemExistente) itemExistente.qtd += 1;
+            else carrinho.push({n: nome, v: valor, qtd: 1});
+            atualizarCarrinho();
+        }
+
+        function atualizarCarrinho() {
+            const list = document.getElementById('cartList');
+            const total = carrinho.reduce((acc, i) => acc + (i.v * i.qtd), 0);
+            list.innerHTML = carrinho.map(i => `
+                <div class="flex justify-between mb-1">
+                    <span>${i.qtd}x ${i.n}</span>
+                    <span class="font-bold">R$ ${(i.v * i.qtd).toFixed(2)}</span>
+                </div>`).join('');
+            document.getElementById('labelTotal').innerText = `R$ ${total.toFixed(2)}`;
+        }
+
+        function finalizarPedido() {
+            if (carrinho.length === 0) return alert("Selecione algum item!");
+            localStorage.setItem('meuCarrinho', JSON.stringify(carrinho));
+            window.location.href = "carrinho.html";
+        }
+    </script>
+</body>
+</html>

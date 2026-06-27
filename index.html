@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mania de Limpeza | Catálogo Digital</title>
+    <!-- Tailwind CSS para Design Responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Ícones modernos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased min-h-screen pb-24">
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen pb-28 sm:pb-24">
 
+    <!-- Header Fixo -->
     <header class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md px-4 py-3">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <div>
                 <h1 class="text-xl font-bold tracking-tight flex items-center gap-2">
-                    <i class="fas fa-pump-soap text-indigo-400"></i> Mania de Limpeza Express
+                    <i class="fas fa-pump-soap text-indigo-400"></i> Mania de Limpeza
                 </h1>
                 <p class="text-xs text-indigo-200">Faça seu pedido e receba em casa</p>
             </div>
+            <!-- Botão do Carrinho Flutuante no Header -->
             <a href="carrinho.html" class="relative bg-indigo-700 hover:bg-indigo-600 transition px-4 py-2 rounded-xl flex items-center gap-2 border border-indigo-500">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="font-semibold text-sm">Ver Carrinho</span>
@@ -27,6 +31,7 @@
 
     <main class="max-w-4xl mx-auto p-4 mt-2">
         
+        <!-- Barra de Pesquisa Avançada e Instantânea -->
         <div class="mb-6">
             <div class="relative max-w-md mx-auto">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-indigo-400">
@@ -44,6 +49,7 @@
             </div>
         </div>
 
+        <!-- Grid de Produtos -->
         <div id="gridProdutos" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <div class="col-span-full text-center py-12 text-gray-400">
                 <i class="fas fa-spinner fa-spin text-3xl text-indigo-600 mb-2"></i>
@@ -52,16 +58,18 @@
         </div>
     </main>
 
-    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-xl p-4 z-40 flex justify-between items-center sm:hidden">
+    <!-- FIX COMPLETO MOBILE: Barra de Acesso Rápido e Cálculo de Preço Inferior -->
+    <div id="barraFixaMobile" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] p-4 z-40 flex justify-between items-center md:hidden hidden">
         <div class="text-sm">
-            <p class="text-gray-400 text-xs">Total do Pedido</p>
-            <p class="font-bold text-indigo-900 text-lg" id="totalFixInferior">R$ 0,00</p>
+            <p class="text-gray-500 text-xs font-medium">Itens selecionados: <span id="qtdItensMobile" class="font-bold text-indigo-900">0</span></p>
+            <p class="font-black text-indigo-950 text-xl" id="totalFixInferior">R$ 0,00</p>
         </div>
-        <a href="carrinho.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-2.5 rounded-xl flex items-center gap-2 transition text-sm">
-            <i class="fas fa-arrow-right"></i> Finalizar Pedido
+        <a href="carrinho.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 transition text-sm shadow-sm">
+            Ver Carrinho <i class="fas fa-arrow-right text-xs"></i>
         </a>
     </div>
 
+    <!-- Script de Inteligência do Catálogo -->
     <script>
         let listaProdutosOriginal = [];
         let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -83,7 +91,7 @@
                 document.getElementById('gridProdutos').innerHTML = `
                     <div class="col-span-full text-center py-12 text-red-500">
                         <i class="fas fa-exclamation-triangle text-3xl mb-2"></i>
-                        <p>Erro ao carregar o catálogo. Por favor, atualize a página.</p>
+                        <p>Erro ao carregar o catálogo. Certifique-se de usar um servidor local (Live Server).</p>
                     </div>
                 `;
             }
@@ -227,13 +235,17 @@
             atualizarInterfaceCarrinho();
         }
 
-        function actualizarInterfaceCarrinho() {
+        // MOTOR REATIVO: Realiza o cálculo unificado para Header e Barra Fixa Inferior Mobile
+        function atualizarInterfaceCarrinho() {
             const badge = document.getElementById('badgeCarrinho');
+            const barraMobile = document.getElementById('barraFixaMobile');
+            const labelQtdMobile = document.getElementById('qtdItensMobile');
             const totalInferior = document.getElementById('totalFixInferior');
             
             const totalItens = carrinho.reduce((acc, item) => acc + item.qtd, 0);
             const valorTotal = carrinho.reduce((acc, item) => acc + (item.qtd * item.preco), 0);
 
+            // Atualização do Badge Superior (Header)
             if (totalItens > 0) {
                 badge.innerText = totalItens;
                 badge.classList.remove('hidden');
@@ -241,8 +253,15 @@
                 badge.classList.add('hidden');
             }
 
-            if (totalInferior) {
-                totalInferior.innerText = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
+            // Controle e Atualização da Barra Inferior Mobile
+            if (barraMobile && labelQtdMobile && totalInferior) {
+                if (totalItens > 0) {
+                    labelQtdMobile.innerText = totalItens;
+                    totalInferior.innerText = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
+                    barraMobile.classList.remove('hidden');
+                } else {
+                    barraMobile.classList.add('hidden');
+                }
             }
         }
     </script>

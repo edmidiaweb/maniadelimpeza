@@ -1,77 +1,294 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pedido | Mania de Limpeza</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Finalizar Pedido | Mania de Limpeza</title>
 </head>
-<body class="bg-gray-50 p-4">
-    <div class="max-w-md mx-auto bg-white p-6 rounded-2xl shadow-lg border border-indigo-50">
-        
-        <a href="index.html" class="inline-flex items-center text-indigo-600 font-bold mb-6 hover:text-indigo-800">
-            <i class="fas fa-arrow-left mr-2"></i> Voltar ao Catálogo
-        </a>
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen pb-12">
 
-        <h2 class="text-lg font-bold mb-3 text-indigo-900">Seu Pedido</h2>
-        <div id="listaItens" class="space-y-2 mb-6 border-b border-indigo-50 pb-4 text-sm text-gray-600"></div>
-
-        <div class="space-y-3 mb-6">
-            <input type="text" id="rua" placeholder="Rua" class="w-full p-2 border rounded">
-            <input type="text" id="numero" placeholder="Número" class="w-full p-2 border rounded">
-            <input type="text" id="bairro" placeholder="Bairro" class="w-full p-2 border rounded">
-            <input type="text" id="referencia" placeholder="Ponto de Referência" class="w-full p-2 border rounded">
-            
-            <select id="pagamento" onchange="verificarPag()" class="w-full p-2 border rounded">
-                <option value="Pix">Pix</option>
-                <option value="Dinheiro">Dinheiro</option>
-                <option value="Cartão">Cartão</option>
-            </select>
-            <input type="text" id="troco" placeholder="Troco para quanto?" class="hidden w-full p-2 border rounded">
+    <header class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md px-4 py-3">
+        <div class="max-w-xl mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-xl font-bold tracking-tight flex items-center gap-2">
+                    <i class="fas fa-pump-soap text-indigo-400"></i> Mania de Limpeza
+                </h1>
+                <p class="text-xs text-indigo-200">Fechamento do Pedido</p>
+            </div>
+            <a href="index.html" class="inline-flex items-center text-xs bg-indigo-800 hover:bg-indigo-700 transition px-3 py-1.5 rounded-xl gap-1 border border-indigo-600 font-semibold">
+                <i class="fas fa-arrow-left"></i> Catálogo
+            </a>
         </div>
+    </header>
 
-        <button onclick="confirmar()" class="w-full bg-green-600 text-white font-bold py-3 rounded-xl hover:bg-green-700">
-            Enviar Pedido via WhatsApp
-        </button>
-    </div>
+    <main class="max-w-xl mx-auto p-4 mt-2">
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+            
+            <div class="mb-6">
+                <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fas fa-shopping-basket text-indigo-500"></i> Seus Produtos Selecionados
+                </h2>
+                
+                <div id="listaItens" class="divide-y divide-gray-100 text-sm">
+                    </div>
+
+                <div class="mt-4 bg-indigo-50/50 p-4 rounded-xl border border-indigo-100/50 space-y-2 text-sm text-gray-600">
+                    <div class="flex justify-between">
+                        <span>Subtotal Produtos:</span>
+                        <span class="font-semibold text-indigo-950" id="valorProdutos">R$ 0,00</span>
+                    </div>
+                    <div class="flex justify-between font-medium" id="blocoTaxa">
+                        <span>Taxa de Entrega:</span>
+                        <span id="valorTaxa">Selecione o bairro</span>
+                    </div>
+                    <div class="flex justify-between items-center pt-2 border-t border-indigo-100">
+                        <span class="text-base font-bold text-gray-800">Total Geral:</span>
+                        <span class="text-xl font-black text-indigo-950" id="valorTotalGeral">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 space-y-3.5">
+                <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-1 flex items-center gap-2">
+                    <i class="fas fa-map-marked-alt text-indigo-500"></i> Dados para Entrega
+                </h2>
+                
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 mb-1">Rua / Logradouro</label>
+                    <input type="text" id="rua" placeholder="Ex: Rua das Flores" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="col-span-1">
+                        <label class="block text-xs font-semibold text-gray-500 mb-1">Número</label>
+                        <input type="text" id="numero" placeholder="Ex: 123" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+                    </div>
+                    <div class="col-span-2">
+                        <label for="bairro" class="block text-xs font-semibold text-gray-500 mb-1">Bairro</label>
+                        <select id="bairro" onchange="atualizarResumoFinanceiro()" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
+                            <option value="" disabled selected>Selecione seu bairro...</option>
+                            <option value="Umuarama">Umuarama (Taxa: R$ 5,00)</option>
+                            <option value="Iemanjá">Iemanjá (Taxa: R$ 5,00)</option>
+                            <option value="Guapiranga">Guapiranga (Taxa: R$ 5,00)</option>
+                            <option value="Coronel">Coronel (Taxa: R$ 5,00)</option>
+                            <option value="Belas Artes">Belas Artes (Taxa: R$ 9,00)</option>
+                            <option value="Corumbá">Corumbá (Taxa: R$ 9,00)</option>
+                            <option value="Ieda">Ieda (Taxa: R$ 9,00)</option>
+                            <option value="Praia dos Sonhos">Praia dos Sonhos (Taxa: R$ 12,00)</option>
+                            <option value="Cibratel 1">Cibratel 1 (Taxa: R$ 12,00)</option>
+                            <option value="Chácara Cibratel">Chácara Cibratel (Taxa: R$ 12,00)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 mb-1">Ponto de Referência <span class="text-red-500 font-bold">(Obrigatório)</span></label>
+                    <input type="text" id="referencia" placeholder="Ex: Próximo ao mercado Central ou travessa da Av. Principal" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+                </div>
+                
+                <div>
+                    <label for="pagamento" class="block text-xs font-semibold text-gray-500 mb-1">Forma de Pagamento</label>
+                    <select id="pagamento" onchange="verificarPagamento()" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
+                        <option value="Pix">Pix (Rápido e Seguro)</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Cartão">Cartão (Débito / Crédito na entrega)</option>
+                    </select>
+                </div>
+
+                <div id="containerTroco" class="hidden transition duration-200">
+                    <label class="block text-xs font-semibold text-gray-500 mb-1">Precisa de troco para quanto?</label>
+                    <input type="text" id="troco" placeholder="Ex: Troco para R$ 50,00" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+                </div>
+            </div>
+
+            <button onclick="confirmarPedido()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center gap-2 text-base tracking-wide">
+                <i class="fab fa-whatsapp text-xl"></i> Enviar Pedido via WhatsApp
+            </button>
+        </div>
+    </main>
 
     <script>
-        // Carrega o carrinho do localStorage
-        const carrinho = JSON.parse(localStorage.getItem('meuCarrinho') || '[]');
-        const listaItens = document.getElementById('listaItens');
+        let carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
 
-        // Renderiza itens
-        listaItens.innerHTML = carrinho.map(i => `
-            <div class="flex justify-between">
-                <span>${i.qtd}x ${i.n}</span>
-                <span>R$ ${(i.v * i.qtd).toFixed(2)}</span>
-            </div>
-        `).join('');
+        const tabelaTaxas = {
+            "Umuarama": 5, "Iemanjá": 5, "Guapiranga": 5, "Coronel": 5,
+            "Belas Artes": 9, "Corumbá": 9, "Ieda": 9,
+            "Praia dos Sonhos": 12, "Cibratel 1": 12, "Chácara Cibratel": 12
+        };
 
-        function verificarPag() { 
-            document.getElementById('troco').classList.toggle('hidden', document.getElementById('pagamento').value !== 'Dinheiro'); 
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarItensCarrinho();
+            recuperarEnderecoSalvo();
+        });
+
+        function renderizarItensCarrinho() {
+            const listaItens = document.getElementById('listaItens');
+
+            if (carrinho.length === 0) {
+                listaItens.innerHTML = `
+                    <div class="text-center py-8 text-gray-400">
+                        <i class="fas fa-shopping-cart text-3xl mb-2"></i>
+                        <p>Seu carrinho está vazio.</p>
+                        <a href="index.html" class="text-indigo-600 hover:underline font-semibold text-xs inline-block mt-2">Voltar para escolher produtos</a>
+                    </div>
+                `;
+                atualizarResumoFinanceiro();
+                return;
+            }
+
+            listaItens.innerHTML = carrinho.map(item => {
+                const totalItem = item.preco * item.qtd;
+                return `
+                    <div class="flex justify-between items-center py-3">
+                        <div class="pr-2">
+                            <span class="font-bold text-indigo-900 bg-indigo-50 px-2 py-0.5 rounded-md text-xs mr-1">${item.qtd}x</span>
+                            <span class="text-gray-700 font-medium uppercase text-xs tracking-tight">${item.nome}</span>
+                        </div>
+                        <div class="flex items-center gap-4 shrink-0">
+                            <span class="font-bold text-gray-900 text-sm">R$ ${totalItem.toFixed(2).replace('.', ',')}</span>
+                            <button onclick="removerItemCarrinho('${item.nome}')" aria-label="Remover item do carrinho" class="text-red-400 hover:text-red-600 transition p-1" title="Remover item">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            atualizarResumoFinanceiro();
         }
 
-        function confirmar() {
-            const rua = document.getElementById('rua').value;
-            const num = document.getElementById('numero').value;
-            const bairro = document.getElementById('bairro').value;
-            const ref = document.getElementById('referencia').value;
-            const pag = document.getElementById('pagamento').value;
-            const troco = document.getElementById('troco').value;
-            
-            if(!rua || !num || !bairro) return alert("Por favor, preencha Rua, Número e Bairro!");
-            
-            // Formata mensagem para WhatsApp
-            let msg = `🛍️ *Novo Pedido - Mania de Limpeza*%0A%0A` +
-                      `*Itens:*` + carrinho.map(i => `%0A- ${i.qtd}x ${i.n} (R$ ${i.v.toFixed(2)})`).join("") + `%0A%0A` +
-                      `📍 *Endereço:* ${rua}, ${num}%0A` +
-                      `🚩 *Ref:* ${ref}%0A` +
-                      `🏘️ *Bairro:* ${bairro}%0A%0A` +
-                      `💳 *Pagamento:* ${pag}${pag === 'Dinheiro' && troco ? ' (Troco para R$ ' + troco + ')' : ''}`;
+        function atualizarResumoFinanceiro() {
+            const labelProdutos = document.getElementById('valorProdutos');
+            const labelTaxa = document.getElementById('valorTaxa');
+            const labelTotalGeral = document.getElementById('valorTotalGeral');
+            const blocoTaxa = document.getElementById('blocoTaxa');
+            const bairroSelecionado = document.getElementById('bairro').value;
 
-            window.open(`https://wa.me/55SEUNUMERO?text=${msg}`, '_blank'); // Substitua pelo seu número
+            const subtotalProdutos = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
+            labelProdutos.innerText = `R$ ${subtotalProdutos.toFixed(2).replace('.', ',')}`;
+
+            const possuiKitPromocional = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
+
+            let taxaEntrega = 0;
+            let bairroConfigurado = false;
+
+            if (bairroSelecionado && tabelaTaxas[bairroSelecionado] !== undefined) {
+                taxaEntrega = tabelaTaxas[bairroSelecionado];
+                bairroConfigurado = true;
+            }
+
+            if (!bairroConfigurado) {
+                labelTaxa.innerText = "Selecione o bairro";
+                labelTaxa.className = "text-gray-400 italic";
+                blocoTaxa.className = "flex justify-between font-medium text-gray-600";
+                labelTotalGeral.innerText = `R$ ${subtotalProdutos.toFixed(2).replace('.', ',')}`;
+                return;
+            }
+
+            if (possuiKitPromocional) {
+                taxaEntrega = 0;
+                labelTaxa.innerText = "GRÁTIS (Kit Ativado)";
+                labelTaxa.className = "text-emerald-600 font-bold";
+                blocoTaxa.className = "flex justify-between font-medium text-emerald-600";
+            } else {
+                labelTaxa.innerText = `R$ ${taxaEntrega.toFixed(2).replace('.', ',')}`;
+                labelTaxa.className = "text-gray-900 font-semibold";
+                blocoTaxa.className = "flex justify-between font-medium text-gray-600";
+            }
+
+            const totalGeralCalculado = subtotalProdutos + taxaEntrega;
+            labelTotalGeral.innerText = `R$ ${totalGeralCalculado.toFixed(2).replace('.', ',')}`;
+        }
+
+        function removerItemCarrinho(nomeDoProduto) {
+            carrinho = carrinho.filter(item => item.nome !== nomeDoProduto);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            renderizarItensCarrinho();
+        }
+
+        function verificarPagamento() { 
+            const selectPagamento = document.getElementById('pagamento').value;
+            const containerTroco = document.getElementById('containerTroco');
+            
+            if (selectPagamento === 'Dinheiro') {
+                containerTroco.classList.remove('hidden');
+            } else {
+                containerTroco.classList.add('hidden');
+            }
+        }
+
+        function salvarDadosEndereco(rua, numero, bairro, referencia) {
+            const dadosEndereco = { rua, numero, bairro, referencia };
+            localStorage.setItem('endereco_cliente', JSON.stringify(dadosEndereco));
+        }
+
+        function recuperarEnderecoSalvo() {
+            const dadosSalvos = JSON.parse(localStorage.getItem('endereco_cliente'));
+            if (dadosSalvos) {
+                document.getElementById('rua').value = dadosSalvos.rua || '';
+                document.getElementById('numero').value = dadosSalvos.numero || '';
+                document.getElementById('bairro').value = dadosSalvos.bairro || '';
+                document.getElementById('referencia').value = dadosSalvos.referencia || '';
+            }
+        }
+
+        function confirmarPedido() {
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio! Adicione produtos antes de finalizar.");
+                return;
+            }
+
+            const rua = document.getElementById('rua').value.trim();
+            const num = document.getElementById('numero').value.trim();
+            const bairro = document.getElementById('bairro').value;
+            const ref = document.getElementById('referencia').value.trim();
+            const pag = document.getElementById('pagamento').value;
+            const troco = document.getElementById('troco').value.trim();
+            
+            if (!rua || !num || !bairro || !ref) {
+                alert("Por favor, preencha todos os campos obrigatórios de endereço: Rua, Número, Bairro e Ponto de Referência.");
+                return;
+            }
+
+            salvarDadosEndereco(rua, num, bairro, ref);
+
+            const possuiKitPromocional = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
+            const taxaEntregaBase = tabelaTaxas[bairro];
+            const taxaAplicada = possuiKitPromocional ? 0 : taxaEntregaBase;
+
+            let subtotalPedido = 0;
+            let msg = `🛍️ *NOVO PEDIDO - MANIA DE LIMPEZA*\n\n`;
+            msg += `📋 *ITENS COMPRADOS:*\n`;
+            
+            carrinho.forEach(item => {
+                const totalItem = item.preco * item.qtd;
+                subtotalPedido += totalItem;
+                msg += `• ${item.qtd}x ${item.nome} - R$ ${totalItem.toFixed(2).replace('.', ',')}\n`;
+            });
+            
+            const totalGeralPedido = subtotalPedido + taxaAplicada;
+
+            msg += `\n💰 *RESUMO DO PEDIDO:*`;
+            msg += `\n• Subtotal Itens: R$ ${subtotalPedido.toFixed(2).replace('.', ',')}`;
+            msg += `\n• Taxa de Entrega: ${possuiKitPromocional ? 'GRÁTIS (Promoção Kit Limpeza)' : 'R$ ' + taxaAplicada.toFixed(2).replace('.', ',')}`;
+            msg += `\n• *Total Geral: R$ ${totalGeralPedido.toFixed(2).replace('.', ',')}*\n\n`;
+            
+            msg += `📍 *ENDEREÇO DE ENTREGA:*\n`;
+            msg += `🏠 Rua: ${rua}, Nº ${num}\n`;
+            msg += `🏘️ Bairro: ${bairro}\n`;
+            msg += `🚩 Ponto de Referência: ${ref}\n`;
+            
+            msg += `\n💳 *FORMA DE PAGAMENTO:*\n`;
+            msg += `• ${pag}`;
+            if (pag === 'Dinheiro' && troco) {
+                msg += ` (Levar troco para: R$ ${troco})`;
+            }
+
+            const mensagemCodificada = encodeURIComponent(msg);
+            // CORREÇÃO: Endpoint definitivo do WhatsApp parametrizado com o número comercial ativo
+            window.open(`https://wa.me/5513991727089?text=${mensagemCodificada}`, '_blank');
         }
     </script>
 </body>

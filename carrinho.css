@@ -1,0 +1,68 @@
+/* carrinho.css */
+
+/* Base */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Melhorias gerais de foco */
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+/* Campo de bairro extra */
+#campoOutroBairro {
+    transition: all 0.25s ease;
+}
+
+#campoOutroBairro input {
+    background-color: #fff;
+}
+
+/* Aviso de entrega */
+#avisoOutrosBairros {
+    transition: all 0.25s ease;
+}
+
+/* Ajuste visual para o banner de entrega */
+#bannerFrete {
+    transition: all 0.3s ease;
+}
+
+/* Botões desabilitados */
+button:disabled {
+    cursor: not-allowed;
+}
+
+/* Melhoria de legibilidade nos itens do carrinho */
+#listaItens p,
+#resumoItens span {
+    word-break: break-word;
+}
+
+/* Resumo financeiro */
+#resumoBlocoTaxa {
+    transition: color 0.2s ease;
+}
+
+/* Responsividade fina em telas muito pequenas */
+@media (max-width: 360px) {
+    .max-w-xl {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    #etapa-1,
+    #etapa-2,
+    #etapa-3 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

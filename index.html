@@ -4,266 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mania de Limpeza | Catálogo Digital</title>
-    <!-- Tailwind CSS para Design Responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome para Ícones modernos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased min-h-screen pb-28 sm:pb-24">
 
-    <!-- Header Fixo -->
-    <header class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md px-4 py-3">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <div>
-                <h1 class="text-xl font-bold tracking-tight flex items-center gap-2">
-                    <i class="fas fa-pump-soap text-indigo-400"></i> Mania de Limpeza Express
-                </h1>
-                <p class="text-xs text-indigo-200">Faça seu pedido e receba em casa</p>
-            </div>
-            <!-- Botão do Carrinho Flutuante no Header -->
-            <a href="carrinho.html" class="relative bg-indigo-700 hover:bg-indigo-600 transition px-4 py-2 rounded-xl flex items-center gap-2 border border-indigo-500">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="font-semibold text-sm">Ver Carrinho</span>
-                <span id="badgeCarrinho" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
-            </a>
+<header class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md px-4 py-3">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <div>
+            <h1 class="text-xl font-bold tracking-tight flex items-center gap-2">
+                <i class="fas fa-pump-soap text-indigo-400"></i> Mania de Limpeza
+            </h1>
+            <p class="text-xs text-indigo-200">Faça seu pedido e receba em casa</p>
         </div>
-    </header>
+        <a href="carrinho.html" class="relative bg-indigo-700 hover:bg-indigo-600 transition px-4 py-2 rounded-xl flex items-center gap-2 border border-indigo-500">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="font-semibold text-sm">Ver Carrinho</span>
+            <span id="badgeCarrinho" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold hidden">0</span>
+        </a>
+    </div>
+</header>
 
-    <main class="max-w-4xl mx-auto p-4 mt-2">
+<div class="category-menu-fixed px-4 py-3 shadow-sm">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-2 justify-between">
+            <div class="flex items-center gap-2 flex-1 min-w-0">
+                <button onclick="toggleMenuCategorias()" id="btnCategoriasDropdown" class="whitespace-nowrap px-4 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold shadow-sm hover:bg-indigo-700 transition flex items-center gap-2">
+                    <i class="fas fa-bars"></i> <span id="txtCategoriaAtiva">Todos</span> <i class="fas fa-chevron-down text-[10px]"></i>
+                </button>
+                
+                <button onclick="toggleFiltroPreco()" id="btnFiltroPreco" class="whitespace-nowrap px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-50 transition flex items-center gap-1.5">
+                    <i class="fas fa-tags text-[10px] text-gray-400"></i> Até R$ 10
+                </button>
+            </div>
+            
+            <div class="hidden sm:block w-full max-w-xs flex-shrink-0">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-indigo-400">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input
+                        type="text"
+                        id="searchBarDesktop"
+                        data-search-input
+                        placeholder="Buscar produto..."
+                        class="w-full pl-10 pr-10 py-2.5 bg-white border border-indigo-100 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition placeholder-gray-400"
+                    />
+                    <button id="clearSearchDesktop" data-clear-search data-target-input="searchBarDesktop" aria-label="Limpar campo de pesquisa" title="Limpar pesquisa" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 hidden">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="sm:hidden flex-shrink-0">
+                <button id="mobileSearchToggle" aria-label="Abrir busca" title="Buscar produto" class="w-11 h-11 rounded-full bg-white border border-indigo-100 text-indigo-900 shadow-sm flex items-center justify-center hover:bg-indigo-50 transition">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
         
-        <!-- Barra de Pesquisa Avançada e Instantânea -->
-        <div class="mb-6">
-            <div class="relative max-w-md mx-auto">
+        <div id="mobileSearchContainer" class="sm:hidden hidden mt-3">
+            <div class="relative">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-indigo-400">
                     <i class="fas fa-search"></i>
                 </span>
-                <input 
-                    type="text" 
-                    id="searchBar" 
-                    placeholder="Buscar produto... (Ex: Água, Vassoura, Sabão)" 
+                <input
+                    type="text"
+                    id="searchBarMobile"
+                    data-search-input
+                    placeholder="Buscar produto..."
                     class="w-full pl-10 pr-10 py-3 bg-white border border-indigo-100 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-gray-700 transition placeholder-gray-400"
                 />
-                <button id="clearSearch" aria-label="Limpar campo de pesquisa" title="Limpar pesquisa" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 hidden">
+                <button id="clearSearchMobile" data-clear-search data-target-input="searchBarMobile" aria-label="Limpar campo de pesquisa" title="Limpar pesquisa" class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600 hidden">
                     <i class="fas fa-times-circle"></i>
                 </button>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Grid de Produtos -->
-        <div id="gridProdutos" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <div class="col-span-full text-center py-12 text-gray-400">
-                <i class="fas fa-spinner fa-spin text-3xl text-indigo-600 mb-2"></i>
-                <p>Carregando catálogo de produtos...</p>
+<div id="modalCategorias" class="fixed inset-0 z-50 hidden transition-opacity duration-200 opacity-0 flex items-start justify-center pt-36 px-4">
+    <div onclick="fecharMenuCategorias()" class="fixed inset-0 bg-black/30 backdrop-blur-xs"></div>
+    <div id="painelCategorias" class="bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-sm flex flex-col max-h-[60vh] z-10 transform scale-95 transition-transform duration-200">
+        <div class="p-3 border-b border-gray-100">
+            <div class="flex justify-between items-center mb-2">
+                <span class="font-bold text-gray-900 text-sm">Categorias</span>
+                <button onclick="fecharMenuCategorias()" class="text-gray-400 hover:text-gray-600 text-sm p-1"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-2.5 text-gray-400">
+                    <i class="fas fa-search text-xs"></i>
+                </span>
+                <input type="text" id="buscaCategoriaInput" oninput="filtrarListaCategorias()" placeholder="Pesquisar categoria..." class="w-full pl-8 pr-3 py-1.5 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 text-gray-700" />
             </div>
         </div>
-    </main>
-
-    <!-- FIX COMPLETO MOBILE: Barra de Acesso Rápido e Cálculo de Preço Inferior -->
-    <div id="barraFixaMobile" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] p-4 z-40 flex justify-between items-center md:hidden hidden">
-        <div class="text-sm">
-            <p class="text-gray-500 text-xs font-medium">Itens selecionados: <span id="qtdItensMobile" class="font-bold text-indigo-900">0</span></p>
-            <p class="font-black text-indigo-950 text-xl" id="totalFixInferior">R$ 0,00</p>
-        </div>
-        <a href="carrinho.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 transition text-sm shadow-sm">
-            Ver Carrinho <i class="fas fa-arrow-right text-xs"></i>
-        </a>
+        <div id="listaCategoriasContainer" class="overflow-y-auto p-1.5 space-y-0.5 max-h-[40vh] no-scrollbar"></div>
     </div>
+</div>
 
-    <!-- Script de Inteligência do Catálogo -->
-    <script>
-        let listaProdutosOriginal = [];
-        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+<main class="max-w-4xl mx-auto p-4">
+    <div id="gridProdutos" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <div class="col-span-full text-center py-12 text-gray-400">
+            <i class="fas fa-spinner fa-spin text-3xl text-indigo-600 mb-2"></i>
+            <p>Carregando catálogo de produtos...</p>
+        </div>
+    </div>
+</main>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            carregarProdutos();
-            configurarFiltroPesquisa();
-            atualizarInterfaceCarrinho();
-        });
+<div id="barraFixaMobile" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] p-4 z-40 flex justify-between items-center md:hidden hidden">
+    <div class="text-sm">
+        <p class="text-gray-500 text-xs font-medium">Itens selecionados: <span id="qtdItensMobile" class="font-bold text-indigo-900">0</span></p>
+        <p class="font-black text-indigo-950 text-xl" id="totalFixInferior">R$ 0,00</p>
+    </div>
+    <a href="carrinho.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 transition text-sm shadow-sm">
+        Ver Carrinho <i class="fas fa-arrow-right text-xs"></i>
+    </a>
+</div>
 
-        async function carregarProdutos() {
-            try {
-                const resposta = await fetch('produtos.json');
-                if (!resposta.ok) throw new Error('Falha ao ler arquivo de produtos.');
-                listaProdutosOriginal = await resposta.json();
-                renderizarProdutos(listaProdutosOriginal);
-            } catch (erro) {
-                console.error(erro);
-                document.getElementById('gridProdutos').innerHTML = `
-                    <div class="col-span-full text-center py-12 text-red-500">
-                        <i class="fas fa-exclamation-triangle text-3xl mb-2"></i>
-                        <p>Erro ao carregar o catálogo. Certifique-se de usar um servidor local (Live Server).</p>
-                    </div>
-                `;
-            }
-        }
-
-        function obterPreco(item) {
-            const precoRaw = item["Valor de venda (R$)"] !== undefined ? item["Valor de venda (R$)"] : item["Valor de venda"];
-            const precoNum = parseFloat(precoRaw);
-            return isNaN(precoNum) ? 0 : precoNum;
-        }
-
-        function normalizarTexto(texto) {
-            return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-        }
-
-        function renderizarProdutos(produtos) {
-            const grid = document.getElementById('gridProdutos');
-            grid.innerHTML = '';
-
-            if (produtos.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full text-center py-12 text-gray-400">
-                        <i class="fas fa-search text-3xl mb-2"></i>
-                        <p>Nenhum produto encontrado com esse termo.</p>
-                    </div>
-                `;
-                return;
-            }
-
-            produtos.forEach(item => {
-                const preco = obterPreco(item);
-                const itemNoCarrinho = carrinho.find(c => c.nome === item.Produto);
-                const qtd = itemNoCarrinho ? itemNoCarrinho.qtd : 0;
-
-                const imagemHtml = item.imagem 
-                    ? `<img src="${item.imagem}" alt="${item.Produto}" class="w-full h-32 object-contain p-2 bg-gray-50 rounded-xl" onerror="this.onerror=null; this.parentNode.innerHTML=obterFallbackIcone();">`
-                    : `<div class="w-full h-32 bg-indigo-50 flex items-center justify-center text-indigo-400 rounded-xl"><i class="fas fa-box text-3xl"></i></div>`;
-
-                const card = document.createElement('div');
-                card.className = "bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition duration-200";
-                card.innerHTML = `
-                    <div>
-                        ${imagemHtml}
-                        <h3 class="text-xs font-bold text-gray-700 mt-2 line-clamp-2 uppercase h-8">${item.Produto}</h3>
-                    </div>
-                    <div class="mt-2">
-                        <p class="text-indigo-900 font-extrabold text-base">R$ ${preco.toFixed(2).replace('.', ',')}</p>
-                        <div class="mt-2" id="btn-container-${btoa(encodeURIComponent(item.Produto)).replace(/=/g, '')}">
-                            ${renderizarBotaoAcao(item.Produto, preco, qtd)}
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        function obterFallbackIcone() {
-            return `<div class="w-full h-32 bg-indigo-50 flex items-center justify-center text-indigo-400 rounded-xl"><i class="fas fa-box text-3xl"></i></div>`;
-        }
-
-        function renderizarBotaoAcao(nome, preco, qtd) {
-            if (qtd > 0) {
-                return `
-                    <div class="flex items-center justify-between bg-indigo-50 rounded-xl p-1 border border-indigo-200">
-                        <button onclick="alterarQuantidade('${nome}', ${preco}, -1)" aria-label="Diminuir quantidade" class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">-</button>
-                        <span class="font-bold text-sm text-indigo-950">${qtd}</span>
-                        <button onclick="alterarQuantidade('${nome}', ${preco}, 1)" aria-label="Aumentar quantidade" class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">+</button>
-                    </div>
-                `;
-            } else {
-                return `
-                    <button onclick="alterarQuantidade('${nome}', ${preco}, 1)" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold py-2 px-3 rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs">
-                        <i class="fas fa-plus text-[10px]"></i> Adicionar
-                    </button>
-                `;
-            }
-        }
-
-        function configurarFiltroPesquisa() {
-            const searchBar = document.getElementById('searchBar');
-            const clearSearch = document.getElementById('clearSearch');
-
-            searchBar.addEventListener('input', (e) => {
-                const termoBuscado = normalizarTexto(e.target.value.trim());
-
-                if (termoBuscado.length > 0) {
-                    clearSearch.classList.remove('hidden');
-                } else {
-                    clearSearch.classList.add('hidden');
-                    renderizarProdutos(listaProdutosOriginal);
-                    return;
-                }
-
-                const produtosFiltrados = listaProdutosOriginal.filter(item => {
-                    const nomeProduto = normalizarTexto(item.Produto);
-                    return nomeProduto.includes(termoBuscado);
-                });
-
-                produtosFiltrados.sort((a, b) => {
-                    const nomeA = normalizarTexto(a.Produto);
-                    const nomeB = normalizarTexto(b.Produto);
-                    const aComeca = nomeA.startsWith(termoBuscado) ? 1 : 0;
-                    const bComeca = nomeB.startsWith(termoBuscado) ? 1 : 0;
-                    return bComeca - aComeca; 
-                });
-
-                renderizarProdutos(produtosFiltrados);
-            });
-
-            clearSearch.addEventListener('click', () => {
-                searchBar.value = '';
-                clearSearch.classList.add('hidden');
-                renderizarProdutos(listaProdutosOriginal);
-                searchBar.focus();
-            });
-        }
-
-        function alterarQuantidade(nome, preco, modificador) {
-            const index = carrinho.findIndex(item => item.nome === nome);
-
-            if (index > -1) {
-                carrinho[index].qtd += modificador;
-                if (carrinho[index].qtd <= 0) {
-                    carrinho.splice(index, 1);
-                }
-            } else if (modificador > 0) {
-                carrinho.push({ nome, preco, qtd: 1 });
-            }
-
-            localStorage.setItem('carrinho', JSON.stringify(carrinho));
-            
-            const idSeguro = btoa(encodeURIComponent(nome)).replace(/=/g, '');
-            const container = document.getElementById(`btn-container-${idSeguro}`);
-            const itemAtualizado = carrinho.find(item => item.nome === nome);
-            const novaQtd = itemAtualizado ? itemAtualizado.qtd : 0;
-            
-            if (container) {
-                container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd);
-            }
-
-            atualizarInterfaceCarrinho();
-        }
-
-        // MOTOR REATIVO: Realiza o cálculo unificado para Header e Barra Fixa Inferior Mobile
-        function atualizarInterfaceCarrinho() {
-            const badge = document.getElementById('badgeCarrinho');
-            const barraMobile = document.getElementById('barraFixaMobile');
-            const labelQtdMobile = document.getElementById('qtdItensMobile');
-            const totalInferior = document.getElementById('totalFixInferior');
-            
-            const totalItens = carrinho.reduce((acc, item) => acc + item.qtd, 0);
-            const valorTotal = carrinho.reduce((acc, item) => acc + (item.qtd * item.preco), 0);
-
-            // Atualização do Badge Superior (Header)
-            if (totalItens > 0) {
-                badge.innerText = totalItens;
-                badge.classList.remove('hidden');
-            } else {
-                badge.classList.add('hidden');
-            }
-
-            // Controle e Atualização da Barra Inferior Mobile
-            if (barraMobile && labelQtdMobile && totalInferior) {
-                if (totalItens > 0) {
-                    labelQtdMobile.innerText = totalItens;
-                    totalInferior.innerText = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
-                    barraMobile.classList.remove('hidden');
-                } else {
-                    barraMobile.classList.add('hidden');
-                }
-            }
-        }
-    </script>
 </body>
 </html>

@@ -13,7 +13,7 @@
         <div class="max-w-xl mx-auto flex justify-between items-center">
             <div>
                 <h1 class="text-xl font-bold tracking-tight flex items-center gap-2">
-                    <i class="fas fa-pump-soap text-indigo-400"></i> Mania de Limpeza Express
+                    <i class="fas fa-pump-soap text-indigo-400"></i> Mania de Limpeza
                 </h1>
                 <p class="text-xs text-indigo-200">Fechamento do Pedido</p>
             </div>
@@ -23,105 +23,325 @@
         </div>
     </header>
 
-    <main class="max-w-xl mx-auto p-4 mt-2">
-        <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
-            
-            <div class="mb-6">
-                <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-3 flex items-center gap-2">
-                    <i class="fas fa-shopping-basket text-indigo-500"></i> Seus Produtos Selecionados
-                </h2>
-                
-                <div id="listaItens" class="divide-y divide-gray-100 text-sm">
-                    </div>
+    <!-- STEPPER -->
+    <div class="max-w-xl mx-auto px-4 pt-4 pb-2">
+        <div class="flex items-center justify-between">
 
-                <div class="mt-4 bg-indigo-50/50 p-4 rounded-xl border border-indigo-100/50 space-y-2 text-sm text-gray-600">
-                    <div class="flex justify-between">
-                        <span>Subtotal Produtos:</span>
-                        <span class="font-semibold text-indigo-950" id="valorProdutos">R$ 0,00</span>
-                    </div>
-                    <div class="flex justify-between font-medium" id="blocoTaxa">
-                        <span>Taxa de Entrega:</span>
-                        <span id="valorTaxa">Selecione o bairro</span>
-                    </div>
-                    <div class="flex justify-between items-center pt-2 border-t border-indigo-100">
-                        <span class="text-base font-bold text-gray-800">Total Geral:</span>
-                        <span class="text-xl font-black text-indigo-950" id="valorTotalGeral">R$ 0,00</span>
-                    </div>
+            <div class="flex flex-col items-center gap-1" id="step-indicator-1">
+                <div id="step-circle-1" class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-indigo-700 border-indigo-700 text-white">
+                    <i class="fas fa-shopping-basket text-xs"></i>
                 </div>
+                <span class="text-xs font-semibold text-indigo-700" id="step-label-1">Carrinho</span>
             </div>
 
-            <div class="mb-6 space-y-3.5">
-                <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-1 flex items-center gap-2">
-                    <i class="fas fa-map-marked-alt text-indigo-500"></i> Dados para Entrega
-                </h2>
-                
-                <div>
-                    <label class="block text-xs font-semibold text-gray-500 mb-1">Rua / Logradouro</label>
-                    <input type="text" id="rua" placeholder="Ex: Rua das Flores" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
-                </div>
+            <div class="flex-1 mx-2 h-1 rounded-full transition-all duration-500" id="step-line-1" style="background: #e0e7ff;"></div>
 
-                <div class="grid grid-cols-3 gap-3">
-                    <div class="col-span-1">
-                        <label class="block text-xs font-semibold text-gray-500 mb-1">Número</label>
-                        <input type="text" id="numero" placeholder="Ex: 123" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
-                    </div>
-                    <div class="col-span-2">
-                        <label for="bairro" class="block text-xs font-semibold text-gray-500 mb-1">Bairro</label>
-                        <select id="bairro" onchange="atualizarResumoFinanceiro()" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
-                            <option value="" disabled selected>Selecione seu bairro...</option>
-                            <option value="Umuarama">Umuarama (Taxa: R$ 5,00)</option>
-                            <option value="Iemanjá">Iemanjá (Taxa: R$ 5,00)</option>
-                            <option value="Guapiranga">Guapiranga (Taxa: R$ 5,00)</option>
-                            <option value="Coronel">Coronel (Taxa: R$ 5,00)</option>
-                            <option value="Belas Artes">Belas Artes (Taxa: R$ 9,00)</option>
-                            <option value="Corumbá">Corumbá (Taxa: R$ 9,00)</option>
-                            <option value="Ieda">Ieda (Taxa: R$ 9,00)</option>
-                            <option value="Praia dos Sonhos">Praia dos Sonhos (Taxa: R$ 12,00)</option>
-                            <option value="Cibratel 1">Cibratel 1 (Taxa: R$ 12,00)</option>
-                            <option value="Chácara Cibratel">Chácara Cibratel (Taxa: R$ 12,00)</option>
-                        </select>
-                    </div>
+            <div class="flex flex-col items-center gap-1" id="step-indicator-2">
+                <div id="step-circle-2" class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-white border-gray-300 text-gray-400">
+                    <i class="fas fa-map-marker-alt text-xs"></i>
                 </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-gray-500 mb-1">Ponto de Referência <span class="text-red-500 font-bold">(Obrigatório)</span></label>
-                    <input type="text" id="referencia" placeholder="Ex: Próximo ao mercado Central ou travessa da Av. Principal" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
-                </div>
-                
-                <div>
-                    <label for="pagamento" class="block text-xs font-semibold text-gray-500 mb-1">Forma de Pagamento</label>
-                    <select id="pagamento" onchange="verificarPagamento()" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
-                        <option value="Pix">Pix (Rápido e Seguro)</option>
-                        <option value="Dinheiro">Dinheiro</option>
-                        <option value="Cartão">Cartão (Débito / Crédito na entrega)</option>
-                    </select>
-                </div>
-
-                <div id="containerTroco" class="hidden transition duration-200">
-                    <label class="block text-xs font-semibold text-gray-500 mb-1">Precisa de troco para quanto?</label>
-                    <input type="text" id="troco" placeholder="Ex: Troco para R$ 50,00" class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
-                </div>
+                <span class="text-xs font-semibold text-gray-400" id="step-label-2">Entrega</span>
             </div>
 
-            <button onclick="confirmarPedido()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center gap-2 text-base tracking-wide">
-                <i class="fab fa-whatsapp text-xl"></i> Enviar Pedido via WhatsApp
+            <div class="flex-1 mx-2 h-1 rounded-full transition-all duration-500" id="step-line-2" style="background: #e5e7eb;"></div>
+
+            <div class="flex flex-col items-center gap-1" id="step-indicator-3">
+                <div id="step-circle-3" class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-white border-gray-300 text-gray-400">
+                    <i class="fas fa-check text-xs"></i>
+                </div>
+                <span class="text-xs font-semibold text-gray-400" id="step-label-3">Confirmação</span>
+            </div>
+
+        </div>
+    </div>
+
+    <main class="max-w-xl mx-auto p-4 mt-1">
+
+        <!-- ===================== ETAPA 1: CARRINHO ===================== -->
+        <div id="etapa-1" class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+            <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-3 flex items-center gap-2">
+                <i class="fas fa-shopping-basket text-indigo-500"></i> Seus Produtos Selecionados
+            </h2>
+
+            <div id="bannerFrete" class="flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3">
+                <i class="fas fa-truck text-emerald-500"></i>
+                <span>Entregas <strong>grátis</strong> a partir de <strong>R$ 30,00</strong> em produtos!</span>
+            </div>
+
+            <div id="listaItens" class="divide-y divide-gray-100 text-sm"></div>
+
+            <div class="mt-4 bg-indigo-50/50 p-4 rounded-xl border border-indigo-100/50 space-y-2 text-sm text-gray-600">
+                <div class="flex justify-between">
+                    <span>Subtotal Produtos:</span>
+                    <span class="font-semibold text-indigo-950" id="valorProdutos">R$ 0,00</span>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-indigo-100">
+                    <span class="text-base font-bold text-gray-800">Total Estimado:</span>
+                    <span class="text-xl font-black text-indigo-950" id="valorTotalGeral">R$ 0,00</span>
+                </div>
+                <p class="text-xs text-gray-400 italic">* Taxa de entrega calculada na próxima etapa</p>
+            </div>
+
+            <button onclick="irParaEtapa(2)" id="btnAvancarEtapa1"
+                class="mt-5 w-full bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center gap-2 text-base tracking-wide disabled:opacity-40 disabled:cursor-not-allowed">
+                Continuar para Entrega <i class="fas fa-arrow-right"></i>
             </button>
         </div>
+
+        <!-- ===================== ETAPA 2: ENTREGA ===================== -->
+        <div id="etapa-2" class="hidden bg-white p-5 rounded-2xl shadow-sm border border-gray-100 space-y-3.5">
+            <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-1 flex items-center gap-2">
+                <i class="fas fa-map-marked-alt text-indigo-500"></i> Dados para Entrega
+            </h2>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-500 mb-1">Nome do Recebedor</label>
+                <input type="text" id="nomeRecebedor" placeholder="Ex: João da Silva"
+                    class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-500 mb-1">Rua / Logradouro</label>
+                <input type="text" id="rua" placeholder="Ex: Rua das Flores"
+                    class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+            </div>
+
+            <div class="grid grid-cols-3 gap-3">
+                <div class="col-span-1">
+                    <label class="block text-xs font-semibold text-gray-500 mb-1">Número</label>
+                    <input type="text" id="numero" placeholder="Ex: 123"
+                        class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+                </div>
+                <div class="col-span-2">
+                    <label for="bairro" class="block text-xs font-semibold text-gray-500 mb-1">Bairro</label>
+                    <select id="bairro" onchange="onBairroChange()"
+                        class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
+                        <option value="" disabled selected>Selecione seu bairro...</option>
+                        <option value="Umuarama">Umuarama (Taxa: R$ 5,00)</option>
+                        <option value="Iemanjá">Iemanjá (Taxa: R$ 5,00)</option>
+                        <option value="Guapiranga">Guapiranga (Taxa: R$ 5,00)</option>
+                        <option value="Coronel">Coronel (Taxa: R$ 5,00)</option>
+                        <option value="Belas Artes">Belas Artes (Taxa: R$ 5,00)</option>
+                        <option value="Corumbá">Corumbá (Taxa: R$ 5,00)</option>
+                        <option value="Ieda">Ieda (Taxa: R$ 5,00)</option>
+                        <option value="Praia dos Sonhos">Praia dos Sonhos (Taxa: R$ 5,00)</option>
+                        <option value="Cibratel 1">Cibratel 1 (Taxa: R$ 5,00)</option>
+                        <option value="Chácara Cibratel">Chácara Cibratel (Taxa: R$ 5,00)</option>
+                        <option value="Outros">Outros bairros</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Aviso "Outros bairros" -->
+            <div id="avisoOutrosBairros" class="hidden">
+                <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 text-sm text-amber-800 space-y-2">
+                    <p class="font-bold flex items-center gap-2">
+                        <i class="fas fa-exclamation-triangle text-amber-500"></i> Atenção — Entrega em outro bairro
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-xs leading-relaxed">
+                        <li>A taxa de entrega para este bairro é de <strong>R$ 15,00</strong>.</li>
+                        <li>O pagamento deve ser realizado <strong>exclusivamente via Pix</strong> antes da entrega.</li>
+                    </ul>
+                </div>
+                <div class="mt-2">
+                    <label for="confirmaOutrosBairros" class="block text-xs font-semibold text-gray-500 mb-1">
+                        Confirmação obrigatória
+                    </label>
+                    <select id="confirmaOutrosBairros" onchange="atualizarBotaoEtapa2()"
+                        class="w-full px-4 py-2.5 bg-white border border-amber-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm text-gray-700 transition">
+                        <option value="" disabled selected>Selecione para confirmar...</option>
+                        <option value="sim">Sim, estou ciente e aceito as condições</option>
+                        <option value="nao">Não, quero escolher outro bairro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-gray-500 mb-1">Ponto de Referência <span class="text-red-500 font-bold">(Obrigatório)</span></label>
+                <input type="text" id="referencia" placeholder="Ex: Próximo ao mercado Central"
+                    class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+            </div>
+
+            <div>
+                <label for="pagamento" class="block text-xs font-semibold text-gray-500 mb-1">Forma de Pagamento</label>
+                <select id="pagamento" onchange="verificarPagamento()"
+                    class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
+                    <option value="Pix">Pix (Rápido e Seguro)</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="Cartão">Cartão (Débito / Crédito na entrega)</option>
+                </select>
+            </div>
+
+            <div id="containerTroco" class="hidden">
+                <label class="block text-xs font-semibold text-gray-500 mb-1">Precisa de troco para quanto?</label>
+                <input type="text" id="troco" placeholder="Ex: Troco para R$ 50,00"
+                    class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition" />
+            </div>
+
+            <div class="flex gap-3 pt-1">
+                <button onclick="irParaEtapa(1)"
+                    class="flex-1 bg-white hover:bg-gray-50 text-gray-600 font-semibold py-3 px-4 rounded-xl border border-gray-200 transition duration-200 flex items-center justify-center gap-2 text-sm">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </button>
+                <button onclick="irParaEtapa(3)" id="btnAvancarEtapa2"
+                    class="flex-[2] bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center gap-2 text-sm tracking-wide">
+                    Revisar Pedido <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- ===================== ETAPA 3: CONFIRMAÇÃO ===================== -->
+        <div id="etapa-3" class="hidden bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+            <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-4 flex items-center gap-2">
+                <i class="fas fa-clipboard-check text-indigo-500"></i> Revise seu Pedido
+            </h2>
+
+            <!-- Resumo itens -->
+            <div class="mb-4">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Produtos</p>
+                <div id="resumoItens" class="divide-y divide-gray-100 text-sm"></div>
+            </div>
+
+            <!-- Resumo endereço -->
+            <div class="mb-4 bg-indigo-50/50 rounded-xl p-4 border border-indigo-100/50 space-y-1.5 text-sm">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Entrega</p>
+                <div class="flex gap-2"><i class="fas fa-user text-indigo-400 w-4 mt-0.5"></i><span id="resumoNome" class="text-gray-700"></span></div>
+                <div class="flex gap-2"><i class="fas fa-map-marker-alt text-indigo-400 w-4 mt-0.5"></i><span id="resumoEndereco" class="text-gray-700"></span></div>
+                <div class="flex gap-2"><i class="fas fa-home text-indigo-400 w-4 mt-0.5"></i><span id="resumoBairro" class="text-gray-700"></span></div>
+                <div class="flex gap-2"><i class="fas fa-flag text-indigo-400 w-4 mt-0.5"></i><span id="resumoReferencia" class="text-gray-700"></span></div>
+            </div>
+
+            <!-- Resumo financeiro -->
+            <div class="mb-5 bg-indigo-50/50 p-4 rounded-xl border border-indigo-100/50 space-y-2 text-sm text-gray-600">
+                <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Valores</p>
+                <div class="flex justify-between">
+                    <span>Subtotal Produtos:</span>
+                    <span class="font-semibold text-indigo-950" id="resumoSubtotal"></span>
+                </div>
+                <div class="flex justify-between font-medium" id="resumoBlocoTaxa">
+                    <span>Taxa de Entrega:</span>
+                    <span id="resumoTaxa"></span>
+                </div>
+                <div class="flex justify-between font-medium">
+                    <span>Pagamento:</span>
+                    <span id="resumoPagamento" class="text-gray-800 font-semibold"></span>
+                </div>
+                <div class="flex justify-between items-center pt-2 border-t border-indigo-100">
+                    <span class="text-base font-bold text-gray-800">Total Geral:</span>
+                    <span class="text-xl font-black text-indigo-950" id="resumoTotal"></span>
+                </div>
+            </div>
+
+            <div class="flex gap-3">
+                <button onclick="irParaEtapa(2)"
+                    class="flex-1 bg-white hover:bg-gray-50 text-gray-600 font-semibold py-3 px-4 rounded-xl border border-gray-200 transition duration-200 flex items-center justify-center gap-2 text-sm">
+                    <i class="fas fa-arrow-left"></i> Editar
+                </button>
+                <button onclick="confirmarPedido()"
+                    class="flex-[2] bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center gap-2 text-sm tracking-wide">
+                    <i class="fab fa-whatsapp text-lg"></i> Enviar via WhatsApp
+                </button>
+            </div>
+        </div>
+
     </main>
 
     <script>
         let carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
+        let etapaAtual = 1;
+
+        const TAXA_OUTROS_BAIRROS = 15;
+        const MINIMO_FRETE_GRATIS = 30;
 
         const tabelaTaxas = {
             "Umuarama": 5, "Iemanjá": 5, "Guapiranga": 5, "Coronel": 5,
-            "Belas Artes": 9, "Corumbá": 9, "Ieda": 9,
-            "Praia dos Sonhos": 12, "Cibratel 1": 12, "Chácara Cibratel": 12
+            "Belas Artes": 5, "Corumbá": 5, "Ieda": 5,
+            "Praia dos Sonhos": 5, "Cibratel 1": 5, "Chácara Cibratel": 5,
+            "Outros": TAXA_OUTROS_BAIRROS
         };
 
         document.addEventListener('DOMContentLoaded', () => {
             renderizarItensCarrinho();
             recuperarEnderecoSalvo();
+            atualizarStepper(1);
         });
+
+        // ── STEPPER ──────────────────────────────────────────────
+
+        function atualizarStepper(etapa) {
+            for (let i = 1; i <= 3; i++) {
+                const circle = document.getElementById(`step-circle-${i}`);
+                const label  = document.getElementById(`step-label-${i}`);
+                if (i < etapa) {
+                    circle.className = "w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-emerald-600 border-emerald-600 text-white";
+                    circle.innerHTML = '<i class="fas fa-check text-xs"></i>';
+                    label.className = "text-xs font-semibold text-emerald-600";
+                } else if (i === etapa) {
+                    circle.className = "w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-indigo-700 border-indigo-700 text-white";
+                    const icons = ['fa-shopping-basket', 'fa-map-marker-alt', 'fa-check'];
+                    circle.innerHTML = `<i class="fas ${icons[i-1]} text-xs"></i>`;
+                    label.className = "text-xs font-semibold text-indigo-700";
+                } else {
+                    circle.className = "w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-white border-gray-300 text-gray-400";
+                    const icons = ['fa-shopping-basket', 'fa-map-marker-alt', 'fa-check'];
+                    circle.innerHTML = `<i class="fas ${icons[i-1]} text-xs"></i>`;
+                    label.className = "text-xs font-semibold text-gray-400";
+                }
+            }
+            for (let i = 1; i <= 2; i++) {
+                const line = document.getElementById(`step-line-${i}`);
+                line.style.background = i < etapa ? '#059669' : '#e0e7ff';
+            }
+        }
+
+        function irParaEtapa(destino) {
+            if (destino === 2 && !validarEtapa1()) return;
+            if (destino === 3 && !validarEtapa2()) return;
+            if (destino === 3) preencherResumo();
+
+            document.getElementById(`etapa-${etapaAtual}`).classList.add('hidden');
+            document.getElementById(`etapa-${destino}`).classList.remove('hidden');
+            etapaAtual = destino;
+            atualizarStepper(destino);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ── VALIDAÇÕES ───────────────────────────────────────────
+
+        function validarEtapa1() {
+            if (carrinho.length === 0) {
+                alert("Seu carrinho está vazio! Adicione produtos antes de continuar.");
+                return false;
+            }
+            return true;
+        }
+
+        function validarEtapa2() {
+            const nome  = document.getElementById('nomeRecebedor').value.trim();
+            const rua   = document.getElementById('rua').value.trim();
+            const num   = document.getElementById('numero').value.trim();
+            const bairro = document.getElementById('bairro').value;
+            const ref   = document.getElementById('referencia').value.trim();
+
+            if (!nome || !rua || !num || !bairro || !ref) {
+                alert("Por favor, preencha todos os campos: Nome, Rua, Número, Bairro e Ponto de Referência.");
+                return false;
+            }
+
+            if (bairro === 'Outros') {
+                const confirma = document.getElementById('confirmaOutrosBairros').value;
+                if (confirma !== 'sim') {
+                    alert("Para continuar com entrega em outro bairro, confirme que aceita as condições (Pix exclusivo + taxa R$ 15,00).");
+                    return false;
+                }
+                // Forçar pagamento Pix
+                document.getElementById('pagamento').value = 'Pix';
+                document.getElementById('containerTroco').classList.add('hidden');
+            }
+            return true;
+        }
+
+        // ── CARRINHO (ETAPA 1) ───────────────────────────────────
 
         function renderizarItensCarrinho() {
             const listaItens = document.getElementById('listaItens');
@@ -132,74 +352,54 @@
                         <i class="fas fa-shopping-cart text-3xl mb-2"></i>
                         <p>Seu carrinho está vazio.</p>
                         <a href="index.html" class="text-indigo-600 hover:underline font-semibold text-xs inline-block mt-2">Voltar para escolher produtos</a>
-                    </div>
-                `;
+                    </div>`;
                 atualizarResumoFinanceiro();
+                document.getElementById('btnAvancarEtapa1').disabled = true;
                 return;
             }
+
+            document.getElementById('btnAvancarEtapa1').disabled = false;
 
             listaItens.innerHTML = carrinho.map(item => {
                 const totalItem = item.preco * item.qtd;
                 return `
                     <div class="flex justify-between items-center py-3">
                         <div class="pr-2">
-                            <span class="font-bold text-indigo-900 bg-indigo-50 px-2 py-0.5 rounded-md text-xs mr-1">${item.qtd}x</span>
-                            <span class="text-gray-700 font-medium uppercase text-xs tracking-tight">${item.nome}</span>
+                            <p class="font-semibold text-gray-800">${item.nome}</p>
+                            <p class="text-xs text-gray-400">${item.qtd}x R$ ${item.preco.toFixed(2).replace('.', ',')}</p>
                         </div>
-                        <div class="flex items-center gap-4 shrink-0">
-                            <span class="font-bold text-gray-900 text-sm">R$ ${totalItem.toFixed(2).replace('.', ',')}</span>
-                            <button onclick="removerItemCarrinho('${item.nome}')" aria-label="Remover item do carrinho" class="text-red-400 hover:text-red-600 transition p-1" title="Remover item">
+                        <div class="flex items-center gap-3 shrink-0">
+                            <span class="font-bold text-indigo-800">R$ ${totalItem.toFixed(2).replace('.', ',')}</span>
+                            <button onclick="removerItemCarrinho('${item.nome}')" class="text-red-400 hover:text-red-600 transition text-xs p-1">
                                 <i class="fas fa-trash-alt"></i>
                             </button>
                         </div>
-                    </div>
-                `;
+                    </div>`;
             }).join('');
 
             atualizarResumoFinanceiro();
         }
 
         function atualizarResumoFinanceiro() {
-            const labelProdutos = document.getElementById('valorProdutos');
-            const labelTaxa = document.getElementById('valorTaxa');
+            const labelProdutos   = document.getElementById('valorProdutos');
             const labelTotalGeral = document.getElementById('valorTotalGeral');
-            const blocoTaxa = document.getElementById('blocoTaxa');
-            const bairroSelecionado = document.getElementById('bairro').value;
+            const banner          = document.getElementById('bannerFrete');
 
-            const subtotalProdutos = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
-            labelProdutos.innerText = `R$ ${subtotalProdutos.toFixed(2).replace('.', ',')}`;
+            const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
+            labelProdutos.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+            labelTotalGeral.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
 
-            const possuiKitPromocional = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
+            const possuiKit = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
+            const freteGratis = possuiKit || subtotal >= MINIMO_FRETE_GRATIS;
 
-            let taxaEntrega = 0;
-            let bairroConfigurado = false;
-
-            if (bairroSelecionado && tabelaTaxas[bairroSelecionado] !== undefined) {
-                taxaEntrega = tabelaTaxas[bairroSelecionado];
-                bairroConfigurado = true;
-            }
-
-            if (!bairroConfigurado) {
-                labelTaxa.innerText = "Selecione o bairro";
-                labelTaxa.className = "text-gray-400 italic";
-                blocoTaxa.className = "flex justify-between font-medium text-gray-600";
-                labelTotalGeral.innerText = `R$ ${subtotalProdutos.toFixed(2).replace('.', ',')}`;
-                return;
-            }
-
-            if (possuiKitPromocional) {
-                taxaEntrega = 0;
-                labelTaxa.innerText = "GRÁTIS (Kit Ativado)";
-                labelTaxa.className = "text-emerald-600 font-bold";
-                blocoTaxa.className = "flex justify-between font-medium text-emerald-600";
+            if (freteGratis) {
+                banner.className = "flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3";
+                banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns!</strong> Você conseguiu frete grátis!</span>`;
             } else {
-                labelTaxa.innerText = `R$ ${taxaEntrega.toFixed(2).replace('.', ',')}`;
-                labelTaxa.className = "text-gray-900 font-semibold";
-                blocoTaxa.className = "flex justify-between font-medium text-gray-600";
+                const faltam = (MINIMO_FRETE_GRATIS - subtotal).toFixed(2).replace('.', ',');
+                banner.className = "flex items-center gap-2 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 mb-3";
+                banner.innerHTML = `<i class="fas fa-truck text-amber-500"></i><span>Faltam <strong>R$ ${faltam}</strong> para conseguir o frete grátis!</span>`;
             }
-
-            const totalGeralCalculado = subtotalProdutos + taxaEntrega;
-            labelTotalGeral.innerText = `R$ ${totalGeralCalculado.toFixed(2).replace('.', ',')}`;
         }
 
         function removerItemCarrinho(nomeDoProduto) {
@@ -208,87 +408,170 @@
             renderizarItensCarrinho();
         }
 
-        function verificarPagamento() { 
-            const selectPagamento = document.getElementById('pagamento').value;
-            const containerTroco = document.getElementById('containerTroco');
-            
-            if (selectPagamento === 'Dinheiro') {
-                containerTroco.classList.remove('hidden');
+        // ── ENTREGA (ETAPA 2) ────────────────────────────────────
+
+        function onBairroChange() {
+            const bairro = document.getElementById('bairro').value;
+            const aviso  = document.getElementById('avisoOutrosBairros');
+            const selectPagamento = document.getElementById('pagamento');
+
+            if (bairro === 'Outros') {
+                aviso.classList.remove('hidden');
+                // Forçar Pix e bloquear o select de pagamento
+                selectPagamento.value = 'Pix';
+                selectPagamento.disabled = true;
+                selectPagamento.classList.add('opacity-50', 'cursor-not-allowed');
+                document.getElementById('containerTroco').classList.add('hidden');
             } else {
-                containerTroco.classList.add('hidden');
+                aviso.classList.add('hidden');
+                document.getElementById('confirmaOutrosBairros').value = '';
+                selectPagamento.disabled = false;
+                selectPagamento.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+            atualizarBotaoEtapa2();
+        }
+
+        function atualizarBotaoEtapa2() {
+            const bairro   = document.getElementById('bairro').value;
+            const btn      = document.getElementById('btnAvancarEtapa2');
+            if (bairro === 'Outros') {
+                const confirma = document.getElementById('confirmaOutrosBairros').value;
+                btn.disabled = confirma !== 'sim';
+                btn.classList.toggle('opacity-40', confirma !== 'sim');
+                btn.classList.toggle('cursor-not-allowed', confirma !== 'sim');
+            } else {
+                btn.disabled = false;
+                btn.classList.remove('opacity-40', 'cursor-not-allowed');
             }
         }
 
-        function salvarDadosEndereco(rua, numero, bairro, referencia) {
-            const dadosEndereco = { rua, numero, bairro, referencia };
-            localStorage.setItem('endereco_cliente', JSON.stringify(dadosEndereco));
+        function verificarPagamento() {
+            const pag = document.getElementById('pagamento').value;
+            const containerTroco = document.getElementById('containerTroco');
+            containerTroco.classList.toggle('hidden', pag !== 'Dinheiro');
+        }
+
+        function salvarDadosEndereco(nome, rua, numero, bairro, referencia) {
+            localStorage.setItem('endereco_cliente', JSON.stringify({ nome, rua, numero, bairro, referencia }));
         }
 
         function recuperarEnderecoSalvo() {
-            const dadosSalvos = JSON.parse(localStorage.getItem('endereco_cliente'));
-            if (dadosSalvos) {
-                document.getElementById('rua').value = dadosSalvos.rua || '';
-                document.getElementById('numero').value = dadosSalvos.numero || '';
-                document.getElementById('bairro').value = dadosSalvos.bairro || '';
-                document.getElementById('referencia').value = dadosSalvos.referencia || '';
+            const dados = JSON.parse(localStorage.getItem('endereco_cliente'));
+            if (dados) {
+                document.getElementById('nomeRecebedor').value = dados.nome    || '';
+                document.getElementById('rua').value           = dados.rua     || '';
+                document.getElementById('numero').value        = dados.numero  || '';
+                document.getElementById('bairro').value        = dados.bairro  || '';
+                document.getElementById('referencia').value    = dados.referencia || '';
+                if (dados.bairro === 'Outros') onBairroChange();
             }
         }
 
-        function confirmarPedido() {
-            if (carrinho.length === 0) {
-                alert("Seu carrinho está vazio! Adicione produtos antes de finalizar.");
-                return;
-            }
+        // ── CONFIRMAÇÃO (ETAPA 3) ────────────────────────────────
 
-            const rua = document.getElementById('rua').value.trim();
-            const num = document.getElementById('numero').value.trim();
+        function calcularTaxa(bairro, subtotal) {
+            const possuiKit = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
+            if (bairro === 'Outros') return TAXA_OUTROS_BAIRROS; // nunca grátis
+            if (possuiKit || subtotal >= MINIMO_FRETE_GRATIS) return 0;
+            return tabelaTaxas[bairro] || 0;
+        }
+
+        function preencherResumo() {
+            const nome   = document.getElementById('nomeRecebedor').value.trim();
+            const rua    = document.getElementById('rua').value.trim();
+            const num    = document.getElementById('numero').value.trim();
             const bairro = document.getElementById('bairro').value;
-            const ref = document.getElementById('referencia').value.trim();
-            const pag = document.getElementById('pagamento').value;
-            const troco = document.getElementById('troco').value.trim();
-            
-            if (!rua || !num || !bairro || !ref) {
-                alert("Por favor, preencha todos os campos obrigatórios de endereço: Rua, Número, Bairro e Ponto de Referência.");
-                return;
+            const ref    = document.getElementById('referencia').value.trim();
+            const pag    = document.getElementById('pagamento').value;
+
+            const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
+            const taxa     = calcularTaxa(bairro, subtotal);
+            const total    = subtotal + taxa;
+
+            // Itens
+            document.getElementById('resumoItens').innerHTML = carrinho.map(item => {
+                const t = item.preco * item.qtd;
+                return `<div class="flex justify-between items-center py-2">
+                    <span class="text-gray-700">${item.qtd}x ${item.nome}</span>
+                    <span class="font-semibold text-indigo-800">R$ ${t.toFixed(2).replace('.', ',')}</span>
+                </div>`;
+            }).join('');
+
+            // Endereço
+            document.getElementById('resumoNome').textContent      = nome;
+            document.getElementById('resumoEndereco').textContent  = `${rua}, Nº ${num}`;
+            document.getElementById('resumoBairro').textContent    = bairro === 'Outros' ? 'Outro bairro (taxa R$ 15,00 / Pix)' : bairro;
+            document.getElementById('resumoReferencia').textContent = ref;
+
+            // Valores
+            document.getElementById('resumoSubtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+
+            const taxaEl = document.getElementById('resumoTaxa');
+            const blocoEl = document.getElementById('resumoBlocoTaxa');
+            if (taxa === 0) {
+                taxaEl.textContent = 'GRÁTIS';
+                taxaEl.className = 'text-emerald-600 font-bold';
+                blocoEl.className = 'flex justify-between font-medium text-emerald-600';
+            } else {
+                taxaEl.textContent = `R$ ${taxa.toFixed(2).replace('.', ',')}`;
+                taxaEl.className = 'text-gray-800 font-semibold';
+                blocoEl.className = 'flex justify-between font-medium text-gray-600';
             }
 
-            salvarDadosEndereco(rua, num, bairro, ref);
+            document.getElementById('resumoPagamento').textContent = pag;
+            document.getElementById('resumoTotal').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
 
-            const possuiKitPromocional = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
-            const taxaEntregaBase = tabelaTaxas[bairro];
-            const taxaAplicada = possuiKitPromocional ? 0 : taxaEntregaBase;
+        // ── ENVIO WHATSAPP ───────────────────────────────────────
 
-            let subtotalPedido = 0;
+        function confirmarPedido() {
+            const nome   = document.getElementById('nomeRecebedor').value.trim();
+            const rua    = document.getElementById('rua').value.trim();
+            const num    = document.getElementById('numero').value.trim();
+            const bairro = document.getElementById('bairro').value;
+            const ref    = document.getElementById('referencia').value.trim();
+            const pag    = document.getElementById('pagamento').value;
+            const troco  = document.getElementById('troco').value.trim();
+
+            salvarDadosEndereco(nome, rua, num, bairro, ref);
+
+            const subtotal  = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
+            const taxa      = calcularTaxa(bairro, subtotal);
+            const total     = subtotal + taxa;
+
             let msg = `🛍️ *NOVO PEDIDO - MANIA DE LIMPEZA*\n\n`;
             msg += `📋 *ITENS COMPRADOS:*\n`;
-            
             carrinho.forEach(item => {
-                const totalItem = item.preco * item.qtd;
-                subtotalPedido += totalItem;
-                msg += `• ${item.qtd}x ${item.nome} - R$ ${totalItem.toFixed(2).replace('.', ',')}\n`;
+                const t = item.preco * item.qtd;
+                msg += `• ${item.qtd}x ${item.nome} — R$ ${t.toFixed(2).replace('.', ',')}\n`;
             });
-            
-            const totalGeralPedido = subtotalPedido + taxaAplicada;
 
             msg += `\n💰 *RESUMO DO PEDIDO:*`;
-            msg += `\n• Subtotal Itens: R$ ${subtotalPedido.toFixed(2).replace('.', ',')}`;
-            msg += `\n• Taxa de Entrega: ${possuiKitPromocional ? 'GRÁTIS (Promoção Kit Limpeza)' : 'R$ ' + taxaAplicada.toFixed(2).replace('.', ',')}`;
-            msg += `\n• *Total Geral: R$ ${totalGeralPedido.toFixed(2).replace('.', ',')}*\n\n`;
-            
-            msg += `📍 *ENDEREÇO DE ENTREGA:*\n`;
-            msg += `🏠 Rua: ${rua}, Nº ${num}\n`;
-            msg += `🏘️ Bairro: ${bairro}\n`;
-            msg += `🚩 Ponto de Referência: ${ref}\n`;
-            
-            msg += `\n💳 *FORMA DE PAGAMENTO:*\n`;
-            msg += `• ${pag}`;
-            if (pag === 'Dinheiro' && troco) {
-                msg += ` (Levar troco para: R$ ${troco})`;
+            msg += `\n• Subtotal Itens: R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+
+            const possuiKit = carrinho.some(i => i.nome.toUpperCase().trim() === "KIT LIMPEZA");
+            let motivoTaxa;
+            if (bairro === 'Outros') {
+                motivoTaxa = `R$ ${taxa.toFixed(2).replace('.', ',')} (outro bairro)`;
+            } else if (taxa === 0) {
+                motivoTaxa = possuiKit ? 'GRÁTIS (Kit Limpeza)' : 'GRÁTIS (Pedido acima de R$ 30)';
+            } else {
+                motivoTaxa = `R$ ${taxa.toFixed(2).replace('.', ',')}`;
             }
 
-            const mensagemCodificada = encodeURIComponent(msg);
-            // CORREÇÃO: Endpoint definitivo do WhatsApp parametrizado com o número comercial ativo
-            window.open(`https://wa.me/5513991727089?text=${mensagemCodificada}`, '_blank');
+            msg += `\n• Taxa de Entrega: ${motivoTaxa}`;
+            msg += `\n• *Total Geral: R$ ${total.toFixed(2).replace('.', ',')}*\n\n`;
+
+            msg += `📍 *ENDEREÇO DE ENTREGA:*\n`;
+            msg += `👤 Recebedor: ${nome}\n`;
+            msg += `🏠 Rua: ${rua}, Nº ${num}\n`;
+            msg += `🏘️ Bairro: ${bairro === 'Outros' ? 'Outro bairro' : bairro}\n`;
+            msg += `🚩 Referência: ${ref}\n`;
+
+            msg += `\n💳 *FORMA DE PAGAMENTO:*\n• ${pag}`;
+            if (pag === 'Dinheiro' && troco) msg += ` (troco para R$ ${troco})`;
+
+            window.open(`https://wa.me/5513991727089?text=${encodeURIComponent(msg)}`, '_blank');
         }
     </script>
 </body>

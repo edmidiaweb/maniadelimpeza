@@ -334,5 +334,8 @@ function confirmarPedido() {
 
     if (pag === 'Dinheiro' && troco) msg += ` (troco para R$ ${troco})`;
 
+    // Inclusão da mensagem de Pix junto ao texto enviado para o WhatsApp
+    msg += `\n\n⚠️ *Para pagamentos via Pix o pedido será liberado após envio do comprovante.*\n🔑 *Chave pix: 01399172-7089*`;
+
     window.open(`https://wa.me/5513991727089?text=${encodeURIComponent(msg)}`, '_blank');
 }

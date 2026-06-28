@@ -2,61 +2,61 @@
   {
     "Produto": "DESENGRAXANTE 1L",
     "Valor de venda (R$)": 7.95,
-    "imagem": "imagens/desengraxante.jpg",
+    "imagem": "desengraxante.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "LIMPA ALUMINIO 1L",
     "Valor de venda (R$)": 6.9,
-    "imagem": "imagens/limpa_aluminio_1l.jpg",
+    "imagem": "limpa_aluminio_1l.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "LIMPA ALUMINIO 5L",
     "Valor de venda (R$)": 19.9,
-    "imagem": "imagens/limpa_aluminio_5l.jpg",
+    "imagem": "limpa_aluminio_5l.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "LIMPA CERAMICA 1 L",
     "Valor de venda (R$)": 9.9,
-    "imagem": "imagens/limpa_ceramica.jpg",
+    "imagem": "limpa_ceramica.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "LIMPA PEDRA",
     "Valor de venda (R$)": 14.9,
-    "imagem": "imagens/limpa_pedra.jpg",
+    "imagem": "limpa_pedra.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "PRETINHO PNEU",
     "Valor de venda (R$)": 12.9,
-    "imagem": "imagens/pretinho_pneu.jpg",
+    "imagem": "pretinho_pneu.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "SILICONE GEL 180 GR",
     "Valor de venda (R$)": 12.9,
-    "imagem": "imagens/silicone_gel_180g.jpg",
+    "imagem": "silicone_gel_180g.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "SILICONE GEL MONZA",
     "Valor de venda (R$)": 14.9,
-    "imagem": "imagens/silicone_gel_monza.jpg",
+    "imagem": "silicone_gel_monza.jpg",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "BALDINHO DE PRAIA",
     "Valor de venda (R$)": 12.87,
-    "imagem": "imagens/baldinho.jpg",
+    "imagem": "baldinho.jpg",
     "Categoria": "Brinquedos e Lazer"
   },
   {
     "Produto": "BARALHO A PROVA DAGUA 54 CARTAS",
     "Valor de venda (R$)": 9.9,
-    "imagem": "imagens/baralho.jpg",
+    "imagem": "baralho.jpg",
     "Categoria": "Brinquedos e Lazer"
   },
   {

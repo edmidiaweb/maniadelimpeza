@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarItensCarrinho();
     recuperarEnderecoSalvo();
     atualizarStepper(1);
+    atualizarResumoFinanceiro();
 });
 
 function atualizarStepper(etapa) {
@@ -28,12 +29,12 @@ function atualizarStepper(etapa) {
         } else if (i === etapa) {
             circle.className = "w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-indigo-700 border-indigo-700 text-white";
             const icons = ['fa-shopping-basket', 'fa-map-marker-alt', 'fa-check'];
-            circle.innerHTML = `<i class="fas ${icons[i-1]} text-xs"></i>`;
+            circle.innerHTML = `<i class="fas ${icons[i - 1]} text-xs"></i>`;
             label.className = "text-xs font-semibold text-indigo-700";
         } else {
             circle.className = "w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 bg-white border-gray-300 text-gray-400";
             const icons = ['fa-shopping-basket', 'fa-map-marker-alt', 'fa-check'];
-            circle.innerHTML = `<i class="fas ${icons[i-1]} text-xs"></i>`;
+            circle.innerHTML = `<i class="fas ${icons[i - 1]} text-xs"></i>`;
             label.className = "text-xs font-semibold text-gray-400";
         }
     }
@@ -89,11 +90,13 @@ function validarEtapa2() {
         document.getElementById('pagamento').value = 'Pix';
         document.getElementById('containerTroco').classList.add('hidden');
     }
+
     return true;
 }
 
 function renderizarItensCarrinho() {
     const listaItens = document.getElementById('listaItens');
+
     if (carrinho.length === 0) {
         listaItens.innerHTML = `
             <div class="text-center py-8 text-gray-400">
@@ -105,7 +108,9 @@ function renderizarItensCarrinho() {
         document.getElementById('btnAvancarEtapa1').disabled = true;
         return;
     }
+
     document.getElementById('btnAvancarEtapa1').disabled = false;
+
     listaItens.innerHTML = carrinho.map(item => {
         const totalItem = item.preco * item.qtd;
         return `
@@ -122,6 +127,7 @@ function renderizarItensCarrinho() {
                 </div>
             </div>`;
     }).join('');
+
     atualizarResumoFinanceiro();
 }
 
@@ -129,18 +135,37 @@ function atualizarResumoFinanceiro() {
     const labelProdutos = document.getElementById('valorProdutos');
     const labelTotalGeral = document.getElementById('valorTotalGeral');
     const banner = document.getElementById('bannerFrete');
+
     const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
     labelProdutos.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
     labelTotalGeral.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+
+    const bairroSelecionado = document.getElementById('bairro')?.value || '';
+    const bairroOutro = document.getElementById('bairroOutro')?.value.trim() || '';
+    const confirmaOutros = document.getElementById('confirmaOutrosBairros')?.value || '';
+
     const possuiKit = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
     const freteGratis = possuiKit || subtotal >= MINIMO_FRETE_GRATIS;
+
+    if (!bairroSelecionado) {
+        banner.classList.add('hidden');
+        return;
+    }
+
+    if (bairroSelecionado === 'Outros') {
+        banner.classList.add('hidden');
+        return;
+    }
+
     if (freteGratis) {
         banner.className = "flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3";
         banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns!</strong> Você conseguiu frete grátis!</span>`;
+        banner.classList.remove('hidden');
     } else {
         const faltam = (MINIMO_FRETE_GRATIS - subtotal).toFixed(2).replace('.', ',');
         banner.className = "flex items-center gap-2 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 mb-3";
-        banner.innerHTML = `<i class="fas fa-truck text-amber-500"></i><span>Faltam <strong>R$ ${faltam}</strong> para conseguir o frete grátis!</span>`;
+        banner.innerHTML = `<i class="fas fa-truck text-amber-500"></i><span>Faltam <strong>R$ ${faltam}</strong> para conseguir frete grátis!</span>`;
+        banner.classList.remove('hidden');
     }
 }
 
@@ -155,6 +180,7 @@ function onBairroChange() {
     const aviso = document.getElementById('avisoOutrosBairros');
     const campoOutro = document.getElementById('campoOutroBairro');
     const selectPagamento = document.getElementById('pagamento');
+
     if (bairro === 'Outros') {
         aviso.classList.remove('hidden');
         campoOutro.classList.remove('hidden');
@@ -170,12 +196,15 @@ function onBairroChange() {
         selectPagamento.disabled = false;
         selectPagamento.classList.remove('opacity-50', 'cursor-not-allowed');
     }
+
     atualizarBotaoEtapa2();
+    atualizarResumoFinanceiro();
 }
 
 function atualizarBotaoEtapa2() {
     const bairro = document.getElementById('bairro').value;
     const btn = document.getElementById('btnAvancarEtapa2');
+
     if (bairro === 'Outros') {
         const confirma = document.getElementById('confirmaOutrosBairros').value;
         btn.disabled = confirma !== 'sim';
@@ -185,6 +214,8 @@ function atualizarBotaoEtapa2() {
         btn.disabled = false;
         btn.classList.remove('opacity-40', 'cursor-not-allowed');
     }
+
+    atualizarResumoFinanceiro();
 }
 
 function verificarPagamento() {
@@ -228,15 +259,18 @@ function preencherResumo() {
     const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
     const taxa = calcularTaxa(bairro, subtotal);
     const total = subtotal + taxa;
+
     document.getElementById('resumoItens').innerHTML = carrinho.map(item => {
         const t = item.preco * item.qtd;
         return `<div class="flex justify-between items-center py-2"><span class="text-gray-700">${item.qtd}x ${item.nome}</span><span class="font-semibold text-indigo-800">R$ ${t.toFixed(2).replace('.', ',')}</span></div>`;
     }).join('');
+
     document.getElementById('resumoNome').textContent = nome;
     document.getElementById('resumoEndereco').textContent = `${rua}, Nº ${num}`;
     document.getElementById('resumoBairro').textContent = bairro === 'Outros' ? `${bairroOutro} (Itanhaém)` : bairro;
     document.getElementById('resumoReferencia').textContent = ref;
     document.getElementById('resumoSubtotal').textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+
     const taxaEl = document.getElementById('resumoTaxa');
     const blocoEl = document.getElementById('resumoBlocoTaxa');
     if (taxa === 0) {
@@ -248,6 +282,7 @@ function preencherResumo() {
         taxaEl.className = 'text-gray-800 font-semibold';
         blocoEl.className = 'flex justify-between font-medium text-gray-600';
     }
+
     document.getElementById('resumoPagamento').textContent = pag;
     document.getElementById('resumoTotal').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
 }
@@ -261,18 +296,23 @@ function confirmarPedido() {
     const ref = document.getElementById('referencia').value.trim();
     const pag = document.getElementById('pagamento').value;
     const troco = document.getElementById('troco').value.trim();
+
     salvarDadosEndereco(nome, rua, num, bairro, ref, bairroOutro);
+
     const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
     const taxa = calcularTaxa(bairro, subtotal);
     const total = subtotal + taxa;
+
     let msg = `🛍️ *NOVO PEDIDO - MANIA DE LIMPEZA*\n\n`;
     msg += `📋 *ITENS COMPRADOS:*\n`;
     carrinho.forEach(item => {
         const t = item.preco * item.qtd;
         msg += `• ${item.qtd}x ${item.nome} — R$ ${t.toFixed(2).replace('.', ',')}\n`;
     });
+
     msg += `\n💰 *RESUMO DO PEDIDO:*`;
     msg += `\n• Subtotal Itens: R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+
     const possuiKit = carrinho.some(i => i.nome.toUpperCase().trim() === "KIT LIMPEZA");
     let motivoTaxa;
     if (bairro === 'Outros') {
@@ -282,6 +322,7 @@ function confirmarPedido() {
     } else {
         motivoTaxa = `R$ ${taxa.toFixed(2).replace('.', ',')}`;
     }
+
     msg += `\n• Taxa de Entrega: ${motivoTaxa}`;
     msg += `\n• *Total Geral: R$ ${total.toFixed(2).replace('.', ',')}*\n\n`;
     msg += `📍 *ENDEREÇO DE ENTREGA:*\n`;
@@ -290,6 +331,8 @@ function confirmarPedido() {
     msg += `🏘️ Bairro: ${bairro === 'Outros' ? bairroOutro : bairro}\n`;
     msg += `🚩 Referência: ${ref}\n`;
     msg += `\n💳 *FORMA DE PAGAMENTO:*\n• ${pag}`;
+
     if (pag === 'Dinheiro' && troco) msg += ` (troco para R$ ${troco})`;
+
     window.open(`https://wa.me/5513991727089?text=${encodeURIComponent(msg)}`, '_blank');
 }

@@ -10,7 +10,6 @@
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased min-h-screen pb-12">
 
-
     <header class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md px-4 py-3">
         <div class="max-w-xl mx-auto flex justify-between items-center">
             <div>
@@ -25,8 +24,6 @@
         </div>
     </header>
 
-
-    <!-- STEPPER -->
     <div class="max-w-xl mx-auto px-4 pt-4 pb-2">
         <div class="flex items-center justify-between">
             <div class="flex flex-col items-center gap-1" id="step-indicator-1">
@@ -59,16 +56,16 @@
     <main class="max-w-xl mx-auto p-4 mt-1">
         <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4 text-sm text-blue-900">
             <p class="font-bold mb-1 flex items-center gap-2"><i class="fas fa-truck"></i> Condições de entrega</p>
-            <p>Pedidos realizados até as 11h da manhã serão entregues a partir das 13h. Pedidos realizados após as 11h serão entregues no dia seguinte pela manhã.</p><br>O frete grátis para compras acima de R$30 somente será válido para os bairros próximos da rodoviaria de Itanhaém. 
+            <p>Pedidos realizados até as 11h da manhã serão entregues a partir das 13h. Pedidos realizados após as 11h serão entregues no dia seguinte pela manhã.</p>
+            <p class="mt-2">O frete grátis para compras acima de R$30 somente será válido para os bairros próximos da rodoviaria de Itanhaém.</p>
         </div>
 
-        <!-- ===================== ETAPA 1: CARRINHO ===================== -->
         <div id="etapa-1" class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
             <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-3 flex items-center gap-2">
                 <i class="fas fa-shopping-basket text-indigo-500"></i> Seus Produtos Selecionados
             </h2>
 
-            <div id="bannerFrete" class="flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3">
+            <div id="bannerFrete" class="hidden flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3">
                 <i class="fas fa-truck text-emerald-500"></i>
                 <span>Entregas <strong>grátis</strong> a partir de <strong>R$ 30,00</strong> em produtos!</span>
             </div>
@@ -93,7 +90,6 @@
             </button>
         </div>
 
-        <!-- ===================== ETAPA 2: ENTREGA ===================== -->
         <div id="etapa-2" class="hidden bg-white p-5 rounded-2xl shadow-sm border border-gray-100 space-y-3.5">
             <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-1 flex items-center gap-2">
                 <i class="fas fa-map-marked-alt text-indigo-500"></i> Dados para Entrega
@@ -146,7 +142,6 @@
                 <p class="text-xs text-amber-700 mt-1">Entregas somente em Itanhaém.</p>
             </div>
 
-            <!-- Aviso "Outros bairros" -->
             <div id="avisoOutrosBairros" class="hidden">
                 <div class="bg-amber-50 border border-amber-300 rounded-xl p-4 text-sm text-amber-800 space-y-2">
                     <p class="font-bold flex items-center gap-2">
@@ -204,7 +199,6 @@
             </div>
         </div>
 
-        <!-- ===================== ETAPA 3: CONFIRMAÇÃO ===================== -->
         <div id="etapa-3" class="hidden bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
             <h2 class="text-sm font-bold text-indigo-950 uppercase tracking-wider mb-4 flex items-center gap-2">
                 <i class="fas fa-clipboard-check text-indigo-500"></i> Revise seu Pedido
@@ -254,7 +248,6 @@
                 </button>
             </div>
         </div>
-
     </main>
 
     <script src="carrinho.js"></script>

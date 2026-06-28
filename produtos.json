@@ -6,6 +6,12 @@
     "Categoria": "Automotivo e Pedras"
   },
   {
+    "Produto": "SAPÓLIO",
+    "Valor de venda (R$)": 7.95,
+    "imagem": "sapolio.jpg",
+    "Categoria": "Automotivo e Pedras"
+  },
+  {
     "Produto": "LIMPA ALUMINIO 1L",
     "Valor de venda (R$)": 6.9,
     "imagem": "limpa_aluminio_1l.jpg",

@@ -1352,7 +1352,7 @@
   {
     "Produto": "ESPONJA LOUÇA ASSOLAN",
     "Valor de venda (R$)": 1.5,
-    "imagem": "esponja_assolan.jpg",
+    "imagem": "esponja.png",
     "Categoria": "Panos e Esponjas"
   },
   {
@@ -1370,13 +1370,13 @@
   {
     "Produto": "FIBRA LIMPEZA LEVE",
     "Valor de venda (R$)": 2.0,
-    "imagem": "fibra_limpeza.jpg",
+    "imagem": "fibra.png",
     "Categoria": "Panos e Esponjas"
   },
   {
     "Produto": "FLANELA 28X28 BRANCA / LARANJA",
     "Valor de venda (R$)": 1.95,
-    "imagem": "flanela.jpg",
+    "imagem": "flanelabanca.png",
     "Categoria": "Panos e Esponjas"
   },
   {
@@ -1412,37 +1412,37 @@
   {
     "Produto": "PANO DE PRATO BRANCO",
     "Valor de venda (R$)": 2.95,
-    "imagem": "pano_prato_branco.jpg",
+    "imagem": "panodeprato.png",
     "Categoria": "Panos e Esponjas"
   },
   {
     "Produto": "PANO DE PRATO COM BARRA",
     "Valor de venda (R$)": 3.95,
-    "imagem": "pano_prato_barra.jpg",
+    "imagem": "panodepratoombarra.png",
     "Categoria": "Panos e Esponjas"
   },
   {
     "Produto": "PANO DE PRATO COM ESTAMPA",
     "Valor de venda (R$)": 4.5,
-    "imagem": "pano_prato_estampa.jpg",
+    "imagem": "panodepratoestampa.png",
     "Categoria": "Panos e Esponjas"
   },
   {
     "Produto": "PANO DE PRATO SIMPLES",
     "Valor de venda (R$)": 2.95,
-    "imagem": "pano_prato_simples.jpg",
+    "imagem": "panodeprato.png",
     "Categoria": "Panos e Esponjas"
   },
   {
     "Produto": "PANO MICROFIBRA",
     "Valor de venda (R$)": 2.95,
-    "imagem": "pano_microfibra.jpg",
+    "imagem": "panomicro.png",
     "Categoria": "Panos e Esponjas"
   },
   {
     "Produto": "PANO MULTIUSO 28X25 M",
     "Valor de venda (R$)": 13.0,
-    "imagem": "pano_multiuso.jpg",
+    "imagem": "panomulti.png",
     "Categoria": "Panos e Esponjas"
   },
   {

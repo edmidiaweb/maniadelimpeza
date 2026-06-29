@@ -54,48 +54,6 @@
     "Categoria": "Automotivo e Pedras"
   },
   {
-    "Produto": "BALDINHO DE PRAIA",
-    "Valor de venda (R$)": 12.87,
-    "imagem": "baldinho.jpg",
-    "Categoria": "Brinquedos e Lazer"
-  },
-  {
-    "Produto": "BARALHO A PROVA DAGUA 54 CARTAS",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "baralho.jpg",
-    "Categoria": "Brinquedos e Lazer"
-  },
-  {
-    "Produto": "BOLA DE VINIL",
-    "Valor de venda (R$)": 7.9,
-    "imagem": "bola_vinil.jpg",
-    "Categoria": "Brinquedos e Lazer"
-  },
-  {
-    "Produto": "BOLA DE VOLEI",
-    "Valor de venda (R$)": 24.9,
-    "imagem": "bola_volei.jpg",
-    "Categoria": "Brinquedos e Lazer"
-  },
-  {
-    "Produto": "BOLA FUTEBOL",
-    "Valor de venda (R$)": 24.9,
-    "imagem": "bola_futebol.jpg",
-    "Categoria": "Brinquedos e Lazer"
-  },
-  {
-    "Produto": "BOLA KIKO 35 CM",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "bola_kiko.jpg",
-    "Categoria": "Brinquedos e Lazer"
-  },
-  {
-    "Produto": "DOMINO 28 PEÇAS",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "domino.jpg",
-    "Categoria": "Brinquedos e Lazer"
-  },
-  {
     "Produto": "AGUA SANITARIA CANDIDA 1 L",
     "Valor de venda (R$)": 4.99,
     "imagem": "aguasanagifacil1l.png",
@@ -318,18 +276,6 @@
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "ADAPTADOR TOMADA T BENJAMIN BOB ESP.",
-    "Valor de venda (R$)": 6.37,
-    "imagem": "adaptador.jpg",
-    "Categoria": "Elétrica e Eletrônicos"
-  },
-  {
-    "Produto": "CABO ANTI FURTO + 2 CHAVES",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "cabo_antifurto.jpg",
-    "Categoria": "Elétrica e Eletrônicos"
-  },
-  {
     "Produto": "CABO CURTO 90 CM",
     "Valor de venda (R$)": 3.9,
     "imagem": "cabo_curto.jpg",
@@ -440,13 +386,13 @@
   {
     "Produto": "DETERGENTE 500 ML POLYLAR",
     "Valor de venda (R$)": 2.0,
-    "imagem": "detergente_polylar.jpg",
+    "imagem": "detergentepolylar.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
     "Produto": "DETERGENTE AGIFACIL",
     "Valor de venda (R$)": 2.0,
-    "imagem": "detergente_agifacil.jpg",
+    "imagem": "detergente.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
@@ -578,7 +524,7 @@
   {
     "Produto": "SHAMPOO ATOMOTIVO 5 L",
     "Valor de venda (R$)": 39.9,
-    "imagem": "shampoo_automotivo_5l.jpg",
+    "imagem": "shampooauto.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
@@ -588,27 +534,15 @@
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "AGUA DE LENÇOL LAVANDA SUAVE 500 ML",
+    "Produto": "AGUA DE LENÇOL 500 ML",
     "Valor de venda (R$)": 15.47,
     "imagem": "agualencol.png",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "AGULHA C/28",
-    "Valor de venda (R$)": 8.97,
-    "imagem": "agulha_c28.jpg",
     "Categoria": "Outros"
   },
   {
     "Produto": "AGULHA DESENTUPIR FOGÃO",
     "Valor de venda (R$)": 2.9,
     "imagem": "agulha_fogao.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "AGULHA KIT",
-    "Valor de venda (R$)": 3.77,
-    "imagem": "agulha_kit.jpg",
     "Categoria": "Outros"
   },
   {
@@ -704,7 +638,7 @@
   {
     "Produto": "DETETIZADOR  DE INSETOS 500 ML",
     "Valor de venda (R$)": 9.95,
-    "imagem": "dedetizador.jpg",
+    "imagem": "dedetizador500.png",
     "Categoria": "Outros"
   },
   {
@@ -924,21 +858,15 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "RÉGUA 30 CM",
-    "Valor de venda (R$)": 1.5,
-    "imagem": "regua_30cm.jpg",
-    "Categoria": "Outros"
-  },
-  {
     "Produto": "S. LIXO 20 LITROS C/100",
     "Valor de venda (R$)": 19.9,
-    "imagem": "saco_lixo_20l_100.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "SACO PL 25X35 P.E. 0,06 UND",
     "Valor de venda (R$)": 0.5,
-    "imagem": "saco_plastico_25x35.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Outros"
   },
   {
@@ -950,13 +878,7 @@
   {
     "Produto": "SAPOLIO",
     "Valor de venda (R$)": 11.9,
-    "imagem": "sapolio.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "SEGUNDA VIA",
-    "Valor de venda (R$)": 3.0,
-    "imagem": "segunda_via.jpg",
+    "imagem": "sapolio.png",
     "Categoria": "Outros"
   },
   {
@@ -968,13 +890,13 @@
   {
     "Produto": "SOLUPAN 1 L",
     "Valor de venda (R$)": 7.9,
-    "imagem": "solupan_1l.jpg",
+    "imagem": "solupan500.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "SOLUPAN 5 L",
     "Valor de venda (R$)": 24.9,
-    "imagem": "solupan_5l.jpg",
+    "imagem": "solupan500.png",
     "Categoria": "Outros"
   },
   {
@@ -1004,7 +926,7 @@
   {
     "Produto": "VARAL INOX 40 PRENDEDORES",
     "Valor de venda (R$)": 39.95,
-    "imagem": "varal_inox.jpg",
+    "imagem": "varalinox.png",
     "Categoria": "Outros"
   },
   {

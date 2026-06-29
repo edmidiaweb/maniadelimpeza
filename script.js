@@ -1,6 +1,5 @@
 let listaProdutosOriginal = [];
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-let categoriaAtiva = localStorage.getItem('categoriaAtiva') || 'Todos';
 let filtroAte10 = localStorage.getItem('filtroAte10') === 'true';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarFiltroPesquisa();
     configurarBuscaMobile();
     atualizarInterfaceCarrinho();
-    
-    // Atalho Tecla Esc para fechar menu de categorias
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') fecharMenuCategorias();
-    });
 });
 
 async function carregarProdutos() {
@@ -20,8 +14,7 @@ async function carregarProdutos() {
         const resposta = await fetch('produtos.json');
         if (!resposta.ok) throw new Error('Falha ao ler arquivo de produtos.');
         listaProdutosOriginal = await resposta.json();
-        
-        gerarMenuCategorias();
+
         atualizarBotaoFiltroPrecoUI();
         aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
     } catch (erro) {
@@ -33,111 +26,6 @@ async function carregarProdutos() {
             </div>
         `;
     }
-}
-
-// Geração Inteligente e Dinâmica do Menu de Categorias
-function gerarMenuCategorias() {
-    const contagem = {};
-    let totalGeral = 0;
-    
-    listaProdutosOriginal.forEach(p => {
-        if (p.Categoria) {
-            contagem[p.Categoria] = (contagem[p.Categoria] || 0) + 1;
-            totalGeral++;
-        }
-    });
-    
-    const categoriesOrdenadas = Object.keys(contagem).sort((a, b) => a.localeCompare(b, 'pt-BR'));
-    const container = document.getElementById('listaCategoriasContainer');
-    if (!container) return;
-    
-    let html = `
-        <button onclick="selecionarCategoria('Todos')" class="item-categoria-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex justify-between items-center transition ${categoriaAtiva === 'Todos' ? 'bg-indigo-50 text-indigo-700 font-bold' : 'text-gray-700 hover:bg-gray-50'}" data-nome-cat="Todos">
-            <span><i class="fas fa-th-large mr-2 opacity-70"></i> Todos</span>
-            <span class="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full font-bold">${totalGeral}</span>
-        </button>
-    `;
-    
-    categoriesOrdenadas.forEach(cat => {
-        if (contagem[cat] > 0) {
-            const ativa = categoriaAtiva === cat;
-            html += `
-                <button onclick="selecionarCategoria('${cat}')" class="item-categoria-btn w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex justify-between items-center transition ${ativa ? 'bg-indigo-50 text-indigo-700 font-bold' : 'text-gray-700 hover:bg-gray-50'}" data-nome-cat="${cat}">
-                    <span class="truncate">${cat}</span>
-                    <span class="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full font-bold">${contagem[cat]}</span>
-                </button>
-            `;
-        }
-    });
-    
-    container.innerHTML = html;
-    document.getElementById('txtCategoriaAtiva').innerText = categoriaAtiva;
-}
-
-// Filtragem instantânea da lista de categorias dentro do dropdown
-function filtrarListaCategorias() {
-    const termo = normalizarTexto(document.getElementById('buscaCategoriaInput').value);
-    const botoes = document.querySelectorAll('.item-categoria-btn');
-    
-    botoes.forEach(btn => {
-        const nomeCat = normalizarTexto(btn.getAttribute('data-nome-cat'));
-        if (nomeCat === 'todos' || nomeCat.includes(termo)) {
-            btn.classList.remove('hidden');
-        } else {
-            btn.classList.add('hidden');
-        }
-    });
-}
-
-// Gerenciamento de Abertura/Fechamento com Animações CSS controladas via JS
-function toggleMenuCategorias() {
-    const modal = document.getElementById('modalCategorias');
-    if (modal.classList.contains('hidden')) {
-        abrirMenuCategorias();
-    } else {
-        fecharMenuCategorias();
-    }
-}
-
-function abrirMenuCategorias() {
-    const modal = document.getElementById('modalCategorias');
-    const painel = document.getElementById('painelCategorias');
-    document.getElementById('buscaCategoriaInput').value = '';
-    filtrarListaCategorias();
-    
-    modal.classList.remove('hidden');
-    setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        modal.classList.add('opacity-100');
-        painel.classList.remove('scale-95');
-        painel.classList.add('scale-100');
-    }, 10);
-}
-
-function fecharMenuCategorias() {
-    const modal = document.getElementById('modalCategorias');
-    const painel = document.getElementById('painelCategorias');
-    if (!modal || modal.classList.contains('hidden')) return;
-    
-    modal.classList.remove('opacity-100');
-    modal.classList.add('opacity-0');
-    painel.classList.remove('scale-100');
-    painel.classList.add('scale-95');
-    
-    setTimeout(() => {
-        modal.classList.add('hidden');
-    }, 200);
-}
-
-function selecionarCategoria(categoria) {
-    categoriaAtiva = categoria;
-    localStorage.setItem('categoriaAtiva', categoria);
-    
-    gerarMenuCategorias();
-    fecharMenuCategorias();
-    
-    const termo = document.getElementById('searchBarDesktop').value || '';
-    aplicarFiltros(termo);
 }
 
 // Gerenciamento e persistência do filtro cumulativo "Até R$ 10"
@@ -173,16 +61,15 @@ function normalizarTexto(texto) {
 }
 
 function obterProdutosBase() {
-    let produtos = listaProdutosOriginal;
-    
-    if (categoriaAtiva !== 'Todos') {
-        produtos = produtos.filter(p => p.Categoria === categoriaAtiva);
-    }
-    
+    let produtos = [...listaProdutosOriginal];
+
     if (filtroAte10) {
         produtos = produtos.filter(p => obterPreco(p) <= 10.00);
     }
-    
+
+    // Ordem alfabética sempre
+    produtos.sort((a, b) => a.Produto.localeCompare(b.Produto, 'pt-BR'));
+
     return produtos;
 }
 
@@ -319,15 +206,74 @@ function renderizarProdutos(produtos) {
         `;
         grid.appendChild(card);
 
-        // Carrega imagem: tenta arquivo local primeiro, senão busca no Unsplash
-        carregarImagemCard(wrapId, item.imagem || null, termoBusca, item.Produto);
+        // Carrega imagem: tenta arquivo local primeiro, senão gera via Canvas
+        carregarImagemCard(wrapId, item.imagem || null, item.Produto, item.Categoria || '');
     });
 }
 
-// Cache para evitar buscas repetidas da mesma query
-const _cacheUnsplash = {};
+// ── Imagens ──────────────────────────────────────────────────────────────────
+// Paleta por categoria — fundo, texto, emoji
+const _catCfg = {
+    'Automotivo e Pedras':        ['#1e3a5f','#a8c8f0','🚗'],
+    'Desinfetantes e Alvejantes': ['#0d4f3c','#86efb8','🧴'],
+    'Elétrica e Eletrônicos':     ['#3b1f6e','#c4b5fd','🔌'],
+    'Higiene e Cuidados':         ['#6b2d6b','#f0abfc','🧼'],
+    'Lavanderia e Louça':         ['#1a4f6e','#7dd3fc','🫧'],
+    'Outros':                     ['#3d3d3d','#d1d5db','📦'],
+    'Panos e Esponjas':           ['#4a3728','#fbbf80','🧽'],
+    'Papelaria e Escritório':     ['#1e4a2e','#86efac','📝'],
+    'Papéis':                     ['#555555','#e5e7eb','🧻'],
+    'Sacos e Lixeiras':           ['#2d2d1f','#bef264','🗑️'],
+    'Utensílios de Limpeza':      ['#1a3a5c','#93c5fd','🧹'],
+    'Vestuário e Têxtil':         ['#5c1a3a','#fda4af','👕'],
+};
+const _catDefault = ['#374151','#d1d5db','🏷️'];
 
-async function carregarImagemCard(wrapId, srcLocal, termoBusca, nomeProduto) {
+function gerarImagemCanvas(nome, categoria) {
+    const [bg, fg, emoji] = _catCfg[categoria] || _catDefault;
+    const W = 200, H = 128;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    // Fundo
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Emoji centralizado
+    ctx.font = '44px serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(emoji, W / 2, H / 2 - 14);
+
+    // Nome do produto (quebra automática)
+    ctx.fillStyle = fg;
+    ctx.font = 'bold 10px sans-serif';
+    ctx.textBaseline = 'top';
+    const maxW = W - 16;
+    const palavras = nome.split(' ');
+    let linha = '';
+    const linhas = [];
+    for (const p of palavras) {
+        const teste = linha ? linha + ' ' + p : p;
+        if (ctx.measureText(teste).width > maxW && linha) {
+            linhas.push(linha);
+            linha = p;
+        } else {
+            linha = teste;
+        }
+        if (linhas.length >= 2) break;
+    }
+    if (linha && linhas.length < 2) linhas.push(linha);
+
+    linhas.forEach((l, i) => {
+        ctx.fillText(l.toUpperCase(), W / 2, H - 30 + i * 13);
+    });
+
+    return canvas.toDataURL();
+}
+
+async function carregarImagemCard(wrapId, srcLocal, nomeProduto, categoria) {
     const wrap = document.getElementById(wrapId);
     if (!wrap) return;
 
@@ -340,19 +286,9 @@ async function carregarImagemCard(wrapId, srcLocal, termoBusca, nomeProduto) {
         }
     }
 
-    // 2. Busca no Unsplash Source (sem chave de API, via source.unsplash.com)
-    try {
-        // Traduz termos muito específicos em português para melhor resultado
-        const query = encodeURIComponent(traduzirTermo(termoBusca));
-        const url = `https://source.unsplash.com/200x200/?${query}`;
-
-        // source.unsplash.com redireciona para a imagem real — apenas injetamos a img
-        wrap.innerHTML = `<img src="${url}" alt="${nomeProduto}"
-            class="w-full h-32 object-cover rounded-xl"
-            onerror="this.parentNode.innerHTML=obterFallbackNome('${nomeProduto.replace(/'/g,"\\'")}')">`;
-    } catch(e) {
-        wrap.innerHTML = obterFallbackNome(nomeProduto);
-    }
+    // 2. Gera imagem via Canvas (zero rede, zero API key)
+    const dataUrl = gerarImagemCanvas(nomeProduto, categoria);
+    wrap.innerHTML = `<img src="${dataUrl}" alt="${nomeProduto}" class="w-full h-32 object-cover rounded-xl">`;
 }
 
 function testarImagem(src) {
@@ -362,48 +298,6 @@ function testarImagem(src) {
         img.onerror = () => resolve(false);
         img.src = src;
     });
-}
-
-// Mapa de tradução dos termos mais comuns do catálogo
-function traduzirTermo(termo) {
-    const mapa = {
-        'vassoura': 'broom', 'vassoura piaçava': 'broom', 'vassoura piassava': 'broom',
-        'rodo': 'floor squeegee', 'balde': 'bucket', 'bacia': 'washbasin',
-        'esponja': 'sponge', 'esfregão': 'mop sponge', 'mop': 'mop floor',
-        'desinfetante': 'disinfectant cleaner', 'alvejante': 'bleach bottle',
-        'agua sanitaria': 'bleach bottle', 'cloro': 'chlorine bleach',
-        'sabão': 'soap', 'sabao': 'soap', 'detergente': 'dish soap liquid',
-        'lava roupa': 'laundry detergent', 'amaciante': 'fabric softener',
-        'papel higienico': 'toilet paper', 'papel toalha': 'paper towel',
-        'saco lixo': 'trash bag', 'lixeira': 'trash bin',
-        'luva': 'cleaning gloves', 'pano': 'cleaning cloth',
-        'esponja de aço': 'steel wool', 'palha de aço': 'steel wool',
-        'bola': 'ball', 'bola futebol': 'soccer ball', 'bola volei': 'volleyball',
-        'baralho': 'playing cards', 'domino': 'dominoes game',
-        'avental': 'apron kitchen', 'tapete': 'rug mat',
-        'escova': 'scrub brush', 'escova sanitaria': 'toilet brush',
-        'pá lixo': 'dustpan', 'pa lixo': 'dustpan',
-        'silicone': 'silicone gel', 'cera': 'floor wax',
-        'espanador': 'feather duster', 'creolina': 'disinfectant cleaner',
-        'limpa vidro': 'glass cleaner', 'multiuso': 'multipurpose cleaner',
-    };
-    const termoNorm = termo.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
-    for (const [pt, en] of Object.entries(mapa)) {
-        if (termoNorm.includes(pt)) return en;
-    }
-    // Fallback: envia o próprio termo (Unsplash lida bem com português)
-    return termo;
-}
-
-function obterFallbackNome(nome) {
-    return `<div class="w-full h-32 bg-indigo-50 flex flex-col items-center justify-center gap-2 rounded-xl px-2">
-        <i class="fas fa-box text-indigo-300 text-2xl"></i>
-        <span class="text-indigo-400 text-[10px] font-semibold text-center leading-tight uppercase">${nome}</span>
-    </div>`;
-}
-
-function obterFallbackIcone() {
-    return `<div class="w-full h-32 bg-indigo-50 flex items-center justify-center text-indigo-400 rounded-xl"><i class="fas fa-box text-3xl"></i></div>`;
 }
 
 function renderizarBotaoAcao(nome, preco, qtd) {

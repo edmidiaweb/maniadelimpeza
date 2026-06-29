@@ -319,34 +319,15 @@ function renderizarProdutos(produtos) {
         `;
         grid.appendChild(card);
 
-        // Carrega imagem: tenta arquivo local primeiro, senão exibe placeholder por categoria
-        carregarImagemCard(wrapId, item.imagem || null, termoBusca, item.Produto, item.Categoria || '');
+        // Carrega imagem: tenta arquivo local primeiro, senão busca no Unsplash
+        carregarImagemCard(wrapId, item.imagem || null, termoBusca, item.Produto);
     });
 }
 
-// Configuração visual por categoria: [cor de fundo hex, cor do texto hex, emoji/ícone FA]
-const _categoriasConfig = {
-    'Automotivo e Pedras':       { bg: '1e3a5f', fg: 'a8c8f0', icone: '🚗' },
-    'Desinfetantes e Alvejantes':{ bg: '0d4f3c', fg: '86efb8', icone: '🧴' },
-    'Elétrica e Eletrônicos':    { bg: '3b1f6e', fg: 'c4b5fd', icone: '🔌' },
-    'Higiene e Cuidados':        { bg: '6b2d6b', fg: 'f0abfc', icone: '🧼' },
-    'Lavanderia e Louça':        { bg: '1a4f6e', fg: '7dd3fc', icone: '🫧' },
-    'Outros':                    { bg: '3d3d3d', fg: 'd1d5db', icone: '📦' },
-    'Panos e Esponjas':          { bg: '4a3728', fg: 'fbbf80', icone: '🧽' },
-    'Papelaria e Escritório':    { bg: '1e4a2e', fg: '86efac', icone: '📝' },
-    'Papéis':                    { bg: '555555', fg: 'e5e7eb', icone: '🧻' },
-    'Sacos e Lixeiras':          { bg: '2d2d1f', fg: 'bef264', icone: '🗑️' },
-    'Utensílios de Limpeza':     { bg: '1a3a5c', fg: '93c5fd', icone: '🧹' },
-    'Vestuário e Têxtil':        { bg: '5c1a3a', fg: 'fda4af', icone: '👕' },
-};
+// Cache para evitar buscas repetidas da mesma query
+const _cacheUnsplash = {};
 
-const _categoriaDefault = { bg: '374151', fg: 'd1d5db', icone: '🏷️' };
-
-function obterConfigCategoria(categoria) {
-    return _categoriasConfig[categoria] || _categoriaDefault;
-}
-
-async function carregarImagemCard(wrapId, srcLocal, termoBusca, nomeProduto, categoria) {
+async function carregarImagemCard(wrapId, srcLocal, termoBusca, nomeProduto) {
     const wrap = document.getElementById(wrapId);
     if (!wrap) return;
 
@@ -359,8 +340,19 @@ async function carregarImagemCard(wrapId, srcLocal, termoBusca, nomeProduto, cat
         }
     }
 
-    // 2. Fallback visual por categoria (sem dependência de API externa)
-    wrap.innerHTML = obterPlaceholderCategoria(nomeProduto, categoria);
+    // 2. Busca no Unsplash Source (sem chave de API, via source.unsplash.com)
+    try {
+        // Traduz termos muito específicos em português para melhor resultado
+        const query = encodeURIComponent(traduzirTermo(termoBusca));
+        const url = `https://source.unsplash.com/200x200/?${query}`;
+
+        // source.unsplash.com redireciona para a imagem real — apenas injetamos a img
+        wrap.innerHTML = `<img src="${url}" alt="${nomeProduto}"
+            class="w-full h-32 object-cover rounded-xl"
+            onerror="this.parentNode.innerHTML=obterFallbackNome('${nomeProduto.replace(/'/g,"\\'")}')">`;
+    } catch(e) {
+        wrap.innerHTML = obterFallbackNome(nomeProduto);
+    }
 }
 
 function testarImagem(src) {
@@ -372,19 +364,47 @@ function testarImagem(src) {
     });
 }
 
-function obterPlaceholderCategoria(nomeProduto, categoria) {
-    const cfg = obterConfigCategoria(categoria);
-    // Abrevia o nome para caber no card sem quebrar o layout
-    const nomeAbrev = nomeProduto.length > 22 ? nomeProduto.substring(0, 20) + '…' : nomeProduto;
-    return `
-        <div class="w-full h-32 rounded-xl flex flex-col items-center justify-center gap-1.5 px-2"
-             style="background-color:#${cfg.bg};">
-            <span style="font-size:2rem;line-height:1;">${cfg.icone}</span>
-            <span class="text-[9px] font-bold text-center leading-tight uppercase tracking-wide"
-                  style="color:#${cfg.fg};">${nomeAbrev}</span>
-        </div>`;
+// Mapa de tradução dos termos mais comuns do catálogo
+function traduzirTermo(termo) {
+    const mapa = {
+        'vassoura': 'broom', 'vassoura piaçava': 'broom', 'vassoura piassava': 'broom',
+        'rodo': 'floor squeegee', 'balde': 'bucket', 'bacia': 'washbasin',
+        'esponja': 'sponge', 'esfregão': 'mop sponge', 'mop': 'mop floor',
+        'desinfetante': 'disinfectant cleaner', 'alvejante': 'bleach bottle',
+        'agua sanitaria': 'bleach bottle', 'cloro': 'chlorine bleach',
+        'sabão': 'soap', 'sabao': 'soap', 'detergente': 'dish soap liquid',
+        'lava roupa': 'laundry detergent', 'amaciante': 'fabric softener',
+        'papel higienico': 'toilet paper', 'papel toalha': 'paper towel',
+        'saco lixo': 'trash bag', 'lixeira': 'trash bin',
+        'luva': 'cleaning gloves', 'pano': 'cleaning cloth',
+        'esponja de aço': 'steel wool', 'palha de aço': 'steel wool',
+        'bola': 'ball', 'bola futebol': 'soccer ball', 'bola volei': 'volleyball',
+        'baralho': 'playing cards', 'domino': 'dominoes game',
+        'avental': 'apron kitchen', 'tapete': 'rug mat',
+        'escova': 'scrub brush', 'escova sanitaria': 'toilet brush',
+        'pá lixo': 'dustpan', 'pa lixo': 'dustpan',
+        'silicone': 'silicone gel', 'cera': 'floor wax',
+        'espanador': 'feather duster', 'creolina': 'disinfectant cleaner',
+        'limpa vidro': 'glass cleaner', 'multiuso': 'multipurpose cleaner',
+    };
+    const termoNorm = termo.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+    for (const [pt, en] of Object.entries(mapa)) {
+        if (termoNorm.includes(pt)) return en;
+    }
+    // Fallback: envia o próprio termo (Unsplash lida bem com português)
+    return termo;
 }
 
+function obterFallbackNome(nome) {
+    return `<div class="w-full h-32 bg-indigo-50 flex flex-col items-center justify-center gap-2 rounded-xl px-2">
+        <i class="fas fa-box text-indigo-300 text-2xl"></i>
+        <span class="text-indigo-400 text-[10px] font-semibold text-center leading-tight uppercase">${nome}</span>
+    </div>`;
+}
+
+function obterFallbackIcone() {
+    return `<div class="w-full h-32 bg-indigo-50 flex items-center justify-center text-indigo-400 rounded-xl"><i class="fas fa-box text-3xl"></i></div>`;
+}
 
 function renderizarBotaoAcao(nome, preco, qtd) {
     if (qtd > 0) {

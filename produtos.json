@@ -8,19 +8,19 @@
   {
     "Produto": "SAPÓLIO",
     "Valor de venda (R$)": 7.95,
-    "imagem": "sapolio.jpg",
+    "imagem": "sapolio.png",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "LIMPA ALUMINIO 1L",
     "Valor de venda (R$)": 6.9,
-    "imagem": "limpa_aluminio_1l.jpg",
+    "imagem": "limpaaluminio.png",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "LIMPA ALUMINIO 5L",
     "Valor de venda (R$)": 19.9,
-    "imagem": "limpa_aluminio_5l.jpg",
+    "imagem": "limpa_luminio.png",
     "Categoria": "Automotivo e Pedras"
   },
   {
@@ -614,7 +614,7 @@
   {
     "Produto": "ALCOOL 46° 1l",
     "Valor de venda (R$)": 8.97,
-    "imagem": "alcool_46.jpg",
+    "imagem": "alcool46.png",
     "Categoria": "Outros"
   },
   {
@@ -660,75 +660,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "APONTADOR COM DEPÓSITO",
-    "Valor de venda (R$)": 1.5,
-    "imagem": "apontador_deposito.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "APONTADOR SIMPLES",
-    "Valor de venda (R$)": 0.75,
-    "imagem": "apontador_simples.jpg",
-    "Categoria": "Outros"
-  },
-  {
     "Produto": "BICARBONATO DE SÓDIO 60 G",
     "Valor de venda (R$)": 3.9,
     "imagem": "bicarbonato.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "BLOCO CAIXA ACOPLADA C/3",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "bloco_caixa.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "BLOCO CAIXA ACOPLADA Q-FRESCOR 45G",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "bloco_qfrescor.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "BLOCO SANITÁRIO SANIALL CITRUS",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "bloco_saniall.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "BOMBA DE AR",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "bomba_ar.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "BORRACHA DE SILICONE PANELA DE PRESSÃO 4,5 L",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "borracha_panela.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "BÓIA DE BRAÇO INFANTIL",
-    "Valor de venda (R$)": 14.9,
-    "imagem": "boia_braco.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "BÓIA REDONDA INFANTIL 60 CM",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "boia_redonda.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "CAIXINHA",
-    "Valor de venda (R$)": 0.1,
-    "imagem": "caixinha.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "CAPA CELULAR IMPERMEÁVEL",
-    "Valor de venda (R$)": 6.9,
-    "imagem": "capa_celular.jpg",
     "Categoria": "Outros"
   },
   {
@@ -741,42 +675,6 @@
     "Produto": "CAPA DE CHUVA REUTILIZAVEL",
     "Valor de venda (R$)": 19.9,
     "imagem": "capa_chuva_reutilizavel.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "CERA LIQUÍDA INCOLOR 750 ML",
-    "Valor de venda (R$)": 14.9,
-    "imagem": "cera_liquida.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "COMANDA JORNAL 8X10 CM",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "comanda.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "CONTRATO DE COMPRA E VENDA",
-    "Valor de venda (R$)": 20.0,
-    "imagem": "contrato.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "CORTADOR DE UNHA",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "cortador_unha.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "CRIAÇÃO DE ARTE",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "criacao_arte.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "CURRICULO",
-    "Valor de venda (R$)": 3.0,
-    "imagem": "curriculo.jpg",
     "Categoria": "Outros"
   },
   {
@@ -810,75 +708,15 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ELASTICO CABELO XUXINHA C/6",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "elastico_xuxinha.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "ELASTICO COSTURA ROUPA POLIESTER 6MM X 10M",
-    "Valor de venda (R$)": 6.9,
-    "imagem": "elastico_costura.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "ELASTICO LATEX N°18 C/10",
-    "Valor de venda (R$)": 1.9,
-    "imagem": "elastico_latex.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "ELASTIQUINHO CABELO 2,5 CM",
-    "Valor de venda (R$)": 3.5,
-    "imagem": "elastiquinho.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "ENFORCA GATO 20 CM",
+    "Produto": "ABRAÇADEIRA 20 CM",
     "Valor de venda (R$)": 1.0,
-    "imagem": "enforca_gato.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "ESPELHO 20X14",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "espelho.jpg",
+    "imagem": "abracadeira.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "ESPIRAL REPELENTE",
     "Valor de venda (R$)": 5.9,
     "imagem": "espiral_repelente.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "FOTO 3X4 (4 UND)",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "foto_3x4.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "FRASCO 10 ML",
-    "Valor de venda (R$)": 1.0,
-    "imagem": "frasco_10ml.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "FRASCO MULTIUSO 500 ML",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "frasco_multiuso.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "FÓSFORO",
-    "Valor de venda (R$)": 1.5,
-    "imagem": "fosforo.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "GALÃO",
-    "Valor de venda (R$)": 5.0,
-    "imagem": "galao.jpg",
     "Categoria": "Outros"
   },
   {
@@ -891,42 +729,6 @@
     "Produto": "GEL SANITÁRIO ADESIVO 6 APLICAÇÕES",
     "Valor de venda (R$)": 15.9,
     "imagem": "gel_sanitario.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "GUARDA-CHUVA",
-    "Valor de venda (R$)": 24.9,
-    "imagem": "guarda_chuva.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "HELICOPTERO PISCA PISCA",
-    "Valor de venda (R$)": 2.0,
-    "imagem": "helicoptero_pisca.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "IMAGEM ADESIVO",
-    "Valor de venda (R$)": 5.0,
-    "imagem": "imagem_adesivo.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "IMAGEM EM GLOSSY",
-    "Valor de venda (R$)": 5.0,
-    "imagem": "imagem_glossy.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "IMPRESSÃO / XEROX COLOR",
-    "Valor de venda (R$)": 1.5,
-    "imagem": "impressao_color.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "IMPRESSÃO / XEROX P/B",
-    "Valor de venda (R$)": 1.0,
-    "imagem": "impressao_pb.jpg",
     "Categoria": "Outros"
   },
   {
@@ -951,12 +753,6 @@
     "Produto": "LIMPA ESTOFADOS FLOTADOR 500 ML",
     "Valor de venda (R$)": 11.9,
     "imagem": "limpa_estofados.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "LIMPA TELAS 120 ML",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "limpa_telas.jpg",
     "Categoria": "Outros"
   },
   {
@@ -1032,30 +828,6 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "MASSINHA DE MODELAR 6 CORES 90G",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "massinha.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "MINI CORNETA BRASIL",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "mini_corneta.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "MINI PÁ 12 CM",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "mini_pa.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "MINI VUVUZELA BRASIL",
-    "Valor de venda (R$)": 1.0,
-    "imagem": "mini_vuvuzela.jpg",
-    "Categoria": "Outros"
-  },
-  {
     "Produto": "MULTIUSO 500 ML VEJA",
     "Valor de venda (R$)": 5.9,
     "imagem": "multiusoveja.png",
@@ -1080,7 +852,7 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "OUTROS SERVIÇOS",
+    "Produto": "CONSULTAR OUTROS SERVIÇOS",
     "Valor de venda (R$)": 0.1,
     "imagem": "outros_servicos.jpg",
     "Categoria": "Outros"
@@ -1089,12 +861,6 @@
     "Produto": "P. HIG. ROLÃO 8 ROLOS 2 KG",
     "Valor de venda (R$)": 29.9,
     "imagem": "papel_higienico_rolao.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "PALITO DENTE C/ 100 UND.",
-    "Valor de venda (R$)": 1.5,
-    "imagem": "palito_dente.jpg",
     "Categoria": "Outros"
   },
   {
@@ -1110,45 +876,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "PINÇA PONTA GROSSA",
-    "Valor de venda (R$)": 7.9,
-    "imagem": "pinca_grossa.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "PINÇA SIMPLES",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "pinca_simples.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "PLASTIFICAÇÃO",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "plastificacao.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "PRANCHA NATAÇÃO EVA",
-    "Valor de venda (R$)": 6.9,
-    "imagem": "prancha_natacao.jpg",
-    "Categoria": "Outros"
-  },
-  {
     "Produto": "PRENDEDOR MADEIRA  C/12",
     "Valor de venda (R$)": 4.0,
     "imagem": "prendedor_madeira.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "PROTETOR CARTÃO",
-    "Valor de venda (R$)": 1.8,
-    "imagem": "protetor_cartao.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "PROTETOR DE DOCUMENTOS",
-    "Valor de venda (R$)": 2.0,
-    "imagem": "protetor_documentos.jpg",
     "Categoria": "Outros"
   },
   {
@@ -1173,12 +903,6 @@
     "Produto": "RALO PIA 7 CM",
     "Valor de venda (R$)": 3.9,
     "imagem": "ralo_pia_7.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "RAQUETE FRESCOBOL",
-    "Valor de venda (R$)": 14.9,
-    "imagem": "raquete_frescobol.jpg",
     "Categoria": "Outros"
   },
   {

@@ -1100,13 +1100,13 @@
   {
     "Produto": "CANETA BIC",
     "Valor de venda (R$)": 1.5,
-    "imagem": "caneta_bic.jpg",
+    "imagem": "bic.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
     "Produto": "CANETA MARCA TEXTO FLUORESCENTE",
     "Valor de venda (R$)": 1.5,
-    "imagem": "marca_texto.jpg",
+    "imagem": "marcatexto.png",
     "Categoria": "Papelaria e Escritório"
   },
   {

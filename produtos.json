@@ -630,7 +630,7 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "DESINFANTE GIOVANNA BABY 2L",
+    "Produto": "DESINFETANTE GIOVANNA BABY 2L",
     "Valor de venda (R$)": 6.9,
     "imagem": "desinfetante_giovanna_2l.jpg",
     "Categoria": "Outros"
@@ -858,7 +858,19 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "S. LIXO 20 LITROS C/100",
+    "Produto": "SACO DE LIXO 20 LITROS C/100",
+    "Valor de venda (R$)": 19.9,
+    "imagem": "sacolixo.png",
+    "Categoria": "Outros"
+  },
+  {
+    "Produto": "SACO DE LIXO 60 LITROS UN",
+    "Valor de venda (R$)": 19.9,
+    "imagem": "sacolixo.png",
+    "Categoria": "Outros"
+  },
+  {
+    "Produto": "SACO DE LIXO 100 LITROS UN",
     "Valor de venda (R$)": 19.9,
     "imagem": "sacolixo.png",
     "Categoria": "Outros"
@@ -969,12 +981,6 @@
     "Produto": "ÓCULOS DE PROTEÇÃO",
     "Valor de venda (R$)": 5.0,
     "imagem": "oculos_protecao.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "ÓCULOS NATAÇÃO",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "oculos_natacao.jpg",
     "Categoria": "Outros"
   },
   {
@@ -1092,33 +1098,9 @@
     "Categoria": "Panos e Esponjas"
   },
   {
-    "Produto": "CADERNETA 1/16",
-    "Valor de venda (R$)": 1.9,
-    "imagem": "caderneta_1_16.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "CADERNETA 1/4",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "caderneta_1_4.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "CADERNETA 1/8",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "caderneta_1_8.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
     "Produto": "CANETA BIC",
     "Valor de venda (R$)": 1.5,
     "imagem": "caneta_bic.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "CANETA HIDROGRÁFICA CANETINHA 6 CORES",
-    "Valor de venda (R$)": 3.5,
-    "imagem": "canetinha.jpg",
     "Categoria": "Papelaria e Escritório"
   },
   {
@@ -1140,12 +1122,6 @@
     "Categoria": "Papelaria e Escritório"
   },
   {
-    "Produto": "ENVELOPE A4",
-    "Valor de venda (R$)": 2.0,
-    "imagem": "envelope_a4.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
     "Produto": "ESTILETE",
     "Valor de venda (R$)": 2.9,
     "imagem": "estilete.jpg",
@@ -1164,12 +1140,6 @@
     "Categoria": "Papelaria e Escritório"
   },
   {
-    "Produto": "FITA FINA 18X50M",
-    "Valor de venda (R$)": 2.95,
-    "imagem": "fita_fina.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
     "Produto": "FITA ISOLANTE 19MMX5M",
     "Valor de venda (R$)": 4.9,
     "imagem": "fita_isolante.jpg",
@@ -1179,36 +1149,6 @@
     "Produto": "FITA LARGA  TRANSP. 48X45M",
     "Valor de venda (R$)": 4.9,
     "imagem": "fita_larga.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "FITA QUALITAPE 12MM X 10M",
-    "Valor de venda (R$)": 1.9,
-    "imagem": "fita_qualitape.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "FOLHA DE SULFITE",
-    "Valor de venda (R$)": 0.25,
-    "imagem": "folha_sulfite.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "IMAGEM EM SULFITE",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "sulfite.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "KIT TESOURAS C/ 3",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "kit_tesouras.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "PASTA A4 TRANSPARENTE",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "pasta_a4.jpg",
     "Categoria": "Papelaria e Escritório"
   },
   {
@@ -1230,15 +1170,9 @@
     "Categoria": "Papelaria e Escritório"
   },
   {
-    "Produto": "TESOURA ESCOLAR AÇO GALVONIZADO",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "tesoura_escolar.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
     "Produto": "GUARDANAPO",
     "Valor de venda (R$)": 1.9,
-    "imagem": "guardanapo.jpg",
+    "imagem": "guardanapo.png",
     "Categoria": "Papéis"
   },
   {
@@ -1272,18 +1206,6 @@
     "Categoria": "Papéis"
   },
   {
-    "Produto": "CESTO LIXEIRA 28 LITROS",
-    "Valor de venda (R$)": 24.9,
-    "imagem": "cesto_lixeira.jpg",
-    "Categoria": "Sacos e Lixeiras"
-  },
-  {
-    "Produto": "LIXEIRA TELADO 10L",
-    "Valor de venda (R$)": 7.95,
-    "imagem": "lixeira_telado.jpg",
-    "Categoria": "Sacos e Lixeiras"
-  },
-  {
     "Produto": "SACO LIXO 100 L C/5",
     "Valor de venda (R$)": 3.9,
     "imagem": "saco_lixo_100l_c5.jpg",
@@ -1298,67 +1220,61 @@
   {
     "Produto": "SACO LIXO 100 LITROS UNIDADE",
     "Valor de venda (R$)": 1.0,
-    "imagem": "saco_lixo_100l_un.jpg",
+    "imagem": "sacodelixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 20 LITROS UNIDADE",
     "Valor de venda (R$)": 0.5,
-    "imagem": "saco_lixo_20l_un.jpg",
+    "imagem": "sacodelixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 20L C/10",
     "Valor de venda (R$)": 1.9,
-    "imagem": "saco_lixo_20l_c10.jpg",
+    "imagem": "sacodelixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 60 L C/5",
     "Valor de venda (R$)": 2.9,
-    "imagem": "saco_lixo_60l_c5.jpg",
+    "imagem": "sacodelixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 60 LITROS UNIDADE",
     "Valor de venda (R$)": 1.0,
-    "imagem": "saco_lixo_60l_un.jpg",
+    "imagem": "sacodelixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO EX 100 L C/ 5",
     "Valor de venda (R$)": 9.9,
-    "imagem": "saco_lixo_ex_100l_c5.jpg",
+    "imagem": "sacodelixo.png",
     "Categoria": "Sacos e Lixeiras"
-  },
-  {
-    "Produto": "BACIA CANELADA 28 LITROS",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "bacia_28l.jpg",
-    "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "BALDE 10L",
     "Valor de venda (R$)": 7.9,
-    "imagem": "balde_10l.jpg",
+    "imagem": "balde.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "BALDE 15L",
     "Valor de venda (R$)": 9.9,
-    "imagem": "balde_15l.jpg",
+    "imagem": "balde.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "BALDE 8L",
     "Valor de venda (R$)": 5.9,
-    "imagem": "balde_8l.jpg",
+    "imagem": "balde.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "ESCOVA OVAL",
     "Valor de venda (R$)": 4.95,
-    "imagem": "escova_oval.jpg",
+    "imagem": "escova.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -1376,7 +1292,7 @@
   {
     "Produto": "ESPANADOR DE PÓ",
     "Valor de venda (R$)": 9.95,
-    "imagem": "espanador.jpg",
+    "imagem": "espanador.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -1388,13 +1304,13 @@
   {
     "Produto": "MOP",
     "Valor de venda (R$)": 29.9,
-    "imagem": "mop.jpg",
+    "imagem": "mop.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "PÁ LIXO CABO CURTO",
     "Valor de venda (R$)": 4.95,
-    "imagem": "pa_lixo_curto.jpg",
+    "imagem": "padelixo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -1406,49 +1322,49 @@
   {
     "Produto": "RODO 30 CM",
     "Valor de venda (R$)": 9.9,
-    "imagem": "rodo_30cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO 40 CM",
     "Valor de venda (R$)": 5.9,
-    "imagem": "rodo_40cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO 60 CM",
     "Valor de venda (R$)": 6.9,
-    "imagem": "rodo_60cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO ALUMINIO 30 CM",
     "Valor de venda (R$)": 9.9,
-    "imagem": "rodo_aluminio_30cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO ALUMINIO 40 CM",
     "Valor de venda (R$)": 11.9,
-    "imagem": "rodo_aluminio_40cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO ALUMINIO 60 CM",
     "Valor de venda (R$)": 19.9,
-    "imagem": "rodo_aluminio_60cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO PARA PIA",
     "Valor de venda (R$)": 2.0,
-    "imagem": "rodo_pia.jpg",
+    "imagem": "rodopia.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "VASSOURA ALEGRIA VARRE BEM",
     "Valor de venda (R$)": 8.9,
-    "imagem": "vassoura_alegria.jpg",
+    "imagem": "vassoura.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -1466,19 +1382,19 @@
   {
     "Produto": "VASSOURA LIMPA CANTO",
     "Valor de venda (R$)": 8.9,
-    "imagem": "vassoura_limpa_canto.jpg",
+    "imagem": "vassouralimpa.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "VASSOURA MULTIUSO",
     "Valor de venda (R$)": 5.9,
-    "imagem": "vassoura_multiuso.jpg",
+    "imagem": "vassouramulti.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "VASSOURA PIAÇAVA BASE PLÁSTICA C/ CABO",
     "Valor de venda (R$)": 14.9,
-    "imagem": "vassoura_piassava_cabo.jpg",
+    "imagem": "vassourapiacava.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -1497,18 +1413,6 @@
     "Produto": "AVENTAL DONA DE CASA",
     "Valor de venda (R$)": 20.0,
     "imagem": "avental_dona_casa.jpg",
-    "Categoria": "Vestuário e Têxtil"
-  },
-  {
-    "Produto": "BATE-MÃO",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "bate_mao.jpg",
-    "Categoria": "Vestuário e Têxtil"
-  },
-  {
-    "Produto": "MEIAS (KIT C/3 PARES)",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "meias.jpg",
     "Categoria": "Vestuário e Têxtil"
   },
   {

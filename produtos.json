@@ -134,7 +134,7 @@
   {
     "Produto": "ALVEJANTE SUPREMA 1,5 L",
     "Valor de venda (R$)": 11.9,
-    "imagem": "alvejante_suprema.jpg",
+    "imagem": "alvejantesuprema15.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -146,25 +146,25 @@
   {
     "Produto": "CLORO FORTE 1L",
     "Valor de venda (R$)": 6.9,
-    "imagem": "cloro_forte_1l.jpg",
+    "imagem": "cloro51l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "CLORO FORTE 5L",
     "Valor de venda (R$)": 19.9,
-    "imagem": "cloro_forte_5l.jpg",
+    "imagem": "cloro55l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "CLORO GEL",
     "Valor de venda (R$)": 10.95,
-    "imagem": "cloro_gel.jpg",
+    "imagem": "clorogel1l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "CREOLINA 500 ML",
     "Valor de venda (R$)": 7.95,
-    "imagem": "creolina_500ml.jpg",
+    "imagem": "creolina.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -470,7 +470,7 @@
   {
     "Produto": "MULTIUSO 500 ML YPE",
     "Valor de venda (R$)": 4.9,
-    "imagem": "multiuso_ype.jpg",
+    "imagem": "multiusoype.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
@@ -488,7 +488,7 @@
   {
     "Produto": "SABÃO EM PASTA FUZETTO 250 GR",
     "Valor de venda (R$)": 3.9,
-    "imagem": "sabao_fuzetto.jpg",
+    "imagem": "sabaoempasta250.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
@@ -524,13 +524,13 @@
   {
     "Produto": "SABÃO EM PÓ 400 G",
     "Valor de venda (R$)": 3.5,
-    "imagem": "sabao_po_400g.jpg",
+    "imagem": "sabaoapyce400g.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
     "Produto": "SABÃO EM PÓ ARES 800 GR",
     "Valor de venda (R$)": 6.9,
-    "imagem": "sabao_ares.jpg",
+    "imagem": "sabaoares800g.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
@@ -584,13 +584,13 @@
   {
     "Produto": "SHAMPOO AUTOMOTIVO 1L",
     "Valor de venda (R$)": 9.95,
-    "imagem": "shampoo_automotivo_1l.jpg",
+    "imagem": "shampooauto.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
     "Produto": "AGUA DE LENÇOL LAVANDA SUAVE 500 ML",
     "Valor de venda (R$)": 15.47,
-    "imagem": "agua.jpg",
+    "imagem": "agualencol.png",
     "Categoria": "Outros"
   },
   {
@@ -650,13 +650,13 @@
   {
     "Produto": "ANTIMOFO 130 G",
     "Valor de venda (R$)": 8.9,
-    "imagem": "antimofo_130g.jpg",
+    "imagem": "antimofo.jpg",
     "Categoria": "Outros"
   },
   {
     "Produto": "ANTIMOFO 25 GR",
     "Valor de venda (R$)": 2.95,
-    "imagem": "antimofo_25g.jpg",
+    "imagem": "antimofo.jpg",
     "Categoria": "Outros"
   },
   {

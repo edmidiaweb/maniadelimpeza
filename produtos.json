@@ -962,13 +962,13 @@
   {
     "Produto": "LIMPA VIDRO 500 ML",
     "Valor de venda (R$)": 3.9,
-    "imagem": "limpa_vidro.jpg",
+    "imagem": "limpavidro.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "LIMPADOR MULTIUSO AGIPRO 500 ML",
     "Valor de venda (R$)": 3.9,
-    "imagem": "limpador_agipro.jpg",
+    "imagem": "multiusoagipro.png",
     "Categoria": "Outros"
   },
   {
@@ -980,25 +980,25 @@
   {
     "Produto": "LIMPADOR PERFUMADO ZULU",
     "Valor de venda (R$)": 5.95,
-    "imagem": "limpador_zulu.jpg",
+    "imagem": "mercoalazulurosa.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "LUSTRA MÓVEIS 500 ML",
     "Valor de venda (R$)": 9.95,
-    "imagem": "lustra_moveis.jpg",
+    "imagem": "lustramoveis.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "LUVA AMARELA G",
     "Valor de venda (R$)": 4.5,
-    "imagem": "luva_amarela_g.jpg",
+    "imagem": "luvalatexm.jpg",
     "Categoria": "Outros"
   },
   {
     "Produto": "LUVA AMARELA M",
     "Valor de venda (R$)": 4.0,
-    "imagem": "luva_amarela_m.jpg",
+    "imagem": "luvalatexm.png",
     "Categoria": "Outros"
   },
   {
@@ -1010,7 +1010,7 @@
   {
     "Produto": "LUVA PLÁSTICA UND.",
     "Valor de venda (R$)": 0.1,
-    "imagem": "luva_plastica.jpg",
+    "imagem": "luvaplastica.png",
     "Categoria": "Outros"
   },
   {
@@ -1028,7 +1028,7 @@
   {
     "Produto": "MARIDÃO 1L",
     "Valor de venda (R$)": 7.95,
-    "imagem": "maridao.jpg",
+    "imagem": "Maridao.png",
     "Categoria": "Outros"
   },
   {
@@ -1058,7 +1058,7 @@
   {
     "Produto": "MULTIUSO 500 ML VEJA",
     "Valor de venda (R$)": 5.9,
-    "imagem": "multiuso_veja.jpg",
+    "imagem": "multiusoveja.png",
     "Categoria": "Outros"
   },
   {

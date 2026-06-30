@@ -344,13 +344,13 @@
   {
     "Produto": "BARBEADOR AZUL",
     "Valor de venda (R$)": 2.49,
-    "imagem": "barbeador_azul.jpg",
+    "imagem": "barbaazul.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
     "Produto": "BARBEADOR FIAT LUX",
     "Valor de venda (R$)": 4.9,
-    "imagem": "barbeador_fiatlux.jpg",
+    "imagem": "barbafiat.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
@@ -1118,7 +1118,7 @@
   {
     "Produto": "COLA INST. THREE BOND SUPER",
     "Valor de venda (R$)": 4.9,
-    "imagem": "cola_threebond.jpg",
+    "imagem": "colatrebond.png",
     "Categoria": "Papelaria e Escritório"
   },
   {

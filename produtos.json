@@ -8,7 +8,7 @@
   {
     "Produto": "ACETONA",
     "Valor de venda (R$)": 6.37,
-    "imagem": "acetona.jpg",
+    "imagem": "acetona.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
@@ -44,7 +44,7 @@
   {
     "Produto": "AGULHA DESENTUPIR FOGÃO",
     "Valor de venda (R$)": 2.9,
-    "imagem": "agulha_fogao.jpg",
+    "imagem": "desenfogao.png",
     "Categoria": "Outros"
   },
   {
@@ -62,7 +62,7 @@
   {
     "Produto": "ALCOOL 70° 1 L",
     "Valor de venda (R$)": 13.87,
-    "imagem": "alcool_70.jpg",
+    "imagem": "alcool70.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
@@ -162,12 +162,6 @@
     "Categoria": "Vestuário e Têxtil"
   },
   {
-    "Produto": "BACIA CANELADA 28 LITROS",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "bacia_28l.jpg",
-    "Categoria": "Utensílios de Limpeza"
-  },
-  {
     "Produto": "BALDE 10L",
     "Valor de venda (R$)": 7.9,
     "imagem": "balde_10l.jpg",
@@ -188,20 +182,14 @@
   {
     "Produto": "BARBEADOR AZUL",
     "Valor de venda (R$)": 2.49,
-    "imagem": "barbeador_azul.jpg",
+    "imagem": "barbaazul.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
     "Produto": "BARBEADOR FIAT LUX",
     "Valor de venda (R$)": 4.9,
-    "imagem": "barbeador_fiatlux.jpg",
+    "imagem": "barbafiat.png",
     "Categoria": "Higiene e Cuidados"
-  },
-  {
-    "Produto": "BATE-MÃO",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "bate_mao.jpg",
-    "Categoria": "Vestuário e Têxtil"
   },
   {
     "Produto": "BICARBONATO DE SÓDIO 60 G",
@@ -248,13 +236,7 @@
   {
     "Produto": "CANETA BIC",
     "Valor de venda (R$)": 1.5,
-    "imagem": "caneta_bic.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "CANETA HIDROGRÁFICA CANETINHA 6 CORES",
-    "Valor de venda (R$)": 3.5,
-    "imagem": "canetinha.jpg",
+    "imagem": "bic.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
@@ -266,7 +248,7 @@
   {
     "Produto": "CAPA CHUVA DESCARTÁVEL",
     "Valor de venda (R$)": 4.9,
-    "imagem": "capa_chuva_descartavel.jpg",
+    "imagem": "capa.png",
     "Categoria": "Outros"
   },
   {
@@ -276,15 +258,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "CESTO LIXEIRA 28 LITROS",
-    "Valor de venda (R$)": 24.9,
-    "imagem": "cesto_lixeira.jpg",
-    "Categoria": "Sacos e Lixeiras"
-  },
-  {
     "Produto": "CLIPS",
     "Valor de venda (R$)": 0.2,
-    "imagem": "clips.jpg",
+    "imagem": "clips.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
@@ -308,7 +284,7 @@
   {
     "Produto": "COLA INST. THREE BOND SUPER",
     "Valor de venda (R$)": 4.9,
-    "imagem": "cola_threebond.jpg",
+    "imagem": "colatrebond.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
@@ -319,20 +295,20 @@
   },
   {
     "Produto": "CONSULTAR OUTROS SERVIÇOS",
-    "Valor de venda (R$)": 0.1,
+    "Valor de venda (R$)": 20,
     "imagem": "outros_servicos.jpg",
     "Categoria": "Outros"
   },
   {
     "Produto": "CREOLINA 500 ML",
     "Valor de venda (R$)": 7.95,
-    "imagem": "creolina.jpg",
+    "imagem": "creolina.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "CREOLINA 900 ML",
     "Valor de venda (R$)": 29.9,
-    "imagem": "creolina_900ml.jpg",
+    "imagem": "creolina.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -344,13 +320,13 @@
   {
     "Produto": "DESENTUPIDOR  WC",
     "Valor de venda (R$)": 9.95,
-    "imagem": "desentupidor_wc.jpg",
+    "imagem": "desenvaso.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "DESENTUPIDOR PIA DSR",
     "Valor de venda (R$)": 3.95,
-    "imagem": "desentupidor_pia_dsr.jpg",
+    "imagem": "desenpia.png",
     "Categoria": "Outros"
   },
   {
@@ -540,15 +516,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ENVELOPE A4",
-    "Valor de venda (R$)": 2.0,
-    "imagem": "envelope_a4.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
     "Produto": "ESCOVA OVAL",
     "Valor de venda (R$)": 4.95,
-    "imagem": "escova_oval.jpg",
+    "imagem": "escova.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -566,7 +536,7 @@
   {
     "Produto": "ESPANADOR DE PÓ",
     "Valor de venda (R$)": 9.95,
-    "imagem": "espanador.jpg",
+    "imagem": "espanador.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {

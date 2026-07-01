@@ -1,20 +1,23 @@
 let listaProdutosOriginal = [];
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 let filtroAte10 = localStorage.getItem('filtroAte10') === 'true';
+let ordenacao = localStorage.getItem('ordenacao') || 'az';
+let _debounceTimer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     carregarProdutos();
     configurarFiltroPesquisa();
     configurarBuscaMobile();
     atualizarInterfaceCarrinho();
+    atualizarUIOrdenacao();
 });
 
+// ── Carregamento ──────────────────────────────────────────────────────────────
 async function carregarProdutos() {
     try {
         const resposta = await fetch('produtos.json');
         if (!resposta.ok) throw new Error('Falha ao ler arquivo de produtos.');
         listaProdutosOriginal = await resposta.json();
-
         atualizarBotaoFiltroPrecoUI();
         aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
     } catch (erro) {
@@ -28,32 +31,51 @@ async function carregarProdutos() {
     }
 }
 
-// Gerenciamento e persistência do filtro cumulativo "Até R$ 10"
+// ── Filtro de preço ───────────────────────────────────────────────────────────
 function toggleFiltroPreco() {
     filtroAte10 = !filtroAte10;
     localStorage.setItem('filtroAte10', filtroAte10);
     atualizarBotaoFiltroPrecoUI();
-    
-    const termo = document.getElementById('searchBarDesktop').value || '';
-    aplicarFiltros(termo);
+    aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
 }
 
 function atualizarBotaoFiltroPrecoUI() {
     const btn = document.getElementById('btnFiltroPreco');
     if (!btn) return;
     if (filtroAte10) {
-        btn.classList.remove('bg-white', 'border-gray-200', 'text-gray-700', 'hover:bg-gray-50');
-        btn.classList.add('bg-indigo-100', 'border-indigo-300', 'text-indigo-800', 'font-bold');
+        btn.className = 'whitespace-nowrap px-4 py-2 bg-indigo-600 border border-indigo-700 text-white rounded-xl text-xs font-bold shadow-sm transition flex items-center gap-1.5';
+        btn.innerHTML = '<i class="fas fa-check text-[10px]"></i> Até R$ 10';
     } else {
-        btn.classList.remove('bg-indigo-100', 'border-indigo-300', 'text-indigo-800', 'font-bold');
-        btn.classList.add('bg-white', 'border-gray-200', 'text-gray-700', 'hover:bg-gray-50');
+        btn.className = 'whitespace-nowrap px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-50 transition flex items-center gap-1.5';
+        btn.innerHTML = '<i class="fas fa-tags text-[10px] text-gray-400"></i> Até R$ 10';
     }
 }
 
+// ── Ordenação ─────────────────────────────────────────────────────────────────
+function definirOrdenacao(modo) {
+    ordenacao = modo;
+    localStorage.setItem('ordenacao', modo);
+    atualizarUIOrdenacao();
+    aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
+}
+
+function atualizarUIOrdenacao() {
+    ['az', 'menor', 'maior'].forEach(modo => {
+        const btn = document.getElementById(`ord-${modo}`);
+        if (!btn) return;
+        if (modo === ordenacao) {
+            btn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-indigo-600 text-white transition';
+        } else {
+            btn.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 transition';
+        }
+    });
+}
+
+// ── Utilitários ───────────────────────────────────────────────────────────────
 function obterPreco(item) {
-    const precoRaw = item["Valor de venda (R$)"] !== undefined ? item["Valor de venda (R$)"] : item["Valor de venda"];
-    const precoNum = parseFloat(precoRaw);
-    return isNaN(precoNum) ? 0 : precoNum;
+    const raw = item["Valor de venda (R$)"] !== undefined ? item["Valor de venda (R$)"] : item["Valor de venda"];
+    const n = parseFloat(raw);
+    return isNaN(n) ? 0 : n;
 }
 
 function normalizarTexto(texto) {
@@ -62,17 +84,19 @@ function normalizarTexto(texto) {
 
 function obterProdutosBase() {
     let produtos = [...listaProdutosOriginal];
+    if (filtroAte10) produtos = produtos.filter(p => obterPreco(p) <= 10.00);
 
-    if (filtroAte10) {
-        produtos = produtos.filter(p => obterPreco(p) <= 10.00);
+    if (ordenacao === 'az') {
+        produtos.sort((a, b) => a.Produto.localeCompare(b.Produto, 'pt-BR'));
+    } else if (ordenacao === 'menor') {
+        produtos.sort((a, b) => obterPreco(a) - obterPreco(b));
+    } else if (ordenacao === 'maior') {
+        produtos.sort((a, b) => obterPreco(b) - obterPreco(a));
     }
-
-    // Ordem alfabética sempre
-    produtos.sort((a, b) => a.Produto.localeCompare(b.Produto, 'pt-BR'));
-
     return produtos;
 }
 
+// ── Pesquisa ──────────────────────────────────────────────────────────────────
 function obterCamposPesquisa() {
     return Array.from(document.querySelectorAll('[data-search-input]'));
 }
@@ -83,17 +107,35 @@ function obterBotoesLimpar() {
 
 function sincronizarCamposPesquisa(valor, campoOrigem = null) {
     obterCamposPesquisa().forEach(input => {
-        if (input !== campoOrigem) {
-            input.value = valor;
-        }
+        if (input !== campoOrigem) input.value = valor;
     });
 }
 
 function atualizarBotoesLimpar(valor) {
     const deveExibir = valor.trim().length > 0;
-    obterBotoesLimpar().forEach(botao => {
-        botao.classList.toggle('hidden', !deveExibir);
+    obterBotoesLimpar().forEach(botao => botao.classList.toggle('hidden', !deveExibir));
+}
+
+function configurarFiltroPesquisa() {
+    obterCamposPesquisa().forEach(searchBar => {
+        searchBar.addEventListener('input', (e) => {
+            const valor = e.target.value;
+            sincronizarCamposPesquisa(valor, e.target);
+            atualizarBotoesLimpar(valor);
+            // Debounce: só aplica filtro 200ms após parar de digitar
+            clearTimeout(_debounceTimer);
+            _debounceTimer = setTimeout(() => aplicarFiltros(valor), 200);
+        });
     });
+
+    obterBotoesLimpar().forEach(botao => {
+        botao.addEventListener('click', () => limparPesquisa(botao.getAttribute('data-target-input')));
+    });
+}
+
+function configurarBuscaMobile() {
+    const toggle = document.getElementById('mobileSearchToggle');
+    if (toggle) toggle.addEventListener('click', alternarBuscaMobile);
 }
 
 function abrirBuscaMobile() {
@@ -121,36 +163,26 @@ function fecharBuscaMobile() {
 function alternarBuscaMobile() {
     const container = document.getElementById('mobileSearchContainer');
     if (!container) return;
-    if (container.classList.contains('hidden')) {
-        abrirBuscaMobile();
-    } else {
-        fecharBuscaMobile();
-    }
+    container.classList.contains('hidden') ? abrirBuscaMobile() : fecharBuscaMobile();
 }
 
 function aplicarFiltros(termo = '') {
     const termoBuscado = normalizarTexto(termo.trim());
     let produtosFiltrados = obterProdutosBase();
 
-    if (!termoBuscado) {
-        renderizarProdutos(produtosFiltrados);
-        return;
+    if (termoBuscado) {
+        produtosFiltrados = produtosFiltrados.filter(item =>
+            normalizarTexto(item.Produto).includes(termoBuscado)
+        );
+        // Itens que começam com o termo primeiro
+        produtosFiltrados.sort((a, b) => {
+            const aComeca = normalizarTexto(a.Produto).startsWith(termoBuscado) ? 1 : 0;
+            const bComeca = normalizarTexto(b.Produto).startsWith(termoBuscado) ? 1 : 0;
+            return bComeca - aComeca;
+        });
     }
 
-    produtosFiltrados = produtosFiltrados.filter(item => {
-        const nomeProduto = normalizarTexto(item.Produto);
-        return nomeProduto.includes(termoBuscado);
-    });
-
-    produtosFiltrados.sort((a, b) => {
-        const nomeA = normalizarTexto(a.Produto);
-        const nomeB = normalizarTexto(b.Produto);
-        const aComeca = nomeA.startsWith(termoBuscado) ? 1 : 0;
-        const bComeca = nomeB.startsWith(termoBuscado) ? 1 : 0;
-        return bComeca - aComeca;
-    });
-
-    renderizarProdutos(produtosFiltrados);
+    renderizarProdutos(produtosFiltrados, termoBuscado);
 }
 
 function limparPesquisa(inputIdParaFoco = 'searchBarDesktop') {
@@ -158,20 +190,37 @@ function limparPesquisa(inputIdParaFoco = 'searchBarDesktop') {
     atualizarBotoesLimpar('');
     aplicarFiltros('');
     const input = document.getElementById(inputIdParaFoco);
-    if (input && !input.closest('.hidden')) {
-        input.focus();
-    }
+    if (input && !input.closest('.hidden')) input.focus();
 }
 
-function renderizarProdutos(produtos) {
+// ── Renderização ──────────────────────────────────────────────────────────────
+function renderizarProdutos(produtos, termoBuscado = '') {
     const grid = document.getElementById('gridProdutos');
     grid.innerHTML = '';
 
+    // Contador de resultados quando há busca ou filtro ativo
+    const temFiltro = termoBuscado || filtroAte10;
+    if (temFiltro) {
+        const contador = document.createElement('div');
+        contador.className = 'col-span-full mb-1';
+        const label = termoBuscado
+            ? `<span class="font-bold text-indigo-700">${produtos.length}</span> produto${produtos.length !== 1 ? 's' : ''} encontrado${produtos.length !== 1 ? 's' : ''} para <span class="font-bold text-indigo-700">"${termoBuscado}"</span>`
+            : `<span class="font-bold text-indigo-700">${produtos.length}</span> produto${produtos.length !== 1 ? 's' : ''} até R$ 10`;
+        contador.innerHTML = `<p class="text-xs text-gray-500">${label}</p>`;
+        grid.appendChild(contador);
+    }
+
     if (produtos.length === 0) {
-        grid.innerHTML = `
-            <div class="col-span-full text-center py-12 text-gray-400">
-                <i class="fas fa-search text-3xl mb-2"></i>
-                <p>Nenhum produto encontrado para os filtros selecionados.</p>
+        const temBusca = termoBuscado.length > 0;
+        grid.innerHTML += `
+            <div class="col-span-full text-center py-14 text-gray-400 flex flex-col items-center gap-3">
+                <i class="fas fa-${temBusca ? 'search' : 'filter'} text-4xl text-indigo-200"></i>
+                <p class="font-semibold text-gray-500">Nenhum produto encontrado</p>
+                <p class="text-xs text-gray-400">${temBusca ? `Nenhum resultado para "${termoBuscado}"` : 'Nenhum produto nessa faixa de preço'}</p>
+                <button onclick="${temBusca ? "limparPesquisa()" : "toggleFiltroPreco()"}"
+                    class="mt-1 px-5 py-2 bg-indigo-600 text-white text-xs font-bold rounded-xl hover:bg-indigo-700 transition">
+                    ${temBusca ? 'Limpar busca' : 'Remover filtro de preço'}
+                </button>
             </div>
         `;
         return;
@@ -181,19 +230,18 @@ function renderizarProdutos(produtos) {
         const preco = obterPreco(item);
         const itemNoCarrinho = carrinho.find(c => c.nome === item.Produto);
         const qtd = itemNoCarrinho ? itemNoCarrinho.qtd : 0;
-
         const idImagem = `img-${btoa(encodeURIComponent(item.Produto)).replace(/[^a-zA-Z0-9]/g, '').substring(0, 20)}`;
-        const termoBusca = item.Produto.toLowerCase();
+        const wrapId = `wrap-${idImagem}`;
 
         const card = document.createElement('div');
         card.className = "bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition duration-200";
-
-        // Bloco de imagem: tenta carrinho local → Unsplash → fallback ícone+nome
-        const wrapId = `wrap-${idImagem}`;
         card.innerHTML = `
             <div>
-                <div id="${wrapId}" class="w-full h-32 bg-indigo-50 rounded-xl overflow-hidden flex items-center justify-center">
-                    <i class="fas fa-spinner fa-spin text-indigo-300 text-xl"></i>
+                <div id="${wrapId}"
+                     class="w-full h-32 bg-indigo-50 rounded-xl overflow-hidden flex items-center justify-center cursor-zoom-in select-none"
+                     data-nome="${item.Produto.replace(/"/g, '&quot;')}"
+                     onclick="abrirLightbox(this)">
+                    <i class="fas fa-spinner fa-spin text-indigo-300 text-xl pointer-events-none"></i>
                 </div>
                 <h3 class="text-xs font-bold text-gray-700 mt-2 line-clamp-2 uppercase h-8">${item.Produto}</h3>
             </div>
@@ -205,14 +253,90 @@ function renderizarProdutos(produtos) {
             </div>
         `;
         grid.appendChild(card);
-
-        // Carrega imagem: tenta arquivo local primeiro, senão gera via Canvas
         carregarImagemCard(wrapId, item.imagem || null, item.Produto, item.Categoria || '');
     });
 }
 
-// ── Imagens ──────────────────────────────────────────────────────────────────
-// Paleta por categoria — fundo, texto, emoji
+// ── Botões de ação ────────────────────────────────────────────────────────────
+function renderizarBotaoAcao(nome, preco, qtd) {
+    if (qtd > 0) {
+        return `
+            <div class="flex items-center justify-between bg-indigo-50 rounded-xl p-1 border border-indigo-200">
+                <button onclick="alterarQuantidade('${nome}', ${preco}, -1)" aria-label="Diminuir quantidade"
+                    class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">-</button>
+                <span class="font-bold text-sm text-indigo-950">${qtd}</span>
+                <button onclick="alterarQuantidade('${nome}', ${preco}, 1)" aria-label="Aumentar quantidade"
+                    class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">+</button>
+            </div>
+        `;
+    }
+    return `
+        <button onclick="alterarQuantidade('${nome}', ${preco}, 1)"
+            class="btn-adicionar w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold py-2 px-3 rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs">
+            <i class="fas fa-plus text-[10px]"></i> Adicionar
+        </button>
+    `;
+}
+
+function alterarQuantidade(nome, preco, alterar) {
+    const index = carrinho.findIndex(item => item.nome === nome);
+    if (index > -1) {
+        carrinho[index].qtd += alterar;
+        if (carrinho[index].qtd <= 0) carrinho.splice(index, 1);
+    } else if (alterar > 0) {
+        carrinho.push({ nome, preco, qtd: 1 });
+    }
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+    const idSeguro = btoa(encodeURIComponent(nome)).replace(/=/g, '');
+    const container = document.getElementById(`btn-container-${idSeguro}`);
+    const itemAtualizado = carrinho.find(item => item.nome === nome);
+    const novaQtd = itemAtualizado ? itemAtualizado.qtd : 0;
+
+    if (container) {
+        // Flash de confirmação ao adicionar pela primeira vez
+        if (alterar > 0 && novaQtd === 1) {
+            container.innerHTML = `
+                <div class="w-full bg-green-500 text-white text-xs font-bold py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-xs">
+                    <i class="fas fa-check text-[10px]"></i> Adicionado!
+                </div>
+            `;
+            setTimeout(() => {
+                container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd);
+            }, 700);
+        } else {
+            container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd);
+        }
+    }
+    atualizarInterfaceCarrinho();
+}
+
+function atualizarInterfaceCarrinho() {
+    const badge = document.getElementById('badgeCarrinho');
+    const barraMobile = document.getElementById('barraFixaMobile');
+    const labelQtdMobile = document.getElementById('qtdItensMobile');
+    const totalInferior = document.getElementById('totalFixInferior');
+
+    const totalItens = carrinho.reduce((acc, item) => acc + item.qtd, 0);
+    const valorTotal = carrinho.reduce((acc, item) => acc + (item.qtd * item.preco), 0);
+
+    if (badge) {
+        badge.innerText = totalItens;
+        badge.classList.toggle('hidden', totalItens === 0);
+    }
+
+    if (barraMobile && labelQtdMobile && totalInferior) {
+        if (totalItens > 0) {
+            labelQtdMobile.innerText = totalItens;
+            totalInferior.innerText = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
+            barraMobile.classList.remove('hidden');
+        } else {
+            barraMobile.classList.add('hidden');
+        }
+    }
+}
+
+// ── Imagens ───────────────────────────────────────────────────────────────────
 const _catCfg = {
     'Automotivo e Pedras':        ['#1e3a5f','#a8c8f0','🚗'],
     'Desinfetantes e Alvejantes': ['#0d4f3c','#86efb8','🧴'],
@@ -236,17 +360,14 @@ function gerarImagemCanvas(nome, categoria) {
     canvas.width = W; canvas.height = H;
     const ctx = canvas.getContext('2d');
 
-    // Fundo
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
 
-    // Emoji centralizado
     ctx.font = '44px serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(emoji, W / 2, H / 2 - 14);
 
-    // Nome do produto (quebra automática)
     ctx.fillStyle = fg;
     ctx.font = 'bold 10px sans-serif';
     ctx.textBaseline = 'top';
@@ -265,10 +386,7 @@ function gerarImagemCanvas(nome, categoria) {
         if (linhas.length >= 2) break;
     }
     if (linha && linhas.length < 2) linhas.push(linha);
-
-    linhas.forEach((l, i) => {
-        ctx.fillText(l.toUpperCase(), W / 2, H - 30 + i * 13);
-    });
+    linhas.forEach((l, i) => ctx.fillText(l.toUpperCase(), W / 2, H - 30 + i * 13));
 
     return canvas.toDataURL();
 }
@@ -277,18 +395,30 @@ async function carregarImagemCard(wrapId, srcLocal, nomeProduto, categoria) {
     const wrap = document.getElementById(wrapId);
     if (!wrap) return;
 
-    // 1. Tenta imagem local
     if (srcLocal) {
         const ok = await testarImagem(srcLocal);
         if (ok) {
-            wrap.innerHTML = `<img src="${srcLocal}" alt="${nomeProduto}" class="w-full h-32 object-contain p-2 bg-gray-50 rounded-xl">`;
+            // Imagem local carregada — habilita lightbox
+            const img = document.createElement('img');
+            img.src = srcLocal;
+            img.alt = nomeProduto;
+            img.className = 'w-full h-32 object-contain p-2 bg-gray-50 rounded-xl pointer-events-none';
+            wrap.innerHTML = '';
+            wrap.appendChild(img);
+            wrap.setAttribute('data-pronta', '1');
             return;
         }
     }
 
-    // 2. Gera imagem via Canvas (zero rede, zero API key)
+    // Canvas — sempre disponível imediatamente
     const dataUrl = gerarImagemCanvas(nomeProduto, categoria);
-    wrap.innerHTML = `<img src="${dataUrl}" alt="${nomeProduto}" class="w-full h-32 object-cover rounded-xl">`;
+    const img = document.createElement('img');
+    img.src = dataUrl;
+    img.alt = nomeProduto;
+    img.className = 'w-full h-32 object-cover rounded-xl pointer-events-none';
+    wrap.innerHTML = '';
+    wrap.appendChild(img);
+    wrap.setAttribute('data-pronta', '1');
 }
 
 function testarImagem(src) {
@@ -300,94 +430,33 @@ function testarImagem(src) {
     });
 }
 
-function renderizarBotaoAcao(nome, preco, qtd) {
-    if (qtd > 0) {
-        return `
-            <div class="flex items-center justify-between bg-indigo-50 rounded-xl p-1 border border-indigo-200">
-                <button onclick="alterarQuantidade('${nome}', ${preco}, -1)" aria-label="Diminuir quantidade" class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">-</button>
-                <span class="font-bold text-sm text-indigo-950">${qtd}</span>
-                <button onclick="alterarQuantidade('${nome}', ${preco}, 1)" aria-label="Aumentar quantidade" class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">+</button>
-            </div>
-        `;
-    } else {
-        return `
-            <button onclick="alterarQuantidade('${nome}', ${preco}, 1)" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold py-2 px-3 rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs">
-                <i class="fas fa-plus text-[10px]"></i> Adicionar
-            </button>
-        `;
-    }
+// ── Lightbox ──────────────────────────────────────────────────────────────────
+function abrirLightbox(wrapEl) {
+    // Só abre se a imagem já terminou de carregar
+    if (!wrapEl.getAttribute('data-pronta')) return;
+
+    const lb     = document.getElementById('lightbox');
+    const lbImg  = document.getElementById('lightboxImg');
+    const lbNome = document.getElementById('lightboxNome');
+    const imgEl  = wrapEl.querySelector('img');
+    if (!imgEl) return;
+
+    lbImg.src  = imgEl.src;
+    lbImg.alt  = wrapEl.getAttribute('data-nome') || '';
+    lbNome.textContent = wrapEl.getAttribute('data-nome') || '';
+
+    lb.classList.remove('hidden');
+    lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
 }
 
-function configurarFiltroPesquisa() {
-    const searchInputs = obterCamposPesquisa();
-    searchInputs.forEach(searchBar => {
-        searchBar.addEventListener('input', (e) => {
-            const valor = e.target.value;
-            sincronizarCamposPesquisa(valor, e.target);
-            atualizarBotoesLimpar(valor);
-            aplicarFiltros(valor);
-        });
-    });
-
-    obterBotoesLimpar().forEach(botao => {
-        botao.addEventListener('click', () => {
-            limparPesquisa(botao.getAttribute('data-target-input'));
-        });
-    });
+function fecharLightbox() {
+    const lb = document.getElementById('lightbox');
+    lb.classList.add('hidden');
+    lb.classList.remove('flex');
+    document.body.style.overflow = '';
 }
 
-function configurarBuscaMobile() {
-    const toggle = document.getElementById('mobileSearchToggle');
-    if (!toggle) return;
-    toggle.addEventListener('click', alternarBuscaMobile);
-}
-
-function alterarQuantidade(nome, preco, alterar) {
-    const index = carrinho.findIndex(item => item.nome === nome);
-    if (index > -1) {
-        carrinho[index].qtd += alterar;
-        if (carrinho[index].qtd <= 0) {
-            carrinho.splice(index, 1);
-        }
-    } else if (alterar > 0) {
-        carrinho.push({ nome, preco, qtd: 1 });
-    }
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    
-    const idSeguro = btoa(encodeURIComponent(nome)).replace(/=/g, '');
-    const container = document.getElementById(`btn-container-${idSeguro}`);
-    const itemAtualizado = carrinho.find(item => item.nome === nome);
-    const novaQtd = itemAtualizado ? itemAtualizado.qtd : 0;
-    
-    if (container) {
-        container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd);
-    }
-    atualizarInterfaceCarrinho();
-}
-
-function atualizarInterfaceCarrinho() {
-    const badge = document.getElementById('badgeCarrinho');
-    const barraMobile = document.getElementById('barraFixaMobile');
-    const labelQtdMobile = document.getElementById('qtdItensMobile');
-    const totalInferior = document.getElementById('totalFixInferior');
-    
-    const totalItens = carrinho.reduce((acc, item) => acc + item.qtd, 0);
-    const valorTotal = carrinho.reduce((acc, item) => acc + (item.qtd * item.preco), 0);
-
-    if (totalItens > 0) {
-        badge.innerText = totalItens;
-        badge.classList.remove('hidden');
-    } else {
-        badge.classList.add('hidden');
-    }
-
-    if (barraMobile && labelQtdMobile && totalInferior) {
-        if (totalItens > 0) {
-            labelQtdMobile.innerText = totalItens;
-            totalInferior.innerText = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
-            barraMobile.classList.remove('hidden');
-        } else {
-            barraMobile.classList.add('hidden');
-        }
-    }
-}
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') fecharLightbox();
+});

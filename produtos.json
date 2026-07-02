@@ -936,7 +936,7 @@
     "Categoria": "Elétrica e Eletrônicos"
   },
   {
-    "Produto": "PINHO GEL",
+    "Produto": "PINHO GEL 500ML",
     "Valor de venda (R$)": 12.95,
     "imagem": "pinho_gel.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -948,9 +948,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "PRETINHO PNEU",
+    "Produto": "PRETINHO PNEU 1l",
     "Valor de venda (R$)": 12.9,
-    "imagem": "pretinho_pneu.jpg",
+    "imagem": "pretinhopneu.png",
     "Categoria": "Automotivo e Pedras"
   },
   {
@@ -960,39 +960,33 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "RALO PIA 4,5 CM LAVATÓRIO / TANQUE",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "ralo_pia_4_5.jpg",
-    "Categoria": "Outros"
-  },
-  {
     "Produto": "RALO PIA 6 CM CROMADO COM VALVULA",
     "Valor de venda (R$)": 4.9,
     "imagem": "ralo_pia_6.jpg",
     "Categoria": "Outros"
   },
   {
-    "Produto": "RALO PIA 7 CM",
+    "Produto": "RALO PIA 7CM",
     "Valor de venda (R$)": 3.9,
-    "imagem": "ralo_pia_7.jpg",
+    "imagem": "ralopia.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "REMOVEDOR GITANES 900 ML",
+    "Produto": "REMOVEDOR GITANES 900ML",
     "Valor de venda (R$)": 14.9,
-    "imagem": "removedor_gitanes.jpg",
+    "imagem": "removedorgitane.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "REMOVEDOR SUPREMA 1L",
     "Valor de venda (R$)": 8.9,
-    "imagem": "removedor_suprema_1l.jpg",
+    "imagem": "removedorsuprema1l.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "REMOVEDOR SUPREMA 500 ML",
+    "Produto": "REMOVEDOR SUPREMA 500ML",
     "Valor de venda (R$)": 6.9,
-    "imagem": "removedor_suprema_500ml.jpg",
+    "imagem": "removedorsuprema.png",
     "Categoria": "Outros"
   },
   {
@@ -1038,7 +1032,7 @@
     "Categoria": "Utensílios de Limpeza"
   },
   {
-    "Produto": "S. LIXO 20 LITROS C/100",
+    "Produto": "SACO DE LIXO 20 LITROS C/100",
     "Valor de venda (R$)": 19.9,
     "imagem": "sacolixo.png",
     "Categoria": "Outros"
@@ -1050,13 +1044,13 @@
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "SABÃO EM PASTA DE POTE 250 GR",
+    "Produto": "SABÃO EM PASTA DE POTE 250G",
     "Valor de venda (R$)": 4.9,
-    "imagem": "sabao_pasta_250g.jpg",
+    "imagem": "sabaopasta250g.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "SABÃO EM PASTA FUZETTO 250 GR",
+    "Produto": "SABÃO EM PASTA FUZETTO 250G",
     "Valor de venda (R$)": 3.9,
     "imagem": "sabaoempasta250.png",
     "Categoria": "Lavanderia e Louça"
@@ -1086,13 +1080,13 @@
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "SABÃO EM PÓ 400 G",
+    "Produto": "SABÃO EM PÓ 400G",
     "Valor de venda (R$)": 3.5,
     "imagem": "sabaoapyce400g.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "SABÃO EM PÓ ARES 800 GR",
+    "Produto": "SABÃO EM PÓ ARES 800G",
     "Valor de venda (R$)": 6.9,
     "imagem": "sabaoares800g.png",
     "Categoria": "Lavanderia e Louça"
@@ -1100,7 +1094,7 @@
   {
     "Produto": "SABÃO EM PÓ TIXAN YPÊ",
     "Valor de venda (R$)": 19.9,
-    "imagem": "sabao_tixan.jpg",
+    "imagem": "sabao_tixan.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
@@ -1110,25 +1104,25 @@
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "SABÃO LIQUIDO LAVA ROUPAS 1 L",
+    "Produto": "SABÃO LIQUIDO LAVA ROUPAS 1L",
     "Valor de venda (R$)": 9.9,
-    "imagem": "sabao_liquido_1l.jpg",
+    "imagem": "sabao_liquido_1l.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS DE COCO 1L",
     "Valor de venda (R$)": 9.9,
-    "imagem": "sabao_liquido_coco_1l.jpg",
+    "imagem": "sabao_liquido_coco_1l.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS GOPABO COCO 5L",
     "Valor de venda (R$)": 24.9,
-    "imagem": "sabao_gopabo_5l.jpg",
+    "imagem": "sabao_gopabo_5l.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "SABÃO LIQUIDO LAVA ROUPAS JUGATHA 5 L",
+    "Produto": "SABÃO LIQUIDO LAVA ROUPAS JUGATHA 5L",
     "Valor de venda (R$)": 24.9,
     "imagem": "sabao_jugatha_5l.jpg",
     "Categoria": "Lavanderia e Louça"
@@ -1136,98 +1130,80 @@
   {
     "Produto": "SABÃO LÍQUIDO LAVA ROUPAS OMO 1L",
     "Valor de venda (R$)": 9.9,
-    "imagem": "sabao_omo_1l.jpg",
+    "imagem": "sabaoomo1l.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "SABÃO LIQUIDO LAVA ROUPAS VALENCIA COCO 5 L",
+    "Produto": "SABÃO LIQUIDO LAVA ROUPAS VALENCIA COCO 5L",
     "Valor de venda (R$)": 29.9,
-    "imagem": "sabao_valencia_5l.jpg",
+    "imagem": "sabao_valencia_5l.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
     "Produto": "SABONETE LIQUIDO FRUTAS VERMELHAS 500 ML",
     "Valor de venda (R$)": 6.9,
-    "imagem": "sabonete_frutas_vermelhas.jpg",
+    "imagem": "sabonete_frutas_vermelhas.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
     "Produto": "SABONETE LIQUIDO TALCO 500 ML",
     "Valor de venda (R$)": 5.9,
-    "imagem": "sabonete_talco.jpg",
+    "imagem": "sabonete_talco.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
     "Produto": "SABONETE SIENE",
     "Valor de venda (R$)": 1.9,
-    "imagem": "sabonete_siene.jpg",
+    "imagem": "sabonete_siene.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
     "Produto": "SACO LIXO 100 L C/5",
     "Valor de venda (R$)": 3.9,
-    "imagem": "saco_lixo_100l_c5.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 100 L EX UND",
     "Valor de venda (R$)": 2.0,
-    "imagem": "saco_lixo_100l_ex.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 100 LITROS UNIDADE",
     "Valor de venda (R$)": 1.0,
-    "imagem": "saco_lixo_100l_un.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 20 LITROS UNIDADE",
     "Valor de venda (R$)": 0.5,
-    "imagem": "saco_lixo_20l_un.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 20L C/10",
     "Valor de venda (R$)": 1.9,
-    "imagem": "saco_lixo_20l_c10.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 60 L C/5",
     "Valor de venda (R$)": 2.9,
-    "imagem": "saco_lixo_60l_c5.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO 60 LITROS UNIDADE",
     "Valor de venda (R$)": 1.0,
-    "imagem": "saco_lixo_60l_un.jpg",
+    "imagem": "sacolixo.png",
     "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SACO LIXO EX 100 L C/ 5",
     "Valor de venda (R$)": 9.9,
-    "imagem": "saco_lixo_ex_100l_c5.jpg",
-    "Categoria": "Sacos e Lixeiras"
-  },
-  {
-    "Produto": "SACO PL 25X35 P.E. 0,06 UND",
-    "Valor de venda (R$)": 0.5,
     "imagem": "sacolixo.png",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "SACOLA 40X50",
-    "Valor de venda (R$)": 0.2,
-    "imagem": "sacola_40x50.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "SACOLA 80X100 BRANCA C/5",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "sacola_80x100.jpg",
-    "Categoria": "Papelaria e Escritório"
+    "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "SAPÓLIO",
@@ -1236,19 +1212,13 @@
     "Categoria": "Automotivo e Pedras"
   },
   {
-    "Produto": "SAPOLIO",
-    "Valor de venda (R$)": 11.9,
-    "imagem": "sapolio.png",
-    "Categoria": "Outros"
-  },
-  {
     "Produto": "SAPONACEO WORKER 200 ML",
     "Valor de venda (R$)": 6.9,
-    "imagem": "saponaceo_worker.jpg",
+    "imagem": "saponaceo_worker.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "SHAMPOO ATOMOTIVO 5 L",
+    "Produto": "SHAMPOO ATOMOTIVO 5L",
     "Valor de venda (R$)": 39.9,
     "imagem": "shampooauto.png",
     "Categoria": "Lavanderia e Louça"
@@ -1268,37 +1238,25 @@
   {
     "Produto": "SILICONE GEL MONZA",
     "Valor de venda (R$)": 14.9,
-    "imagem": "silicone_gel_monza.jpg",
+    "imagem": "silicone_gel_monza.png",
     "Categoria": "Automotivo e Pedras"
   },
   {
     "Produto": "SODA CAUTICA",
     "Valor de venda (R$)": 9.9,
-    "imagem": "soda_caustica.jpg",
+    "imagem": "soda_caustica.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "SOLUPAN 1 L",
+    "Produto": "SOLUPAN 1L",
     "Valor de venda (R$)": 7.9,
     "imagem": "solupan500.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "SOLUPAN 5 L",
+    "Produto": "SOLUPAN 5L",
     "Valor de venda (R$)": 24.9,
     "imagem": "solupan500.png",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "TALÃO DE PEDIDO (1/32) 1 VIA 50 FOLHAS",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "talao_pedido.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "TALÃO DE RECIBO COMERCIAL COM CANHOTO 50 FOLHAS",
-    "Valor de venda (R$)": 5.9,
-    "imagem": "talao_recibo.jpg",
     "Categoria": "Outros"
   },
   {
@@ -1308,15 +1266,9 @@
     "Categoria": "Vestuário e Têxtil"
   },
   {
-    "Produto": "TESOURA ESCOLAR AÇO GALVONIZADO",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "tesoura_escolar.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "TIRA FERRUGEM 50 ML",
+    "Produto": "TIRA FERRUGEM 50ML",
     "Valor de venda (R$)": 9.9,
-    "imagem": "tira_ferrugem.jpg",
+    "imagem": "tiraferrugem.png",
     "Categoria": "Outros"
   },
   {
@@ -1326,21 +1278,15 @@
     "Categoria": "Vestuário e Têxtil"
   },
   {
-    "Produto": "TOUCA CETIM INFANTIL",
-    "Valor de venda (R$)": 2.0,
-    "imagem": "touca_cetim_infantil.jpg",
-    "Categoria": "Vestuário e Têxtil"
-  },
-  {
     "Produto": "TOUCA DE BANHO",
     "Valor de venda (R$)": 2.9,
-    "imagem": "touca_banho.jpg",
+    "imagem": "toucabanho.png",
     "Categoria": "Vestuário e Têxtil"
   },
   {
     "Produto": "VARAL AÇO 20M",
     "Valor de venda (R$)": 3.9,
-    "imagem": "varal_aco.jpg",
+    "imagem": "varalaco.png",
     "Categoria": "Outros"
   },
   {
@@ -1352,7 +1298,7 @@
   {
     "Produto": "VASELINA LIQUIDA GITANES 1L",
     "Valor de venda (R$)": 29.9,
-    "imagem": "vaselina_liquida.jpg",
+    "imagem": "vaselinaliquida.png",
     "Categoria": "Outros"
   },
   {
@@ -1398,7 +1344,7 @@
     "Categoria": "Utensílios de Limpeza"
   },
   {
-    "Produto": "VEDA ROSCA 18MM X 10MTS",
+    "Produto": "VEDA ROSCA 18MMX10MTS",
     "Valor de venda (R$)": 3.0,
     "imagem": "vedarosca.png",
     "Categoria": "Outros"

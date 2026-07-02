@@ -1460,13 +1460,13 @@
   {
     "Produto": "VASSOURA CONDOR",
     "Valor de venda (R$)": 3.9,
-    "imagem": "vassoura_condor.jpg",
+    "imagem": "vassouracondor.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "VASSOURA LIMPA CANTO",
     "Valor de venda (R$)": 8.9,
-    "imagem": "vassoura_limpa_canto.jpg",
+    "imagem": "vasouralimpa.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {

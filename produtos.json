@@ -62,7 +62,7 @@
   {
     "Produto": "ALCOOL 70° 1 L",
     "Valor de venda (R$)": 13.87,
-    "imagem": "alcool70.png",
+    "imagem": "álcool70.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
@@ -242,7 +242,7 @@
   {
     "Produto": "CANETA MARCA TEXTO FLUORESCENTE",
     "Valor de venda (R$)": 1.5,
-    "imagem": "marca_texto.jpg",
+    "imagem": "marcatexto.png",
     "Categoria": "Papelaria e Escritório"
   },
   {

@@ -2,11 +2,11 @@
   {
     "Produto": "ABRAÇADEIRA 20 CM",
     "Valor de venda (R$)": 1.0,
-    "imagem": "abrac20cm.png",
+    "imagem": "abracadeira.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "ACETONA 80ML",
+    "Produto": "ACETONA",
     "Valor de venda (R$)": 6.37,
     "imagem": "acetona.png",
     "Categoria": "Higiene e Cuidados"
@@ -18,9 +18,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ÁGUA OXIGENADA 100ML",
+    "Produto": "ÁGUA OXIGENADA",
     "Valor de venda (R$)": 6.45,
-    "imagem": "aguaoxi.png",
+    "imagem": "agua_oxigenada.png",
     "Categoria": "Outros"
   },
   {
@@ -32,7 +32,7 @@
   {
     "Produto": "AGUA SANITARIA CANDIDA 2 L",
     "Valor de venda (R$)": 7.67,
-    "imagem": "aguasuprema2l.png",
+    "imagem": "aguasansuprema2l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -44,11 +44,11 @@
   {
     "Produto": "AGULHA DESENTUPIR FOGÃO",
     "Valor de venda (R$)": 2.9,
-    "imagem": "desenfogao.png",
+    "imagem": "agulha_fogao.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "AJAX 500ML",
+    "Produto": "AJAX",
     "Valor de venda (R$)": 12.87,
     "imagem": "ajax.png",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -60,9 +60,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ALCOOL 70° 1L",
+    "Produto": "ALCOOL 70° 1 L",
     "Valor de venda (R$)": 13.87,
-    "imagem": "alcool70.png",
+    "imagem": "alcool_70.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
@@ -72,7 +72,7 @@
     "Categoria": "Higiene e Cuidados"
   },
   {
-    "Produto": "ALCOOL PERFUMADO 1L",
+    "Produto": "ÁLCOOL PERFUMADO 1L",
     "Valor de venda (R$)": 12.87,
     "imagem": "alcool_perfumado.png",
     "Categoria": "Outros"
@@ -86,7 +86,7 @@
   {
     "Produto": "ALVEJANTE SEM CLORO 1L",
     "Valor de venda (R$)": 8.9,
-    "imagem": "alvejantesc1l.png",
+    "imagem": "alvejante_sem_cloro.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -114,9 +114,9 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "AMACIANTE MON BIJOU 1L",
+    "Produto": "AMACIANTE MON BIJOU 1 L",
     "Valor de venda (R$)": 7.9,
-    "imagem": "amaciantemb1l.png.png",
+    "imagem": "amaciante_monbijou_1l.png",
     "Categoria": "Outros"
   },
   {
@@ -140,7 +140,7 @@
   {
     "Produto": "ANTIMOFO 130 G",
     "Valor de venda (R$)": 8.9,
-    "imagem": "antimofo130.png.png",
+    "imagem": "antimofo.png",
     "Categoria": "Outros"
   },
   {
@@ -162,34 +162,46 @@
     "Categoria": "Vestuário e Têxtil"
   },
   {
+    "Produto": "BACIA CANELADA 28 LITROS",
+    "Valor de venda (R$)": 19.9,
+    "imagem": "bacia_28l.png",
+    "Categoria": "Utensílios de Limpeza"
+  },
+  {
     "Produto": "BALDE 10L",
     "Valor de venda (R$)": 7.9,
-    "imagem": "balde.png",
+    "imagem": "balde_10l.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "BALDE 15L",
     "Valor de venda (R$)": 9.9,
-    "imagem": "balde.png",
+    "imagem": "balde_15l.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "BALDE 8L",
     "Valor de venda (R$)": 5.9,
-    "imagem": "balde.png",
+    "imagem": "balde_8l.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
-    "Produto": "BARBEADOR ALFACEL",
+    "Produto": "BARBEADOR AZUL",
     "Valor de venda (R$)": 2.49,
-    "imagem": "barbaazul.png",
+    "imagem": "barbeador_azul.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
     "Produto": "BARBEADOR FIAT LUX",
     "Valor de venda (R$)": 4.9,
-    "imagem": "barbafiat.png",
+    "imagem": "barbeador_fiatlux.png",
     "Categoria": "Higiene e Cuidados"
+  },
+  {
+    "Produto": "BATE-MÃO",
+    "Valor de venda (R$)": 10.0,
+    "imagem": "bate_mao.png",
+    "Categoria": "Vestuário e Têxtil"
   },
   {
     "Produto": "BICARBONATO DE SÓDIO 60 G",
@@ -198,27 +210,63 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "CABO MÉDIO 1,20M",
-    "Valor de venda (R$)": 6.0,
-    "imagem": "cabo.png",
+    "Produto": "CABO CURTO 90 CM",
+    "Valor de venda (R$)": 3.9,
+    "imagem": "cabo_curto.png",
     "Categoria": "Elétrica e Eletrônicos"
+  },
+  {
+    "Produto": "CABO LONGO 1,50 M",
+    "Valor de venda (R$)": 7.0,
+    "imagem": "cabo_longo.png",
+    "Categoria": "Elétrica e Eletrônicos"
+  },
+  {
+    "Produto": "CABO MÉDIO 1,20 M",
+    "Valor de venda (R$)": 6.0,
+    "imagem": "cabo_medio.png",
+    "Categoria": "Elétrica e Eletrônicos"
+  },
+  {
+    "Produto": "CADERNETA 1/16",
+    "Valor de venda (R$)": 1.9,
+    "imagem": "caderneta_1_16.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
+    "Produto": "CADERNETA 1/4",
+    "Valor de venda (R$)": 3.9,
+    "imagem": "caderneta_1_4.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
+    "Produto": "CADERNETA 1/8",
+    "Valor de venda (R$)": 2.9,
+    "imagem": "caderneta_1_8.png",
+    "Categoria": "Papelaria e Escritório"
   },
   {
     "Produto": "CANETA BIC",
     "Valor de venda (R$)": 1.5,
-    "imagem": "bic.png",
+    "imagem": "caneta_bic.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
+    "Produto": "CANETA HIDROGRÁFICA CANETINHA 6 CORES",
+    "Valor de venda (R$)": 3.5,
+    "imagem": "canetinha.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
     "Produto": "CANETA MARCA TEXTO FLUORESCENTE",
     "Valor de venda (R$)": 1.5,
-    "imagem": "marcatexto.png",
+    "imagem": "marca_texto.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
     "Produto": "CAPA CHUVA DESCARTÁVEL",
     "Valor de venda (R$)": 4.9,
-    "imagem": "capa.png",
+    "imagem": "capa_chuva_descartavel.png",
     "Categoria": "Outros"
   },
   {
@@ -226,6 +274,12 @@
     "Valor de venda (R$)": 19.9,
     "imagem": "capa_chuva_reutilizavel.png",
     "Categoria": "Outros"
+  },
+  {
+    "Produto": "CESTO LIXEIRA 28 LITROS",
+    "Valor de venda (R$)": 24.9,
+    "imagem": "cesto_lixeira.png",
+    "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "CLIPS",
@@ -254,12 +308,18 @@
   {
     "Produto": "COLA INST. THREE BOND SUPER",
     "Valor de venda (R$)": 4.9,
-    "imagem": "col_trebond.png",
+    "imagem": "cola_threebond.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
+    "Produto": "CONECTOR PS2 / USB",
+    "Valor de venda (R$)": 20.0,
+    "imagem": "conector_ps2_usb.png",
+    "Categoria": "Elétrica e Eletrônicos"
+  },
+  {
     "Produto": "CONSULTAR OUTROS SERVIÇOS",
-    "Valor de venda (R$)": 20.00,
+    "Valor de venda (R$)": 0.1,
     "imagem": "outros_servicos.png",
     "Categoria": "Outros"
   },
@@ -272,7 +332,7 @@
   {
     "Produto": "CREOLINA 900 ML",
     "Valor de venda (R$)": 29.9,
-    "imagem": "creolina.png",
+    "imagem": "creolina_900ml.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -284,13 +344,13 @@
   {
     "Produto": "DESENTUPIDOR  WC",
     "Valor de venda (R$)": 9.95,
-    "imagem": "desenvaso.png",
+    "imagem": "desentupidor_wc.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "DESENTUPIDOR PIA DSR",
     "Valor de venda (R$)": 3.95,
-    "imagem": "desenpia.png",
+    "imagem": "desentupidor_pia_dsr.png",
     "Categoria": "Outros"
   },
   {
@@ -360,7 +420,7 @@
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE EUCALIPTO 1L",
+    "Produto": "DESINFETANTE EUCALIPTO 1 L",
     "Valor de venda (R$)": 3.9,
     "imagem": "desinfetante_eucalipto_1l.png",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -444,45 +504,51 @@
     "Categoria": "Higiene e Cuidados"
   },
   {
-    "Produto": "DETERGENTE 500ML POLYLAR",
+    "Produto": "DETERGENTE 500 ML POLYLAR",
     "Valor de venda (R$)": 2.0,
     "imagem": "detergentepolylar.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE AGIFACIL 500ML",
+    "Produto": "DETERGENTE AGIFACIL",
     "Valor de venda (R$)": 2.0,
     "imagem": "detergente.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE BULNEZ 500ML",
+    "Produto": "DETERGENTE BULNEZ",
     "Valor de venda (R$)": 2.5,
     "imagem": "detergente_bulnez.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE HARCCLIN 5L",
+    "Produto": "DETERGENTE LIQUIDO HARCCLIN  5 L",
     "Valor de venda (R$)": 16.9,
     "imagem": "detergente_harcclin_5l.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE YPÊ 500ML",
+    "Produto": "DETERGENTE YPÊ",
     "Valor de venda (R$)": 2.9,
     "imagem": "detergente_ype.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETETIZADOR  DE INSETOS 500ML",
+    "Produto": "DETETIZADOR  DE INSETOS 500 ML",
     "Valor de venda (R$)": 9.95,
     "imagem": "dedetizador500.png",
     "Categoria": "Outros"
   },
   {
+    "Produto": "ENVELOPE A4",
+    "Valor de venda (R$)": 2.0,
+    "imagem": "envelope_a4.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
     "Produto": "ESCOVA OVAL",
     "Valor de venda (R$)": 4.95,
-    "imagem": "escova.png",
+    "imagem": "escova_oval.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -506,13 +572,13 @@
   {
     "Produto": "ESPIRAL REPELENTE",
     "Valor de venda (R$)": 5.9,
-    "imagem": "espiral.png",
+    "imagem": "espiral_repelente.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "ESPONJA AÇO INOX",
     "Valor de venda (R$)": 2.9,
-    "imagem": "esponjaaco.png",
+    "imagem": "esponja_aco.png",
     "Categoria": "Panos e Esponjas"
   },
   {
@@ -546,6 +612,24 @@
     "Categoria": "Panos e Esponjas"
   },
   {
+    "Produto": "FITA CREPE 19X10M",
+    "Valor de venda (R$)": 4.9,
+    "imagem": "fita_crepe.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
+    "Produto": "FITA DUPLA FACE",
+    "Valor de venda (R$)": 7.9,
+    "imagem": "fita_dupla_face.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
+    "Produto": "FITA FINA 18X50M",
+    "Valor de venda (R$)": 2.95,
+    "imagem": "fita_fina.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
     "Produto": "FITA ISOLANTE 19MMX5M",
     "Valor de venda (R$)": 4.9,
     "imagem": "fita_isolante.png",
@@ -558,10 +642,22 @@
     "Categoria": "Papelaria e Escritório"
   },
   {
+    "Produto": "FITA QUALITAPE 12MM X 10M",
+    "Valor de venda (R$)": 1.9,
+    "imagem": "fita_qualitape.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
     "Produto": "FLANELA 28X28 BRANCA / LARANJA",
     "Valor de venda (R$)": 1.95,
     "imagem": "flanelabanca.png",
     "Categoria": "Panos e Esponjas"
+  },
+  {
+    "Produto": "FOLHA DE SULFITE",
+    "Valor de venda (R$)": 0.25,
+    "imagem": "folha_sulfite.png",
+    "Categoria": "Papelaria e Escritório"
   },
   {
     "Produto": "GEL ACENDEDOR ALCOOL 80°",
@@ -582,6 +678,12 @@
     "Categoria": "Papéis"
   },
   {
+    "Produto": "IMAGEM EM SULFITE",
+    "Valor de venda (R$)": 3.9,
+    "imagem": "sulfite.png",
+    "Categoria": "Papelaria e Escritório"
+  },
+  {
     "Produto": "INCENSO CITRONELA C/7 VARETAS",
     "Valor de venda (R$)": 3.9,
     "imagem": "incenso_citronela.png",
@@ -596,7 +698,7 @@
   {
     "Produto": "KIT TESOURAS C/ 3",
     "Valor de venda (R$)": 19.9,
-    "imagem": "tesoura.png",
+    "imagem": "kit_tesouras.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
@@ -614,7 +716,7 @@
   {
     "Produto": "LAMPADA LED BULBO 9W BIVOLT",
     "Valor de venda (R$)": 4.9,
-    "imagem": "lampada.png",
+    "imagem": "lampada_led.png",
     "Categoria": "Elétrica e Eletrônicos"
   },
   {
@@ -672,16 +774,22 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "LIMPADOR PERFUMADO YPÊ 500ML",
+    "Produto": "LIMPADOR PERFUMADO YPÊ",
     "Valor de venda (R$)": 6.95,
     "imagem": "limpador_ype.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "LIMPADOR PERFUMADO ZULU 500ML",
+    "Produto": "LIMPADOR PERFUMADO ZULU",
     "Valor de venda (R$)": 5.95,
     "imagem": "mercoalazulurosa.png",
     "Categoria": "Outros"
+  },
+  {
+    "Produto": "LIXEIRA TELADO 10L",
+    "Valor de venda (R$)": 7.95,
+    "imagem": "lixeira_telado.png",
+    "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "LUSTRA MÓVEIS 500 ML",
@@ -704,7 +812,7 @@
   {
     "Produto": "LUVA DE MALHA COM PIGMENTO",
     "Valor de venda (R$)": 6.0,
-    "imagem": "luvamalha.png",
+    "imagem": "luva_malha.png",
     "Categoria": "Outros"
   },
   {
@@ -732,10 +840,22 @@
     "Categoria": "Outros"
   },
   {
+    "Produto": "MÁSCARA PANO",
+    "Valor de venda (R$)": 2.0,
+    "imagem": "mascara_pano.png",
+    "Categoria": "Panos e Esponjas"
+  },
+  {
     "Produto": "MÁSCARA PFF1",
     "Valor de venda (R$)": 3.0,
-    "imagem": "mascarapff1.png",
+    "imagem": "mascara_pff1.png",
     "Categoria": "Outros"
+  },
+  {
+    "Produto": "MEIAS (KIT C/3 PARES)",
+    "Valor de venda (R$)": 10.0,
+    "imagem": "meias.png",
+    "Categoria": "Vestuário e Têxtil"
   },
   {
     "Produto": "MINI ESPANADOR NYLON",
@@ -750,25 +870,31 @@
     "Categoria": "Utensílios de Limpeza"
   },
   {
-    "Produto": "MULTIUSO 500 ML VEJA 500ML",
+    "Produto": "MOUSE USB",
+    "Valor de venda (R$)": 15.0,
+    "imagem": "mouse_usb.png",
+    "Categoria": "Elétrica e Eletrônicos"
+  },
+  {
+    "Produto": "MULTIUSO 500 ML VEJA",
     "Valor de venda (R$)": 5.9,
     "imagem": "multiusoveja.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "MULTIUSO 500 ML YPE 500ML",
+    "Produto": "MULTIUSO 500 ML YPE",
     "Valor de venda (R$)": 4.9,
     "imagem": "multiusoype.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "MULTIUSO UAU ROSAS E SEDUÇÃO 500ML",
+    "Produto": "MULTIUSO UAU ROSAS E SEDUÇÃO",
     "Valor de venda (R$)": 6.9,
     "imagem": "multiuso_uau.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "NAFTALINA 30G",
+    "Produto": "NAFTALINA",
     "Valor de venda (R$)": 2.95,
     "imagem": "naftalina.png",
     "Categoria": "Outros"
@@ -780,6 +906,12 @@
     "Categoria": "Outros"
   },
   {
+    "Produto": "ÓCULOS NATAÇÃO",
+    "Valor de venda (R$)": 9.9,
+    "imagem": "oculos_natacao.png",
+    "Categoria": "Outros"
+  },
+  {
     "Produto": "ÓLEO DE MUTAMBA",
     "Valor de venda (R$)": 20.0,
     "imagem": "oleo_mutamba.png",
@@ -788,11 +920,11 @@
   {
     "Produto": "ÓLEO SINGER 100 ML",
     "Valor de venda (R$)": 9.9,
-    "imagem": "oleosinger.png",
+    "imagem": "oleo_singer.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "P. HIG. ROLO G 8 ROLOS",
+    "Produto": "P. HIG. ROLÃO 8 ROLOS 2 KG",
     "Valor de venda (R$)": 29.9,
     "imagem": "papel_higienico_rolao.png",
     "Categoria": "Outros"
@@ -800,13 +932,13 @@
   {
     "Produto": "PÁ LIXO CABO CURTO",
     "Valor de venda (R$)": 4.95,
-    "imagem": "padelixo.png",
+    "imagem": "pa_lixo_curto.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "PÁ LIXO CABO LONGO",
     "Valor de venda (R$)": 9.95,
-    "imagem": "padelixocl.png",
+    "imagem": "pa_lixo_longo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {

@@ -1,6 +1,5 @@
 let listaProdutosOriginal = [];
 let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-let filtroAte10 = localStorage.getItem('filtroAte10') === 'true';
 let ordenacao = localStorage.getItem('ordenacao') || 'az';
 let _debounceTimer = null;
 
@@ -18,7 +17,6 @@ async function carregarProdutos() {
         const resposta = await fetch('produtos.json');
         if (!resposta.ok) throw new Error('Falha ao ler arquivo de produtos.');
         listaProdutosOriginal = await resposta.json();
-        atualizarBotaoFiltroPrecoUI();
         aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
     } catch (erro) {
         console.error(erro);
@@ -28,26 +26,6 @@ async function carregarProdutos() {
                 <p>Erro ao carregar o catálogo. Certifique-se de usar um servidor local (Live Server).</p>
             </div>
         `;
-    }
-}
-
-// ── Filtro de preço ───────────────────────────────────────────────────────────
-function toggleFiltroPreco() {
-    filtroAte10 = !filtroAte10;
-    localStorage.setItem('filtroAte10', filtroAte10);
-    atualizarBotaoFiltroPrecoUI();
-    aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
-}
-
-function atualizarBotaoFiltroPrecoUI() {
-    const btn = document.getElementById('btnFiltroPreco');
-    if (!btn) return;
-    if (filtroAte10) {
-        btn.className = 'whitespace-nowrap px-4 py-2 bg-indigo-600 border border-indigo-700 text-white rounded-xl text-xs font-bold shadow-sm transition flex items-center gap-1.5';
-        btn.innerHTML = '<i class="fas fa-check text-[10px]"></i> Até R$ 10';
-    } else {
-        btn.className = 'whitespace-nowrap px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-50 transition flex items-center gap-1.5';
-        btn.innerHTML = '<i class="fas fa-tags text-[10px] text-gray-400"></i> Até R$ 10';
     }
 }
 
@@ -84,7 +62,6 @@ function normalizarTexto(texto) {
 
 function obterProdutosBase() {
     let produtos = [...listaProdutosOriginal];
-    if (filtroAte10) produtos = produtos.filter(p => obterPreco(p) <= 10.00);
 
     if (ordenacao === 'az') {
         produtos.sort((a, b) => a.Produto.localeCompare(b.Produto, 'pt-BR'));
@@ -122,7 +99,6 @@ function configurarFiltroPesquisa() {
             const valor = e.target.value;
             sincronizarCamposPesquisa(valor, e.target);
             atualizarBotoesLimpar(valor);
-            // Debounce: só aplica filtro 200ms após parar de digitar
             clearTimeout(_debounceTimer);
             _debounceTimer = setTimeout(() => aplicarFiltros(valor), 200);
         });
@@ -174,7 +150,6 @@ function aplicarFiltros(termo = '') {
         produtosFiltrados = produtosFiltrados.filter(item =>
             normalizarTexto(item.Produto).includes(termoBuscado)
         );
-        // Itens que começam com o termo primeiro
         produtosFiltrados.sort((a, b) => {
             const aComeca = normalizarTexto(a.Produto).startsWith(termoBuscado) ? 1 : 0;
             const bComeca = normalizarTexto(b.Produto).startsWith(termoBuscado) ? 1 : 0;
@@ -198,29 +173,21 @@ function renderizarProdutos(produtos, termoBuscado = '') {
     const grid = document.getElementById('gridProdutos');
     grid.innerHTML = '';
 
-    // Contador de resultados quando há busca ou filtro ativo
-    const temFiltro = termoBuscado || filtroAte10;
-    if (temFiltro) {
+    if (termoBuscado) {
         const contador = document.createElement('div');
         contador.className = 'col-span-full mb-1';
-        const label = termoBuscado
-            ? `<span class="font-bold text-indigo-700">${produtos.length}</span> produto${produtos.length !== 1 ? 's' : ''} encontrado${produtos.length !== 1 ? 's' : ''} para <span class="font-bold text-indigo-700">"${termoBuscado}"</span>`
-            : `<span class="font-bold text-indigo-700">${produtos.length}</span> produto${produtos.length !== 1 ? 's' : ''} até R$ 10`;
+        const label = `<span class="font-bold text-indigo-700">${produtos.length}</span> produto${produtos.length !== 1 ? 's' : ''} encontrado${produtos.length !== 1 ? 's' : ''} para <span class="font-bold text-indigo-700">"${termoBuscado}"</span>`;
         contador.innerHTML = `<p class="text-xs text-gray-500">${label}</p>`;
         grid.appendChild(contador);
     }
 
     if (produtos.length === 0) {
-        const temBusca = termoBuscado.length > 0;
         grid.innerHTML += `
             <div class="col-span-full text-center py-14 text-gray-400 flex flex-col items-center gap-3">
-                <i class="fas fa-${temBusca ? 'search' : 'filter'} text-4xl text-indigo-200"></i>
+                <i class="fas fa-search text-4xl text-indigo-200"></i>
                 <p class="font-semibold text-gray-500">Nenhum produto encontrado</p>
-                <p class="text-xs text-gray-400">${temBusca ? `Nenhum resultado para "${termoBuscado}"` : 'Nenhum produto nessa faixa de preço'}</p>
-                <button onclick="${temBusca ? "limparPesquisa()" : "toggleFiltroPreco()"}"
-                    class="mt-1 px-5 py-2 bg-indigo-600 text-white text-xs font-bold rounded-xl hover:bg-indigo-700 transition">
-                    ${temBusca ? 'Limpar busca' : 'Remover filtro de preço'}
-                </button>
+                <p class="text-xs text-gray-400">${termoBuscado ? `Nenhum resultado para "${termoBuscado}"` : 'O catálogo está vazio.'}</p>
+                ${termoBuscado ? `<button onclick="limparPesquisa()" class="mt-1 px-5 py-2 bg-indigo-600 text-white text-xs font-bold rounded-xl hover:bg-indigo-700 transition">Limpar busca</button>` : ''}
             </div>
         `;
         return;
@@ -397,7 +364,6 @@ async function carregarImagemCard(wrapId, srcLocal, nomeProduto, categoria) {
     if (srcLocal) {
         const ok = await testarImagem(srcLocal);
         if (ok) {
-            // Imagem local carregada — habilita lightbox
             const img = document.createElement('img');
             img.src = srcLocal;
             img.alt = nomeProduto;
@@ -409,7 +375,6 @@ async function carregarImagemCard(wrapId, srcLocal, nomeProduto, categoria) {
         }
     }
 
-    // Canvas — sempre disponível imediatamente
     const dataUrl = gerarImagemCanvas(nomeProduto, categoria);
     const img = document.createElement('img');
     img.src = dataUrl;
@@ -431,7 +396,6 @@ function testarImagem(src) {
 
 // ── Lightbox ──────────────────────────────────────────────────────────────────
 function abrirLightbox(wrapEl) {
-    // Só abre se a imagem já terminou de carregar
     if (!wrapEl.getAttribute('data-pronta')) return;
 
     const lb     = document.getElementById('lightbox');

@@ -314,7 +314,7 @@
   {
     "Produto": "DESENGRAXANTE 1L",
     "Valor de venda (R$)": 7.95,
-    "imagem": "desengraxante.jpg",
+    "imagem": "desengraxante.png",
     "Categoria": "Automotivo e Pedras"
   },
   {
@@ -482,7 +482,7 @@
   {
     "Produto": "DETERGENTE 500 ML POLYLAR",
     "Valor de venda (R$)": 2.0,
-    "imagem": "detergentepolylar.png",
+    "imagem": "detergentepolilar.png",
     "Categoria": "Lavanderia e Louça"
   },
   {

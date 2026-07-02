@@ -50,7 +50,7 @@
   {
     "Produto": "AJAX",
     "Valor de venda (R$)": 12.87,
-    "imagem": "ajax.jpg",
+    "imagem": "ajax.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -62,7 +62,7 @@
   {
     "Produto": "ALCOOL 70° 1 L",
     "Valor de venda (R$)": 13.87,
-    "imagem": "álcool70.png",
+    "imagem": "alcool70.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
@@ -164,19 +164,19 @@
   {
     "Produto": "BALDE 10L",
     "Valor de venda (R$)": 7.9,
-    "imagem": "balde_10l.jpg",
+    "imagem": "balde.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "BALDE 15L",
     "Valor de venda (R$)": 9.9,
-    "imagem": "balde_15l.jpg",
+    "imagem": "balde.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "BALDE 8L",
     "Valor de venda (R$)": 5.9,
-    "imagem": "balde_8l.jpg",
+    "imagem": "balde.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -194,13 +194,13 @@
   {
     "Produto": "BICARBONATO DE SÓDIO 60 G",
     "Valor de venda (R$)": 3.9,
-    "imagem": "bicarbonato.jpg",
+    "imagem": "bicarbonato.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "CABO CURTO 90 CM",
     "Valor de venda (R$)": 3.9,
-    "imagem": "cabo_curto.jpg",
+    "imagem": "cabo_curto.png",
     "Categoria": "Elétrica e Eletrônicos"
   },
   {

@@ -1472,37 +1472,37 @@
   {
     "Produto": "VASSOURA MULTIUSO",
     "Valor de venda (R$)": 5.9,
-    "imagem": "vassoura_multiuso.jpg",
+    "imagem": "vassouramultiuso.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
-    "Produto": "VASSOURA PIAÇAVA BASE PLÁSTICA C/ CABO",
+    "Produto": "VASSOURA PIAÇAVA BASE PLÁSTICA",
     "Valor de venda (R$)": 14.9,
-    "imagem": "vassoura_piassava_cabo.jpg",
+    "imagem": "piacavaplast.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "VASSOURA PIAÇAVA SINTÉTICA",
     "Valor de venda (R$)": 8.9,
-    "imagem": "vassoura_piassava_sintetica.jpg",
+    "imagem": "piacavasin.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "VEDA ROSCA 18MM X 10MTS",
     "Valor de venda (R$)": 3.0,
-    "imagem": "veda_rosca.jpg",
+    "imagem": "vedarosca.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "VELA N.3 12 GR C/8",
     "Valor de venda (R$)": 9.9,
-    "imagem": "vela_n3.jpg",
+    "imagem": "vela.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "YELLOW CLEAN 1L",
     "Valor de venda (R$)": 11.9,
-    "imagem": "yellow_clean.jpg",
+    "imagem": "yellowclean.png",
     "Categoria": "Outros"
   }
 ]

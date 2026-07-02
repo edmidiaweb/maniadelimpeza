@@ -6,7 +6,7 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ACETONA",
+    "Produto": "ACETONA 80ML",
     "Valor de venda (R$)": 6.37,
     "imagem": "acetona.png",
     "Categoria": "Higiene e Cuidados"
@@ -18,7 +18,7 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ÁGUA OXIGENADA",
+    "Produto": "ÁGUA OXIGENADA 100ML",
     "Valor de venda (R$)": 6.45,
     "imagem": "aguaoxi.png",
     "Categoria": "Outros"
@@ -36,7 +36,7 @@
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "AGUA SANITARIA BIOKRISS 5l",
+    "Produto": "AGUA SAN BIOKRISS 5l",
     "Valor de venda (R$)": 16.2,
     "imagem": "aguasanbiokris5l.png",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -48,7 +48,7 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "AJAX",
+    "Produto": "AJAX 500ML",
     "Valor de venda (R$)": 12.87,
     "imagem": "ajax.png",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -60,7 +60,7 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ALCOOL 70° 1L",
+    "Produto": "ALCOOL LIQ 70° 1L",
     "Valor de venda (R$)": 13.87,
     "imagem": "alcool70.png",
     "Categoria": "Higiene e Cuidados"
@@ -68,13 +68,13 @@
   {
     "Produto": "ALCOOL GEL 430G",
     "Valor de venda (R$)": 12.87,
-    "imagem": "alcool_gel.jpg",
+    "imagem": "alcoolgel.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
     "Produto": "ÁLCOOL PERFUMADO 1L",
     "Valor de venda (R$)": 12.87,
-    "imagem": "alcool_perfumado.jpg",
+    "imagem": "alcoolperfumado.png",
     "Categoria": "Outros"
   },
   {
@@ -90,67 +90,67 @@
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "ALVEJANTE SUPREMA 1,5 L",
+    "Produto": "ALVEJANTE SUPREMA 1,5L",
     "Valor de venda (R$)": 11.9,
     "imagem": "alvejantesuprema15.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "ALVEJANTE SUPREMA ROUPAS COLOR 1,5 L",
+    "Produto": "ALVEJANTE SUPREMA ROUPAS COLOR 1,5L",
     "Valor de venda (R$)": 13.9,
     "imagem": "alvejante_color.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "AMACIANTE CONFORT 500 ML",
+    "Produto": "AMACIANTE CONFORT 500ML",
     "Valor de venda (R$)": 12.9,
-    "imagem": "amaciante_confort.jpg",
+    "imagem": "amacianteconfort.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "AMACIANTE DOWNY 500 ML",
+    "Produto": "AMACIANTE DOWNY 500ML",
     "Valor de venda (R$)": 13.9,
-    "imagem": "amaciante_downy.jpg",
+    "imagem": "amaciante_downy.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "AMACIANTE MON BIJOU 1 L",
+    "Produto": "AMACIANTE MON BIJOU 1L",
     "Valor de venda (R$)": 7.9,
     "imagem": "amaciante_monbijou_1l.jpg",
     "Categoria": "Outros"
   },
   {
-    "Produto": "AMACIANTE MON BIJOU 1,7 L",
+    "Produto": "AMACIANTE MON BIJOU 1,7L",
     "Valor de venda (R$)": 11.9,
     "imagem": "amaciante_monbijou_17l.jpg",
     "Categoria": "Outros"
   },
   {
-    "Produto": "AMACIANTE MON BIJOU 5 L",
+    "Produto": "AMACIANTE MON BIJOU 5L",
     "Valor de venda (R$)": 24.9,
     "imagem": "amaciante_monbijou_5l.jpg",
     "Categoria": "Outros"
   },
   {
-    "Produto": "AMACIANTE YPE 2 L",
+    "Produto": "AMACIANTE YPE 2L",
     "Valor de venda (R$)": 12.9,
     "imagem": "amaciante_ype.jpg",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "ANTIMOFO 130 G",
+    "Produto": "ANTIMOFO 130G",
     "Valor de venda (R$)": 8.9,
     "imagem": "antimofo.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "ANTIMOFO 25 GR",
+    "Produto": "ANTIMOFO 25GR",
     "Valor de venda (R$)": 2.95,
     "imagem": "antimofo.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "AVENTAL COZINHA PVC IMPERMEÁVEL 1,20 X 0,65",
+    "Produto": "AVENTAL COZ PVC IMP 1,20X0,65",
     "Valor de venda (R$)": 25.0,
     "imagem": "avental_pvc.jpg",
     "Categoria": "Vestuário e Têxtil"
@@ -198,40 +198,10 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "CABO CURTO 90 CM",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "cabo_curto.png",
-    "Categoria": "Elétrica e Eletrônicos"
-  },
-  {
-    "Produto": "CABO LONGO 1,50 M",
-    "Valor de venda (R$)": 7.0,
-    "imagem": "cabo_longo.jpg",
-    "Categoria": "Elétrica e Eletrônicos"
-  },
-  {
     "Produto": "CABO MÉDIO 1,20 M",
     "Valor de venda (R$)": 6.0,
-    "imagem": "cabo_medio.jpg",
+    "imagem": "cabo.png",
     "Categoria": "Elétrica e Eletrônicos"
-  },
-  {
-    "Produto": "CADERNETA 1/16",
-    "Valor de venda (R$)": 1.9,
-    "imagem": "caderneta_1_16.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "CADERNETA 1/4",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "caderneta_1_4.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "CADERNETA 1/8",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "caderneta_1_8.jpg",
-    "Categoria": "Papelaria e Escritório"
   },
   {
     "Produto": "CANETA BIC",
@@ -254,7 +224,7 @@
   {
     "Produto": "CAPA DE CHUVA REUTILIZAVEL",
     "Valor de venda (R$)": 19.9,
-    "imagem": "capa_chuva_reutilizavel.jpg",
+    "imagem": "capa_chuva_reutilizavel.png",
     "Categoria": "Outros"
   },
   {
@@ -288,12 +258,6 @@
     "Categoria": "Papelaria e Escritório"
   },
   {
-    "Produto": "CONECTOR PS2 / USB",
-    "Valor de venda (R$)": 20.0,
-    "imagem": "conector_ps2_usb.jpg",
-    "Categoria": "Elétrica e Eletrônicos"
-  },
-  {
     "Produto": "CONSULTAR OUTROS SERVIÇOS",
     "Valor de venda (R$)": 20,
     "imagem": "outros_servicos.jpg",
@@ -302,13 +266,13 @@
   {
     "Produto": "CREOLINA 500 ML",
     "Valor de venda (R$)": 7.95,
-    "imagem": "creolina.png",
+    "imagem": "creolina500.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "CREOLINA 900 ML",
     "Valor de venda (R$)": 29.9,
-    "imagem": "creolina.png",
+    "imagem": "creolina500.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
@@ -338,53 +302,53 @@
   {
     "Produto": "DESINFANTE GIOVANNA BABY 2L",
     "Valor de venda (R$)": 6.9,
-    "imagem": "desinfetante_giovanna_2l.jpg",
+    "imagem": "desgiovana2l.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "DESINFETANTE 1L FLORAL",
     "Valor de venda (R$)": 3.9,
-    "imagem": "desinfetante_floral_1l.jpg",
+    "imagem": "desinfetante_floral_1l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "DESINFETANTE 2L DOVE",
     "Valor de venda (R$)": 5.9,
-    "imagem": "desinfetante_dove_2l.jpg",
+    "imagem": "desdove2l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "DESINFETANTE 2L FLORAL",
     "Valor de venda (R$)": 4.95,
-    "imagem": "desinfetante_floral_2l.jpg",
+    "imagem": "desfloral2l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE CITRONELA CONCENTRADA 500 ML",
+    "Produto": "DESINFETANTE CITRONELA CONCENTRADA 500ML",
     "Valor de venda (R$)": 2.95,
     "imagem": "desinfetante_citronela.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE DAMA DA NOITE 2 L",
+    "Produto": "DESINFETANTE DAMA DA NOITE 2L",
     "Valor de venda (R$)": 3.9,
     "imagem": "desinfetante_dama_2l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE DAMA DA NOITE 2,5 L",
+    "Produto": "DESINFETANTE DAMA DA NOITE 2,5L",
     "Valor de venda (R$)": 4.5,
     "imagem": "desinfetante_dama_2_5l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE DAMA DA NOITE 500 ML",
+    "Produto": "DESINFETANTE DAMA DA NOITE 500ML",
     "Valor de venda (R$)": 2.0,
     "imagem": "desinfetante_dama_500ml.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE DOVE 500 ml",
+    "Produto": "DESINFETANTE DOVE 500ML",
     "Valor de venda (R$)": 2.0,
     "imagem": "desinfetante_dove_500ml.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -396,25 +360,25 @@
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE EUCALIPTO 1 L",
+    "Produto": "DESINFETANTE EUCALIPTO 1L",
     "Valor de venda (R$)": 3.9,
     "imagem": "desinfetante_eucalipto_1l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE EUCALIPTO 2 L",
+    "Produto": "DESINFETANTE EUCALIPTO 2L",
     "Valor de venda (R$)": 5.9,
     "imagem": "desinfetante_eucalipto_2l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE EUCALIPTO 5 L",
+    "Produto": "DESINFETANTE EUCALIPTO 5L",
     "Valor de venda (R$)": 14.95,
     "imagem": "desinfetante_eucalipto_5l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE FLORAL 5 L",
+    "Produto": "DESINFETANTE FLORAL 5L",
     "Valor de venda (R$)": 11.9,
     "imagem": "desinfetante_floral_5l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -444,25 +408,25 @@
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE LAVANDA 5 L",
+    "Produto": "DESINFETANTE LAVANDA 5L",
     "Valor de venda (R$)": 11.9,
     "imagem": "desinfbiocrislav5l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE LAVANDA 500 ML",
+    "Produto": "DESINFETANTE LAVANDA 500ML",
     "Valor de venda (R$)": 2.0,
     "imagem": "desinfetante_lavanda_500ml.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE MARINE 2 L",
+    "Produto": "DESINFETANTE MARINE 2L",
     "Valor de venda (R$)": 5.9,
     "imagem": "desinfetante_marine_2l.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "DESINFETANTE MARINE 500 ml",
+    "Produto": "DESINFETANTE MARINE 500ML",
     "Valor de venda (R$)": 2.0,
     "imagem": "desinfetante_marine_500ml.jpg",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -486,31 +450,31 @@
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE AGIFACIL",
+    "Produto": "DETERGENTE AGIFACIL 500ML",
     "Valor de venda (R$)": 2.0,
     "imagem": "detergente.png",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE BULNEZ",
+    "Produto": "DETERGENTE BULNEZ 500ML",
     "Valor de venda (R$)": 2.5,
     "imagem": "detergente_bulnez.jpg",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE LIQUIDO HARCCLIN  5 L",
+    "Produto": "DETERGENTE HARCCLIN 5L",
     "Valor de venda (R$)": 16.9,
     "imagem": "detergente_harcclin_5l.jpg",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETERGENTE YPÊ",
+    "Produto": "DETERGENTE YPÊ 500ML",
     "Valor de venda (R$)": 2.9,
     "imagem": "detergente_ype.jpg",
     "Categoria": "Lavanderia e Louça"
   },
   {
-    "Produto": "DETETIZADOR  DE INSETOS 500 ML",
+    "Produto": "DETETIZADOR DE INSETOS 500ML",
     "Valor de venda (R$)": 9.95,
     "imagem": "dedetizador500.png",
     "Categoria": "Outros"
@@ -561,12 +525,6 @@
     "Produto": "ESPONJA POLIESTER",
     "Valor de venda (R$)": 4.9,
     "imagem": "esponja_poliester.jpg",
-    "Categoria": "Panos e Esponjas"
-  },
-  {
-    "Produto": "ESPONJA POLIESTER (KIT C/3)",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "esponja_poliester_kit.jpg",
     "Categoria": "Panos e Esponjas"
   },
   {

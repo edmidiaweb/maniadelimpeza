@@ -226,12 +226,12 @@ function renderizarProdutos(produtos, termoBuscado = '') {
         return;
     }
 
-    produtos.forEach(item => {
+    produtos.forEach((item, idx) => {
         const preco = obterPreco(item);
         const itemNoCarrinho = carrinho.find(c => c.nome === item.Produto);
         const qtd = itemNoCarrinho ? itemNoCarrinho.qtd : 0;
-        const idImagem = `img-${btoa(encodeURIComponent(item.Produto)).replace(/[^a-zA-Z0-9]/g, '').substring(0, 20)}`;
-        const wrapId = `wrap-${idImagem}`;
+        const wrapId = `wrap-img-${idx}`;
+        const btnId  = `btn-container-${idx}`;
 
         const card = document.createElement('div');
         card.className = "bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition duration-200";
@@ -247,38 +247,39 @@ function renderizarProdutos(produtos, termoBuscado = '') {
             </div>
             <div class="mt-2">
                 <p class="text-indigo-900 font-extrabold text-base">R$ ${preco.toFixed(2).replace('.', ',')}</p>
-                <div class="mt-2" id="btn-container-${btoa(encodeURIComponent(item.Produto)).replace(/=/g, '')}">
-                    ${renderizarBotaoAcao(item.Produto, preco, qtd)}
+                <div class="mt-2" id="${btnId}">
+                    ${renderizarBotaoAcao(item.Produto, preco, qtd, btnId)}
                 </div>
             </div>
         `;
         grid.appendChild(card);
-        carregarImagemCard(wrapId, item.imagem || null, item.Produto, item.Categoria || '');
+        carregarImagemCard(wrapId, item.imagem || null, item.Produto, item.Categoria || '', btnId);
     });
 }
 
 // ── Botões de ação ────────────────────────────────────────────────────────────
-function renderizarBotaoAcao(nome, preco, qtd) {
+function renderizarBotaoAcao(nome, preco, qtd, btnId = '') {
+    const nomeEsc = nome.replace(/'/g, "\\'");
     if (qtd > 0) {
         return `
             <div class="flex items-center justify-between bg-indigo-50 rounded-xl p-1 border border-indigo-200">
-                <button onclick="alterarQuantidade('${nome}', ${preco}, -1)" aria-label="Diminuir quantidade"
+                <button onclick="alterarQuantidade('${nomeEsc}', ${preco}, -1, '${btnId}')" aria-label="Diminuir quantidade"
                     class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">-</button>
                 <span class="font-bold text-sm text-indigo-950">${qtd}</span>
-                <button onclick="alterarQuantidade('${nome}', ${preco}, 1)" aria-label="Aumentar quantidade"
+                <button onclick="alterarQuantidade('${nomeEsc}', ${preco}, 1, '${btnId}')" aria-label="Aumentar quantidade"
                     class="w-8 h-8 flex items-center justify-center bg-white text-indigo-900 rounded-lg shadow-xs hover:bg-indigo-100 font-bold transition">+</button>
             </div>
         `;
     }
     return `
-        <button onclick="alterarQuantidade('${nome}', ${preco}, 1)"
+        <button onclick="alterarQuantidade('${nomeEsc}', ${preco}, 1, '${btnId}')"
             class="btn-adicionar w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold py-2 px-3 rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs">
             <i class="fas fa-plus text-[10px]"></i> Adicionar
         </button>
     `;
 }
 
-function alterarQuantidade(nome, preco, alterar) {
+function alterarQuantidade(nome, preco, alterar, btnId) {
     const index = carrinho.findIndex(item => item.nome === nome);
     if (index > -1) {
         carrinho[index].qtd += alterar;
@@ -288,13 +289,11 @@ function alterarQuantidade(nome, preco, alterar) {
     }
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-    const idSeguro = btoa(encodeURIComponent(nome)).replace(/=/g, '');
-    const container = document.getElementById(`btn-container-${idSeguro}`);
+    const container = document.getElementById(btnId);
     const itemAtualizado = carrinho.find(item => item.nome === nome);
     const novaQtd = itemAtualizado ? itemAtualizado.qtd : 0;
 
     if (container) {
-        // Flash de confirmação ao adicionar pela primeira vez
         if (alterar > 0 && novaQtd === 1) {
             container.innerHTML = `
                 <div class="w-full bg-green-500 text-white text-xs font-bold py-2 px-3 rounded-xl flex items-center justify-center gap-1.5 shadow-xs">
@@ -302,10 +301,10 @@ function alterarQuantidade(nome, preco, alterar) {
                 </div>
             `;
             setTimeout(() => {
-                container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd);
+                container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd, btnId);
             }, 700);
         } else {
-            container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd);
+            container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd, btnId);
         }
     }
     atualizarInterfaceCarrinho();

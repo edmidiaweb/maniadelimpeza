@@ -1,6 +1,6 @@
 [
   {
-    "Produto": "ABRAÇADEIRA 20 CM",
+    "Produto": "ABRAÇADEIRA 20CM",
     "Valor de venda (R$)": 1.0,
     "imagem": "abrac20cm.png",
     "Categoria": "Outros"
@@ -12,7 +12,7 @@
     "Categoria": "Higiene e Cuidados"
   },
   {
-    "Produto": "AGUA DE LENÇOL 500 ML",
+    "Produto": "AGUA DE LENÇOL 500ML",
     "Valor de venda (R$)": 15.47,
     "imagem": "agualencol.png",
     "Categoria": "Outros"
@@ -24,19 +24,19 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "AGUA SANITARIA AGIFACIL 1 L",
+    "Produto": "AGUA SANITARIA AGIFACIL 1L",
     "Valor de venda (R$)": 4.99,
     "imagem": "aguasanagifacil1l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "AGUA SANITARIA SUPREMA 2 L",
+    "Produto": "AGUA SANITARIA SUPREMA 2L",
     "Valor de venda (R$)": 7.67,
     "imagem": "aguasuprema2l.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
-    "Produto": "AGUA SANITARIA CANDIDA 5l BIOKRISS",
+    "Produto": "AGUA SANITARIA BIOKRISS 5l",
     "Valor de venda (R$)": 16.2,
     "imagem": "aguasanbiokris5l.png",
     "Categoria": "Desinfetantes e Alvejantes"
@@ -60,13 +60,13 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "ALCOOL 70° 1 L",
+    "Produto": "ALCOOL 70° 1L",
     "Valor de venda (R$)": 13.87,
     "imagem": "alcool70.png",
     "Categoria": "Higiene e Cuidados"
   },
   {
-    "Produto": "ALCOOL GEL 430 G",
+    "Produto": "ALCOOL GEL 430G",
     "Valor de venda (R$)": 12.87,
     "imagem": "alcool_gel.jpg",
     "Categoria": "Higiene e Cuidados"

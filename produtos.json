@@ -746,7 +746,7 @@
   {
     "Produto": "LIMPADOR PERFUMADO YPÊ",
     "Valor de venda (R$)": 6.95,
-    "imagem": "limpador_ype.jpg",
+    "imagem": "limpadorype.png",
     "Categoria": "Outros"
   },
   {
@@ -754,12 +754,6 @@
     "Valor de venda (R$)": 5.95,
     "imagem": "mercoalazulurosa.png",
     "Categoria": "Outros"
-  },
-  {
-    "Produto": "LIXEIRA TELADO 10L",
-    "Valor de venda (R$)": 7.95,
-    "imagem": "lixeira_telado.jpg",
-    "Categoria": "Sacos e Lixeiras"
   },
   {
     "Produto": "LUSTRA MÓVEIS 500 ML",
@@ -770,7 +764,7 @@
   {
     "Produto": "LUVA AMARELA G",
     "Valor de venda (R$)": 4.5,
-    "imagem": "luvalatexm.jpg",
+    "imagem": "luvalatexm.png",
     "Categoria": "Outros"
   },
   {
@@ -782,7 +776,7 @@
   {
     "Produto": "LUVA DE MALHA COM PIGMENTO",
     "Valor de venda (R$)": 6.0,
-    "imagem": "luva_malha.jpg",
+    "imagem": "luvamalha.png",
     "Categoria": "Outros"
   },
   {
@@ -794,13 +788,13 @@
   {
     "Produto": "LYSOFORM ORIGINAL 500ML",
     "Valor de venda (R$)": 11.9,
-    "imagem": "lysoform.jpg",
+    "imagem": "lysoform.png",
     "Categoria": "Desinfetantes e Alvejantes"
   },
   {
     "Produto": "MARCADOR PERMANENTE",
     "Valor de venda (R$)": 3.95,
-    "imagem": "marcador_permanente.jpg",
+    "imagem": "marcadorpermanente.png",
     "Categoria": "Outros"
   },
   {
@@ -810,40 +804,22 @@
     "Categoria": "Outros"
   },
   {
-    "Produto": "MÁSCARA PANO",
-    "Valor de venda (R$)": 2.0,
-    "imagem": "mascara_pano.jpg",
-    "Categoria": "Panos e Esponjas"
-  },
-  {
     "Produto": "MÁSCARA PFF1",
     "Valor de venda (R$)": 3.0,
-    "imagem": "mascara_pff1.jpg",
+    "imagem": "mascarapff1.png",
     "Categoria": "Outros"
-  },
-  {
-    "Produto": "MEIAS (KIT C/3 PARES)",
-    "Valor de venda (R$)": 10.0,
-    "imagem": "meias.jpg",
-    "Categoria": "Vestuário e Têxtil"
   },
   {
     "Produto": "MINI ESPANADOR NYLON",
     "Valor de venda (R$)": 5.0,
-    "imagem": "mini_espanador.jpg",
+    "imagem": "miniespanador.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "MOP",
     "Valor de venda (R$)": 29.9,
-    "imagem": "mop.jpg",
+    "imagem": "mop.png",
     "Categoria": "Utensílios de Limpeza"
-  },
-  {
-    "Produto": "MOUSE USB",
-    "Valor de venda (R$)": 15.0,
-    "imagem": "mouse_usb.jpg",
-    "Categoria": "Elétrica e Eletrônicos"
   },
   {
     "Produto": "MULTIUSO 500 ML VEJA",
@@ -860,55 +836,49 @@
   {
     "Produto": "MULTIUSO UAU ROSAS E SEDUÇÃO",
     "Valor de venda (R$)": 6.9,
-    "imagem": "multiuso_uau.jpg",
+    "imagem": "multiuau.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "NAFTALINA",
     "Valor de venda (R$)": 2.95,
-    "imagem": "naftalina.jpg",
+    "imagem": "nafta.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "ÓCULOS DE PROTEÇÃO",
     "Valor de venda (R$)": 5.0,
-    "imagem": "oculos_protecao.jpg",
-    "Categoria": "Outros"
-  },
-  {
-    "Produto": "ÓCULOS NATAÇÃO",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "oculos_natacao.jpg",
+    "imagem": "oculosprotecao.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "ÓLEO DE MUTAMBA",
     "Valor de venda (R$)": 20.0,
-    "imagem": "oleo_mutamba.jpg",
+    "imagem": "oleomutamba.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "ÓLEO SINGER 100 ML",
     "Valor de venda (R$)": 9.9,
-    "imagem": "oleo_singer.jpg",
+    "imagem": "oleosinger.png",
     "Categoria": "Outros"
   },
   {
-    "Produto": "P. HIG. ROLÃO 8 ROLOS 2 KG",
+    "Produto": "P. HIG. ROLO GDE 8 ROLOS",
     "Valor de venda (R$)": 29.9,
-    "imagem": "papel_higienico_rolao.jpg",
+    "imagem": "phrolog.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "PÁ LIXO CABO CURTO",
     "Valor de venda (R$)": 4.95,
-    "imagem": "pa_lixo_curto.jpg",
+    "imagem": "padelixo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "PÁ LIXO CABO LONGO",
     "Valor de venda (R$)": 9.95,
-    "imagem": "pa_lixo_longo.jpg",
+    "imagem": "padelixocl.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
@@ -966,63 +936,45 @@
     "Categoria": "Papéis"
   },
   {
-    "Produto": "PAPEL HIGIENICO FOLHA DUPLA NESS FARDO 16x4",
-    "Valor de venda (R$)": 94.9,
-    "imagem": "papel_higienico_ness_fardo.jpg",
-    "Categoria": "Papéis"
-  },
-  {
     "Produto": "PAPEL HIGIENICO FOLHA DUPLA PERSONAL VIP C/4",
     "Valor de venda (R$)": 7.9,
-    "imagem": "papel_higienico_personal.jpg",
+    "imagem": "papelpersonal.png",
     "Categoria": "Papéis"
   },
   {
-    "Produto": "PAPEL HIGIENICO FOLHA DUPLA QUALITE C/4",
+    "Produto": "PAPEL HIGIENICO FOLHA DUPLA C/4",
     "Valor de venda (R$)": 5.9,
-    "imagem": "papel_higienico_qualite.jpg",
+    "imagem": "papelqualite.png",
     "Categoria": "Papéis"
   },
   {
     "Produto": "PAPEL HIGIÊNICO TROPICOS C/4",
     "Valor de venda (R$)": 4.0,
-    "imagem": "papel_higienico_tropicos.jpg",
+    "imagem": "papeltropicos.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "PAPEL TOALHA",
     "Valor de venda (R$)": 3.95,
-    "imagem": "papel_toalha.jpg",
+    "imagem": "papeltoalha120.png",
     "Categoria": "Papéis"
   },
   {
-    "Produto": "PASTA A4 TRANSPARENTE",
+    "Produto": "PASTA DESENGRAXANTE 500G",
     "Valor de venda (R$)": 4.9,
-    "imagem": "pasta_a4.jpg",
-    "Categoria": "Papelaria e Escritório"
-  },
-  {
-    "Produto": "PASTA DESENGRAXANTE 500 GR",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "pasta_desengraxante.jpg",
+    "imagem": "pastarosa.png",
     "Categoria": "Papelaria e Escritório"
   },
   {
     "Produto": "PEDRA SANITÁRIA",
     "Valor de venda (R$)": 2.95,
-    "imagem": "pedra_sanitaria.jpg",
+    "imagem": "pedra.png",
     "Categoria": "Outros"
   },
   {
     "Produto": "PILHA AA c/4",
     "Valor de venda (R$)": 4.9,
-    "imagem": "pilha_aa.jpg",
-    "Categoria": "Elétrica e Eletrônicos"
-  },
-  {
-    "Produto": "PILHA AAA c/4",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "pilha_aaa.jpg",
+    "imagem": "pilhaaa.png",
     "Categoria": "Elétrica e Eletrônicos"
   },
   {
@@ -1034,7 +986,7 @@
   {
     "Produto": "PRENDEDOR MADEIRA  C/12",
     "Valor de venda (R$)": 4.0,
-    "imagem": "prendedor_madeira.jpg",
+    "imagem": "pregamagg.png",
     "Categoria": "Outros"
   },
   {
@@ -1046,7 +998,7 @@
   {
     "Produto": "PULVERIZADOR / BORRIFADOR 500 ML",
     "Valor de venda (R$)": 6.9,
-    "imagem": "pulverizador.jpg",
+    "imagem": "pulverizador.png",
     "Categoria": "Outros"
   },
   {
@@ -1088,43 +1040,43 @@
   {
     "Produto": "RODO 30 CM",
     "Valor de venda (R$)": 9.9,
-    "imagem": "rodo_30cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO 40 CM",
     "Valor de venda (R$)": 5.9,
-    "imagem": "rodo_40cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO 60 CM",
     "Valor de venda (R$)": 6.9,
-    "imagem": "rodo_60cm.jpg",
+    "imagem": "rodo.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO ALUMINIO 30 CM",
     "Valor de venda (R$)": 9.9,
-    "imagem": "rodo_aluminio_30cm.jpg",
+    "imagem": "rodo.png.jpg",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO ALUMINIO 40 CM",
     "Valor de venda (R$)": 11.9,
-    "imagem": "rodo_aluminio_40cm.jpg",
+    "imagem": "rodo.png.jpg",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO ALUMINIO 60 CM",
     "Valor de venda (R$)": 19.9,
-    "imagem": "rodo_aluminio_60cm.jpg",
+    "imagem": "rodo.png.jpg",
     "Categoria": "Utensílios de Limpeza"
   },
   {
     "Produto": "RODO PARA PIA",
     "Valor de venda (R$)": 2.0,
-    "imagem": "rodo_pia.jpg",
+    "imagem": "rodopia.png",
     "Categoria": "Utensílios de Limpeza"
   },
   {

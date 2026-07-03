@@ -80,62 +80,62 @@
   {
     "Produto": "ALVEJANTE BARBAREX 5L",
     "Valor de venda (R$)": 38.99,
-    "imagem": "alvejante_barbarex.png",
+    "imagem": "alvejscloro5lt.png",
     "Estoque": 3
   },
   {
     "Produto": "ALVEJANTE SEM CLORO 1L",
     "Valor de venda (R$)": 11.99,
-    "imagem": "alvejante_sem_cloro.png",
-    "Estoque": 1
+    "imagem": "alvejscl1lt.png",
+    "Estoque": 6
   },
   {
     "Produto": "ALVEJANTE SUPREMA 1,5L",
     "Valor de venda (R$)": 14.99,
-    "imagem": "alvejantesuprema15.png",
+    "imagem": "alvejscloro1lt.png",
     "Estoque": 1
   },
   {
     "Produto": "ALVEJANTE SUPREMA ROUPAS COLOR 1,5L",
     "Valor de venda (R$)": 17.99,
-    "imagem": "alvejante_color.png",
+    "imagem": "alvejscl15.png",
     "Estoque": 1
   },
   {
     "Produto": "AMACIANTE CONFORT 500ML",
     "Valor de venda (R$)": 15.99,
-    "imagem": "amacianteconfort.png",
+    "imagem": "amacconfort.png",
     "Estoque": 4
   },
   {
     "Produto": "AMACIANTE DOWNY 500ML",
     "Valor de venda (R$)": 17.99,
-    "imagem": "amaciante_downy.png",
-    "Estoque": 0
+    "imagem": "amacdowny.png",
+    "Estoque": 3
   },
   {
     "Produto": "AMACIANTE MON BIJOU 1L",
     "Valor de venda (R$)": 10.99,
-    "imagem": "amaciante_monbijou_1l.png",
+    "imagem": "amacmonbi1l.png",
     "Estoque": 6
   },
   {
     "Produto": "AMACIANTE MON BIJOU 1,7L",
     "Valor de venda (R$)": 16.99,
-    "imagem": "amaciante_monbijou_17l.png",
+    "imagem": "amacmonb17L.png",
     "Estoque": 2
   },
   {
     "Produto": "AMACIANTE MON BIJOU 5L",
     "Valor de venda (R$)": 31.99,
-    "imagem": "amaciante_monbijou_5l.png",
+    "imagem": "amacmonb17L.png",
     "Estoque": 3
   },
   {
     "Produto": "AMACIANTE YPE 2L",
     "Valor de venda (R$)": 15.99,
-    "imagem": "amaciante_ype.png",
-    "Estoque": 1
+    "imagem": "amacype2l.png",
+    "Estoque": 3
   },
   {
     "Produto": "ANTIMOFO 130G",
@@ -165,7 +165,7 @@
     "Produto": "BALDE 8L",
     "Valor de venda (R$)": 7.99,
     "imagem": "balde.png",
-    "Estoque": 0
+    "Estoque": 4
   },
   {
     "Produto": "BARBEADOR AZUL",
@@ -240,8 +240,8 @@
     "Estoque": 6
   },
   {
-    "Produto": "CONSULTAR OUTROS SERVIÇOS",
-    "Valor de venda (R$)": 0.20,
+    "Produto": "CONSULTAR OUTROS SERVIÇOS (entregas, serviços de informática)",
+    "Valor de venda (R$)": 20.00,
     "imagem": "outros_servicos.png",
     "Estoque": 997
   },
@@ -265,7 +265,7 @@
   },
   {
     "Produto": "DESENTUPIDOR  WC",
-    "Valor de venda (R$)": 11.99,
+    "Valor de venda (R$)": 14.99,
     "imagem": "desenvaso.png",
     "Estoque": 1
   },
@@ -278,19 +278,19 @@
   {
     "Produto": "DESENTUPIDOR PIA SANFONADO",
     "Valor de venda (R$)": 8.99,
-    "imagem": "desentupidor_pia_sanfonado.png",
+    "imagem": "desenpia2.png",
     "Estoque": 2
   },
   {
     "Produto": "DESINFANTE GIOVANNA BABY 2L",
     "Valor de venda (R$)": 8.99,
-    "imagem": "desgiovana2l.png",
+    "imagem": "desgeovana2l.png",
     "Estoque": 1
   },
   {
     "Produto": "DESINFETANTE 1L FLORAL",
     "Valor de venda (R$)": 3.99,
-    "imagem": "desinfetante_floral_1l.png",
+    "imagem": "desinf2l.png",
     "Estoque": 1
   },
   {

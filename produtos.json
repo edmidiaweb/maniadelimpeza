@@ -1,1364 +1,1226 @@
 [
   {
     "Produto": "ABRAÇADEIRA 20CM",
-    "Valor de venda (R$)": 1.0,
+    "Valor de venda (R$)": 1.5,
     "imagem": "abrac20cm.png",
     "Estoque": 1
   },
   {
     "Produto": "ACETONA 80ML",
-    "Valor de venda (R$)": 6.37,
+    "Valor de venda (R$)": 6.39,
     "imagem": "acetona.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "AGUA DE LENÇOL 500ML",
-    "Valor de venda (R$)": 15.47,
+    "Valor de venda (R$)": 14.99,
     "imagem": "agualencol.png",
-    "Estoque": 1
+    "Estoque": 12
   },
   {
     "Produto": "ÁGUA OXIGENADA 100ML",
-    "Valor de venda (R$)": 6.45,
+    "Valor de venda (R$)": 5.99,
     "imagem": "aguaoxi.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "AGUA SANITARIA AGIFACIL 1L",
     "Valor de venda (R$)": 4.99,
     "imagem": "aguasanagifacil1l.png",
-    "Estoque": 1
+    "Estoque": 20
   },
   {
     "Produto": "AGUA SANITARIA SUPREMA 2L",
-    "Valor de venda (R$)": 7.67,
+    "Valor de venda (R$)": 6.99,
     "imagem": "aguasuprema2l.png",
-    "Estoque": 1
+    "Estoque": 21
   },
   {
     "Produto": "AGUA SAN BIOKRISS 5l",
-    "Valor de venda (R$)": 16.2,
+    "Valor de venda (R$)": 15.99,
     "imagem": "aguasanbiokris5l.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "AGULHA DESENTUPIR FOGÃO",
-    "Valor de venda (R$)": 2.9,
+    "Valor de venda (R$)": 2.00,
     "imagem": "desenfogao.png",
     "Estoque": 1
   },
   {
     "Produto": "AJAX 500ML",
-    "Valor de venda (R$)": 12.87,
+    "Valor de venda (R$)": 15.99,
     "imagem": "ajax.png",
     "Estoque": 1
   },
   {
     "Produto": "ALCOOL 46° 1l",
-    "Valor de venda (R$)": 8.97,
+    "Valor de venda (R$)": 7.99,
     "imagem": "alcool46.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "ALCOOL LIQ 70° 1L",
-    "Valor de venda (R$)": 13.87,
+    "Valor de venda (R$)": 12.99,
     "imagem": "alcool70.png",
-    "Estoque": 1
+    "Estoque": 11
   },
   {
     "Produto": "ALCOOL GEL 430G",
-    "Valor de venda (R$)": 12.87,
+    "Valor de venda (R$)": 13.99,
     "imagem": "alcoolgel.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "ÁLCOOL PERFUMADO 1L",
-    "Valor de venda (R$)": 12.87,
+    "Valor de venda (R$)": 12.99,
     "imagem": "alcoolperfumado.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "ALVEJANTE BARBAREX 5L",
-    "Valor de venda (R$)": 29.9,
+    "Valor de venda (R$)": 38.99,
     "imagem": "alvejante_barbarex.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "ALVEJANTE SEM CLORO 1L",
-    "Valor de venda (R$)": 8.9,
+    "Valor de venda (R$)": 11.99,
     "imagem": "alvejante_sem_cloro.png",
     "Estoque": 1
   },
   {
     "Produto": "ALVEJANTE SUPREMA 1,5L",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 14.99,
     "imagem": "alvejantesuprema15.png",
     "Estoque": 1
   },
   {
     "Produto": "ALVEJANTE SUPREMA ROUPAS COLOR 1,5L",
-    "Valor de venda (R$)": 13.9,
+    "Valor de venda (R$)": 17.99,
     "imagem": "alvejante_color.png",
     "Estoque": 1
   },
   {
     "Produto": "AMACIANTE CONFORT 500ML",
-    "Valor de venda (R$)": 12.9,
+    "Valor de venda (R$)": 15.99,
     "imagem": "amacianteconfort.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "AMACIANTE DOWNY 500ML",
-    "Valor de venda (R$)": 13.9,
+    "Valor de venda (R$)": 17.99,
     "imagem": "amaciante_downy.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "AMACIANTE MON BIJOU 1L",
-    "Valor de venda (R$)": 7.9,
+    "Valor de venda (R$)": 10.99,
     "imagem": "amaciante_monbijou_1l.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "AMACIANTE MON BIJOU 1,7L",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 16.99,
     "imagem": "amaciante_monbijou_17l.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "AMACIANTE MON BIJOU 5L",
-    "Valor de venda (R$)": 24.9,
+    "Valor de venda (R$)": 31.99,
     "imagem": "amaciante_monbijou_5l.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "AMACIANTE YPE 2L",
-    "Valor de venda (R$)": 12.9,
+    "Valor de venda (R$)": 15.99,
     "imagem": "amaciante_ype.png",
     "Estoque": 1
   },
   {
     "Produto": "ANTIMOFO 130G",
-    "Valor de venda (R$)": 8.9,
-    "imagem": "antimofo130.png",
-    "Estoque": 1
+    "Valor de venda (R$)": 10.99,
+    "imagem": "antimofo.png",
+    "Estoque": 5
   },
   {
     "Produto": "ANTIMOFO 25GR",
-    "Valor de venda (R$)": 2.95,
+    "Valor de venda (R$)": 3.99,
     "imagem": "antimofo.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "AVENTAL COZ PVC IMP 1,20X0,65",
-    "Valor de venda (R$)": 25.0,
-    "imagem": "avental_pvc.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "AVENTAL DONA DE CASA",
-    "Valor de venda (R$)": 20.0,
-    "imagem": "avental_dona_casa.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "BALDE 10L",
-    "Valor de venda (R$)": 7.9,
+    "Valor de venda (R$)": 11.60,
     "imagem": "balde.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "BALDE 15L",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 13.90,
     "imagem": "balde.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "BALDE 8L",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 7.99,
     "imagem": "balde.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "BARBEADOR AZUL",
     "Valor de venda (R$)": 2.49,
     "imagem": "barbaazul.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "BARBEADOR FIAT LUX",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "barbafiat.png",
-    "Estoque": 1
+    "Estoque": 22
   },
   {
     "Produto": "BICARBONATO DE SÓDIO 60 G",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "bicarbonato.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "CABO MÉDIO 1,20 M",
-    "Valor de venda (R$)": 6.0,
+    "Valor de venda (R$)": 7.99,
     "imagem": "cabo.png",
-    "Estoque": 1
+    "Estoque": 41
   },
   {
     "Produto": "CANETA BIC",
-    "Valor de venda (R$)": 1.5,
+    "Valor de venda (R$)": 1.99,
     "imagem": "bic.png",
-    "Estoque": 1
+    "Estoque": 49
   },
   {
     "Produto": "CANETA MARCA TEXTO FLUORESCENTE",
-    "Valor de venda (R$)": 1.5,
+    "Valor de venda (R$)": 2.99,
     "imagem": "marcatexto.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "CAPA CHUVA DESCARTÁVEL",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "capa.png",
     "Estoque": 1
   },
   {
-    "Produto": "CAPA DE CHUVA REUTILIZAVEL",
-    "Valor de venda (R$)": 19.9,
-    "imagem": "capa_chuva_reutilizavel.png",
-    "Estoque": 1
-  },
-  {
     "Produto": "CLIPS",
-    "Valor de venda (R$)": 0.2,
+    "Valor de venda (R$)": 0.30,
     "imagem": "clips.png",
-    "Estoque": 1
+    "Estoque": 50
   },
   {
     "Produto": "CLORO FORTE 1L",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "cloro51l.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "CLORO FORTE 5L",
-    "Valor de venda (R$)": 19.9,
+    "Valor de venda (R$)": 25.99,
     "imagem": "cloro55l.png",
-    "Estoque": 1
+    "Estoque": 37
   },
   {
-    "Produto": "CLORO GEL",
-    "Valor de venda (R$)": 10.95,
+    "Produto": "CLORO GEL 1l",
+    "Valor de venda (R$)": 13.99,
     "imagem": "clorogel1l.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "COLA INST. THREE BOND SUPER",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "colatrebond.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "CONSULTAR OUTROS SERVIÇOS",
-    "Valor de venda (R$)": 20,
+    "Valor de venda (R$)": 0.20,
     "imagem": "outros_servicos.png",
-    "Estoque": 1
+    "Estoque": 997
   },
   {
     "Produto": "CREOLINA 500 ML",
-    "Valor de venda (R$)": 7.95,
+    "Valor de venda (R$)": 9.99,
     "imagem": "creolina500ml.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "CREOLINA 900 ML",
-    "Valor de venda (R$)": 29.9,
+    "Valor de venda (R$)": 32.99,
     "imagem": "creolina500ml.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "DESENGRAXANTE 1L",
-    "Valor de venda (R$)": 7.95,
+    "Valor de venda (R$)": 11.99,
     "imagem": "desengraxante.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "DESENTUPIDOR  WC",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 11.99,
     "imagem": "desenvaso.png",
     "Estoque": 1
   },
   {
     "Produto": "DESENTUPIDOR PIA DSR",
-    "Valor de venda (R$)": 3.95,
+    "Valor de venda (R$)": 4.99,
     "imagem": "desenpia.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "DESENTUPIDOR PIA SANFONADO",
-    "Valor de venda (R$)": 6.95,
+    "Valor de venda (R$)": 8.99,
     "imagem": "desentupidor_pia_sanfonado.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "DESINFANTE GIOVANNA BABY 2L",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "desgiovana2l.png",
     "Estoque": 1
   },
   {
     "Produto": "DESINFETANTE 1L FLORAL",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 3.99,
     "imagem": "desinfetante_floral_1l.png",
     "Estoque": 1
   },
   {
     "Produto": "DESINFETANTE 2L DOVE",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 7.99,
     "imagem": "desdove2l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "DESINFETANTE 2L FLORAL",
-    "Valor de venda (R$)": 4.95,
+    "Valor de venda (R$)": 4.99,
     "imagem": "desfloral2l.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "DESINFETANTE CITRONELA CONCENTRADA 500ML",
-    "Valor de venda (R$)": 2.95,
+    "Valor de venda (R$)": 3.99,
     "imagem": "desinfetante_citronela.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "DESINFETANTE DAMA DA NOITE 2L",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "desinfetante_dama_2l.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "DESINFETANTE DAMA DA NOITE 2,5L",
-    "Valor de venda (R$)": 4.5,
-    "imagem": "desinfetante_dama_2_5l.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "DESINFETANTE DAMA DA NOITE 500ML",
-    "Valor de venda (R$)": 2.0,
-    "imagem": "desinfetante_dama_500ml.png",
-    "Estoque": 1
+    "Estoque": 33
   },
   {
     "Produto": "DESINFETANTE DOVE 500ML",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 2.99,
     "imagem": "desinfetante_dove_500ml.png",
     "Estoque": 1
   },
   {
     "Produto": "DESINFETANTE DOVE 5L",
-    "Valor de venda (R$)": 14.95,
+    "Valor de venda (R$)": 18.99,
     "imagem": "desinfetante_dove_5l.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "DESINFETANTE EUCALIPTO 1L",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "desinfetante_eucalipto_1l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "DESINFETANTE EUCALIPTO 2L",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "desinfetante_eucalipto_2l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "DESINFETANTE EUCALIPTO 5L",
-    "Valor de venda (R$)": 14.95,
+    "Valor de venda (R$)": 18.99,
     "imagem": "desinfetante_eucalipto_5l.png",
-    "Estoque": 1
+    "Estoque": 12
   },
   {
     "Produto": "DESINFETANTE FLORAL 5L",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 15.99,
     "imagem": "desinfetante_floral_5l.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "DESINFETANTE GIOVANNA BABY 1L",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "desinfetante_giovanna_1l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "DESINFETANTE GIOVANNA BABY 5L",
-    "Valor de venda (R$)": 14.95,
+    "Valor de venda (R$)": 18.99,
     "imagem": "desinfetante_giovanna_5l.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "DESINFETANTE LAVANDA 1L",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "desinfetante_lavanda_1l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "DESINFETANTE LAVANDA 2L",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "desinfetante_lavanda_2l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "DESINFETANTE LAVANDA 5L",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 14.99,
     "imagem": "desinfbiocrislav5l.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "DESINFETANTE LAVANDA 500ML",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 2.99,
     "imagem": "desinfetante_lavanda_500ml.png",
     "Estoque": 1
   },
   {
     "Produto": "DESINFETANTE MARINE 2L",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "desinfetante_marine_2l.png",
     "Estoque": 1
   },
   {
     "Produto": "DESINFETANTE MARINE 500ML",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 2.99,
     "imagem": "desinfetante_marine_500ml.png",
     "Estoque": 1
   },
   {
     "Produto": "DESINFETANTE VIOLEX 5L",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 14.99,
     "imagem": "desinfbiocrisvio5l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "DESODORANTE NIVEA MEN",
-    "Valor de venda (R$)": 11.95,
+    "Valor de venda (R$)": 14.99,
     "imagem": "desodorante_nivea.png",
     "Estoque": 1
   },
   {
     "Produto": "DETERGENTE 500 ML POLYLAR",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 2.6,
     "imagem": "detergentepolilar.png",
     "Estoque": 1
   },
   {
     "Produto": "DETERGENTE AGIFACIL 500ML",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 2.6,
     "imagem": "detergente.png",
     "Estoque": 1
   },
   {
     "Produto": "DETERGENTE BULNEZ 500ML",
-    "Valor de venda (R$)": 2.5,
+    "Valor de venda (R$)": 2.99,
     "imagem": "detergente_bulnez.png",
     "Estoque": 1
   },
   {
     "Produto": "DETERGENTE HARCCLIN 5L",
-    "Valor de venda (R$)": 16.9,
+    "Valor de venda (R$)": 23.99,
     "imagem": "detergente_harcclin_5l.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "DETERGENTE YPÊ 500ML",
-    "Valor de venda (R$)": 2.9,
+    "Valor de venda (R$)": 3.50,
     "imagem": "detergente_ype.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "DETETIZADOR DE INSETOS 500ML",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 12.93,
     "imagem": "dedetizador500.png",
     "Estoque": 1
   },
   {
     "Produto": "ESCOVA OVAL",
-    "Valor de venda (R$)": 4.95,
+    "Valor de venda (R$)": 5.99,
     "imagem": "escova.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "ESCOVA SANITÁRIA",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 12.99,
     "imagem": "escova_sanitaria.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "ESFREGÃO ESPONJA / ABRASIVO / MACIO",
-    "Valor de venda (R$)": 8.9,
-    "imagem": "esfregao.png",
-    "Estoque": 1
+    "Estoque": 11
   },
   {
     "Produto": "ESPANADOR DE PÓ",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 12.99,
     "imagem": "espanador.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "ESPIRAL REPELENTE",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "espiral_repelente.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "ESPONJA AÇO INOX",
-    "Valor de venda (R$)": 2.9,
+    "Valor de venda (R$)": 3.99,
     "imagem": "esponja_aco.png",
-    "Estoque": 1
+    "Estoque": 50
   },
   {
     "Produto": "ESPONJA LOUÇA ASSOLAN",
-    "Valor de venda (R$)": 1.5,
+    "Valor de venda (R$)": 1.99,
     "imagem": "esponja.png",
-    "Estoque": 1
+    "Estoque": 33
   },
   {
     "Produto": "ESPONJA POLIESTER",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "esponja_poliester.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "ESTILETE",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "estilete.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "FIBRA LIMPEZA LEVE",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 2.6,
     "imagem": "fibra.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "FITA CREPE 19X10M",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "fita_crepe.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "FITA DUPLA FACE",
-    "Valor de venda (R$)": 7.9,
-    "imagem": "fita_dupla_face.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "FITA FINA 18X50M",
-    "Valor de venda (R$)": 2.95,
-    "imagem": "fita_fina.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "FITA ISOLANTE 19MMX5M",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "fita_isolante.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "FITA LARGA  TRANSP. 48X45M",
-    "Valor de venda (R$)": 4.9,
-    "imagem": "fita_larga.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "FITA QUALITAPE 12MM X 10M",
-    "Valor de venda (R$)": 1.9,
-    "imagem": "fita_qualitape.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "FLANELA 28X28 BRANCA / LARANJA",
-    "Valor de venda (R$)": 1.95,
+    "Valor de venda (R$)": 2.99,
     "imagem": "flanelabanca.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "FOLHA DE SULFITE",
-    "Valor de venda (R$)": 0.25,
-    "imagem": "folha_sulfite.png",
-    "Estoque": 1
+    "Estoque": 43
   },
   {
     "Produto": "GEL ACENDEDOR ALCOOL 80°",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 12.99,
     "imagem": "gel_acendedor.png",
     "Estoque": 1
   },
   {
     "Produto": "GEL SANITÁRIO ADESIVO 6 APLICAÇÕES",
-    "Valor de venda (R$)": 15.9,
+    "Valor de venda (R$)": 19.99,
     "imagem": "gel_sanitario.png",
     "Estoque": 1
   },
   {
     "Produto": "GUARDANAPO",
-    "Valor de venda (R$)": 1.9,
+    "Valor de venda (R$)": 2.99,
     "imagem": "guardanapo.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "IMAGEM EM SULFITE",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "sulfite.png",
-    "Estoque": 1
+    "Estoque": 19
   },
   {
     "Produto": "INCENSO CITRONELA C/7 VARETAS",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "incenso_citronela.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "ISQUEIRO",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "isqueiro.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "KIT TESOURAS C/ 3",
-    "Valor de venda (R$)": 19.9,
+    "Valor de venda (R$)": 25.99,
     "imagem": "kit_tesouras.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "LÃ DE AÇO ASSOLAN",
-    "Valor de venda (R$)": 3.0,
+    "Valor de venda (R$)": 3.99,
     "imagem": "la_aco_assolan.png",
-    "Estoque": 1
+    "Estoque": 110
   },
   {
     "Produto": "LÃ DE AÇO BOMBRIL",
-    "Valor de venda (R$)": 3.5,
+    "Valor de venda (R$)": 3.99,
     "imagem": "la_aco_bombril.png",
-    "Estoque": 1
+    "Estoque": 17
   },
   {
     "Produto": "LAMPADA LED BULBO 9W BIVOLT",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "lampada_led.png",
-    "Estoque": 1
+    "Estoque": 11
   },
   {
     "Produto": "LÁPIS N°2 HB",
-    "Valor de venda (R$)": 1.0,
+    "Valor de venda (R$)": 1.50,
     "imagem": "lapis.png",
-    "Estoque": 1
+    "Estoque": 20
   },
   {
     "Produto": "LIMPA ALUMINIO 1L",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "limpaaluminio.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "LIMPA ALUMINIO 5L",
-    "Valor de venda (R$)": 19.9,
+    "Valor de venda (R$)": 25.99,
     "imagem": "limpa_luminio.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "LIMPA BÁU 1 L",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 15.99,
     "imagem": "limpa_bau.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "LIMPA CERAMICA 1 L",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 12.99,
     "imagem": "limpa_ceramica.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "LIMPA ESTOFADOS FLOTADOR 500 ML",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 15.99,
     "imagem": "limpa_estofados.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "LIMPA PEDRA",
-    "Valor de venda (R$)": 14.9,
+    "Valor de venda (R$)": 19.99,
     "imagem": "limpa_pedra.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "LIMPA VIDRO 500 ML",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "limpavidro.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "LIMPADOR MULTIUSO AGIPRO 500 ML",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "multiusoagipro.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "LIMPADOR PERFUMADO YPÊ",
-    "Valor de venda (R$)": 6.95,
+    "Valor de venda (R$)": 8.99,
     "imagem": "limpadorype.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "LIMPADOR PERFUMADO ZULU",
-    "Valor de venda (R$)": 5.95,
+    "Valor de venda (R$)": 7.99,
     "imagem": "mercoalazulurosa.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "LUSTRA MÓVEIS 500 ML",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 13.99,
     "imagem": "lustramoveis.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "LUVA AMARELA G",
-    "Valor de venda (R$)": 4.5,
+    "Valor de venda (R$)": 5.99,
     "imagem": "luvalatexm.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "LUVA AMARELA M",
-    "Valor de venda (R$)": 4.0,
+    "Valor de venda (R$)": 4.99,
     "imagem": "luvalatexm.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "LUVA DE MALHA COM PIGMENTO",
-    "Valor de venda (R$)": 6.0,
+    "Valor de venda (R$)": 7.99,
     "imagem": "luvamalha.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "LUVA PLÁSTICA UND.",
-    "Valor de venda (R$)": 0.1,
+    "Valor de venda (R$)": 0.25,
     "imagem": "luvaplastica.png",
-    "Estoque": 1
+    "Estoque": 148
   },
   {
     "Produto": "LYSOFORM ORIGINAL 500ML",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 14.99,
     "imagem": "lysoform.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "MARCADOR PERMANENTE",
-    "Valor de venda (R$)": 3.95,
-    "imagem": "marcadorpermanente.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "MARIDÃO 1L",
-    "Valor de venda (R$)": 7.95,
+    "Valor de venda (R$)": 9.99,
     "imagem": "Maridao.png",
-    "Estoque": 1
+    "Estoque": 15
   },
   {
     "Produto": "MÁSCARA PFF1",
-    "Valor de venda (R$)": 3.0,
+    "Valor de venda (R$)": 3.99,
     "imagem": "mascarapff1.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "MINI ESPANADOR NYLON",
-    "Valor de venda (R$)": 5.0,
-    "imagem": "miniespanador.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "MOP",
-    "Valor de venda (R$)": 29.9,
+    "Valor de venda (R$)": 37.99,
     "imagem": "mop.png",
     "Estoque": 1
   },
   {
     "Produto": "MULTIUSO 500 ML VEJA",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "multiusoveja.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "MULTIUSO 500 ML YPE",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "multiusoype.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
-    "Produto": "MULTIUSO UAU ROSAS E SEDUÇÃO",
-    "Valor de venda (R$)": 6.9,
+    "Produto": "MULTIUSO UAU ROSAS E SEDUÇÃO 500ML",
+    "Valor de venda (R$)": 7.99,
     "imagem": "multiuau.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "NAFTALINA",
-    "Valor de venda (R$)": 2.95,
+    "Valor de venda (R$)": 3.99,
     "imagem": "nafta.png",
-    "Estoque": 1
+    "Estoque": 72
   },
   {
     "Produto": "ÓCULOS DE PROTEÇÃO",
-    "Valor de venda (R$)": 5.0,
+    "Valor de venda (R$)": 6.5,
     "imagem": "oculosprotecao.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "ÓLEO DE MUTAMBA",
-    "Valor de venda (R$)": 20.0,
+    "Valor de venda (R$)": 25.99,
     "imagem": "oleomutamba.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "ÓLEO SINGER 100 ML",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 12.99,
     "imagem": "oleosinger.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "P. HIG. ROLO GDE 8 ROLOS",
-    "Valor de venda (R$)": 29.9,
+    "Valor de venda (R$)": 37.99,
     "imagem": "phrolog.png",
     "Estoque": 1
   },
   {
     "Produto": "PÁ LIXO CABO CURTO",
-    "Valor de venda (R$)": 4.95,
+    "Valor de venda (R$)": 5.99,
     "imagem": "padelixo.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "PÁ LIXO CABO LONGO",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 12.99,
     "imagem": "padelixocl.png",
-    "Estoque": 1
+    "Estoque": 16
   },
   {
     "Produto": "PANO CHÃO PREMIUM",
-    "Valor de venda (R$)": 3.95,
+    "Valor de venda (R$)": 4.99,
     "imagem": "pano_chao_premium.png",
-    "Estoque": 1
+    "Estoque": 19
   },
   {
     "Produto": "PANO DE CHÃO BRANCO",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "pano_chao_branco.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "PANO DE PRATO BRANCO",
-    "Valor de venda (R$)": 2.95,
+    "Valor de venda (R$)": 3.99,
     "imagem": "panodeprato.png",
-    "Estoque": 1
+    "Estoque": 12
   },
   {
     "Produto": "PANO DE PRATO COM BARRA",
-    "Valor de venda (R$)": 3.95,
+    "Valor de venda (R$)": 4.99,
     "imagem": "panodepratoombarra.png",
     "Estoque": 1
   },
   {
     "Produto": "PANO DE PRATO COM ESTAMPA",
-    "Valor de venda (R$)": 4.5,
+    "Valor de venda (R$)": 5.99,
     "imagem": "panodepratoestampa.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "PANO DE PRATO SIMPLES",
-    "Valor de venda (R$)": 2.95,
+    "Valor de venda (R$)": 3.99,
     "imagem": "panodeprato.png",
-    "Estoque": 1
+    "Estoque": 11
   },
   {
     "Produto": "PANO MICROFIBRA",
-    "Valor de venda (R$)": 2.95,
+    "Valor de venda (R$)": 3.99,
     "imagem": "panomicro.png",
-    "Estoque": 1
+    "Estoque": 18
   },
   {
     "Produto": "PANO MULTIUSO 28X25 M",
-    "Valor de venda (R$)": 13.0,
+    "Valor de venda (R$)": 16.99,
     "imagem": "panomulti.png",
-    "Estoque": 1
+    "Estoque": 13
   },
   {
     "Produto": "PAPEL HIGIENICO FOLHA DUPLA NESS C/4",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "papel_higienico_ness_4.png",
-    "Estoque": 1
+    "Estoque": 12
   },
   {
     "Produto": "PAPEL HIGIENICO FOLHA DUPLA PERSONAL VIP C/4",
-    "Valor de venda (R$)": 7.9,
+    "Valor de venda (R$)": 9.99,
     "imagem": "papelpersonal.png",
     "Estoque": 1
   },
   {
     "Produto": "PAPEL HIGIENICO FOLHA DUPLA C/4",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "papelqualite.png",
-    "Estoque": 1
+    "Estoque": 12
   },
   {
     "Produto": "PAPEL HIGIÊNICO TROPICOS C/4",
-    "Valor de venda (R$)": 4.0,
+    "Valor de venda (R$)": 4.99,
     "imagem": "papeltropicos.png",
-    "Estoque": 1
+    "Estoque": 14
   },
   {
     "Produto": "PAPEL TOALHA",
-    "Valor de venda (R$)": 3.95,
+    "Valor de venda (R$)": 4.99,
     "imagem": "papeltoalha120.png",
     "Estoque": 1
   },
   {
     "Produto": "PASTA DESENGRAXANTE 500G",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 6.99,
     "imagem": "pastarosa.png",
-    "Estoque": 1
+    "Estoque": 19
   },
   {
     "Produto": "PEDRA SANITÁRIA",
-    "Valor de venda (R$)": 2.95,
+    "Valor de venda (R$)": 3.99,
     "imagem": "pedra.png",
-    "Estoque": 1
+    "Estoque": 52
   },
   {
     "Produto": "PILHA AA c/4",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "pilhaaa.png",
-    "Estoque": 1
+    "Estoque": 60
   },
   {
     "Produto": "PINHO GEL 500ML",
-    "Valor de venda (R$)": 12.95,
+    "Valor de venda (R$)": 16.99,
     "imagem": "pinho_gel.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "PRENDEDOR MADEIRA  C/12",
-    "Valor de venda (R$)": 4.0,
+    "Valor de venda (R$)": 4.99,
     "imagem": "pregamagg.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "PRETINHO PNEU 1l",
-    "Valor de venda (R$)": 12.9,
+    "Valor de venda (R$)": 16.99,
     "imagem": "pretinhopneu.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "PULVERIZADOR / BORRIFADOR 500 ML",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "pulverizador.png",
-    "Estoque": 1
+    "Estoque": 25
   },
   {
     "Produto": "RALO PIA 6 CM CROMADO COM VALVULA",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "ralo_pia_6.png",
     "Estoque": 1
   },
   {
     "Produto": "RALO PIA 7CM",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "ralopia.png",
     "Estoque": 1
   },
   {
     "Produto": "REMOVEDOR GITANES 900ML",
-    "Valor de venda (R$)": 14.9,
+    "Valor de venda (R$)": 18.99,
     "imagem": "removedorgitane.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "REMOVEDOR SUPREMA 1L",
-    "Valor de venda (R$)": 8.9,
+    "Valor de venda (R$)": 10.99,
     "imagem": "removedorsuprema1l.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "REMOVEDOR SUPREMA 500ML",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 7.99,
     "imagem": "removedorsuprema.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "RODO 30 CM",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 12.99,
     "imagem": "rodo.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "RODO 40 CM",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 7.99,
     "imagem": "rodo.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "RODO 60 CM",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "rodo.png",
-    "Estoque": 1
+    "Estoque": 18
   },
   {
     "Produto": "RODO ALUMINIO 30 CM",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 12.99,
     "imagem": "rodo.png.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "RODO ALUMINIO 40 CM",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 14.99,
     "imagem": "rodo.png.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "RODO ALUMINIO 60 CM",
-    "Valor de venda (R$)": 19.9,
+    "Valor de venda (R$)": 25.99,
     "imagem": "rodo.png.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "RODO PARA PIA",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 2.99,
     "imagem": "rodopia.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "SACO DE LIXO 20 LITROS C/100",
-    "Valor de venda (R$)": 19.9,
+    "Valor de venda (R$)": 25.99,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "SABÃO CASEIRO EM BARRA / PEDRA 250G",
-    "Valor de venda (R$)": 6.0,
+    "Valor de venda (R$)": 6.99,
     "imagem": "sabao_caseiro.png",
-    "Estoque": 1
+    "Estoque": 56
   },
   {
     "Produto": "SABÃO EM PASTA DE POTE 250G",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "sabaopasta250g.png",
     "Estoque": 1
   },
   {
     "Produto": "SABÃO EM PASTA FUZETTO 250G",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "sabaoempasta250.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "SABÃO EM PEDRA COCO",
-    "Valor de venda (R$)": 2.9,
+    "Valor de venda (R$)": 3.99,
     "imagem": "sabao_pedra_coco.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "SABÃO EM PEDRA COCO ZAVASKI",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 5.99,
     "imagem": "sabao_zavaski_coco.png",
-    "Estoque": 1
+    "Estoque": 6
   },
   {
     "Produto": "SABÃO EM PEDRA YPE",
-    "Valor de venda (R$)": 3.95,
+    "Valor de venda (R$)": 4.99,
     "imagem": "sabao_ype_pedra.png",
     "Estoque": 1
   },
   {
     "Produto": "SABÃO EM PEDRA ZAVASKI C/5",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 9.99,
     "imagem": "sabao_zavaski_c5.png",
-    "Estoque": 1
+    "Estoque": 14
   },
   {
-    "Produto": "SABÃO EM PÓ 400G",
-    "Valor de venda (R$)": 3.5,
+    "Produto": "SABÃO EM PÓ APYCE 400G",
+    "Valor de venda (R$)": 4.99,
     "imagem": "sabaoapyce400g.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "SABÃO EM PÓ ARES 800G",
-    "Valor de venda (R$)": 6.9,
-    "imagem": "sabaoares800g.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "SABÃO EM PÓ TIXAN YPÊ",
-    "Valor de venda (R$)": 19.9,
+    "Valor de venda (R$)": 23.99,
     "imagem": "sabao_tixan.png",
     "Estoque": 1
   },
   {
     "Produto": "SABÃO EM POTE ISADORA 200 GR",
-    "Valor de venda (R$)": 4.9,
+    "Valor de venda (R$)": 4.50,
     "imagem": "sabao_isadora.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS 1L",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 11.99,
     "imagem": "sabao_liquido_1l.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS DE COCO 1L",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 11.99,
     "imagem": "sabao_liquido_coco_1l.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS GOPABO COCO 5L",
-    "Valor de venda (R$)": 24.9,
+    "Valor de venda (R$)": 27.99,
     "imagem": "sabao_gopabo_5l.png",
-    "Estoque": 1
+    "Estoque": 2
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS JUGATHA 5L",
-    "Valor de venda (R$)": 24.9,
+    "Valor de venda (R$)": 32.99,
     "imagem": "sabao_jugatha_5l.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "SABÃO LÍQUIDO LAVA ROUPAS OMO 1L",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 15.99,
     "imagem": "sabaoomo1l.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS VALENCIA COCO 5L",
-    "Valor de venda (R$)": 29.9,
+    "Valor de venda (R$)": 29.99,
     "imagem": "sabao_valencia_5l.png",
     "Estoque": 1
   },
   {
     "Produto": "SABONETE LIQUIDO FRUTAS VERMELHAS 500 ML",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "sabonete_frutas_vermelhas.png",
-    "Estoque": 1
+    "Estoque": 9
   },
   {
     "Produto": "SABONETE LIQUIDO TALCO 500 ML",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 7.99,
     "imagem": "sabonete_talco.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "SABONETE SIENE",
-    "Valor de venda (R$)": 1.9,
+    "Valor de venda (R$)": 1.99,
     "imagem": "sabonete_siene.png",
-    "Estoque": 1
+    "Estoque": 23
   },
   {
     "Produto": "SACO LIXO 100 L C/5",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 11
   },
   {
     "Produto": "SACO LIXO 100 L EX UND",
-    "Valor de venda (R$)": 2.0,
+    "Valor de venda (R$)": 1.50,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 11
   },
   {
     "Produto": "SACO LIXO 100 LITROS UNIDADE",
-    "Valor de venda (R$)": 1.0,
+    "Valor de venda (R$)": 1.30,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 20
   },
   {
     "Produto": "SACO LIXO 20 LITROS UNIDADE",
-    "Valor de venda (R$)": 0.5,
+    "Valor de venda (R$)": 0.70,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "SACO LIXO 20L C/10",
-    "Valor de venda (R$)": 1.9,
+    "Valor de venda (R$)": 2.99,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "SACO LIXO 60 L C/5",
-    "Valor de venda (R$)": 2.9,
+    "Valor de venda (R$)": 3.99,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "SACO LIXO 60 LITROS UNIDADE",
-    "Valor de venda (R$)": 1.0,
+    "Valor de venda (R$)": 0.80,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "SACO LIXO EX 100 L C/ 5",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 6.50,
     "imagem": "sacolixo.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "SAPÓLIO",
-    "Valor de venda (R$)": 7.95,
+    "Valor de venda (R$)": 15.99,
     "imagem": "sapolio.png",
-    "Estoque": 1
+    "Estoque": 4
   },
   {
     "Produto": "SAPONACEO WORKER 200 ML",
-    "Valor de venda (R$)": 6.9,
+    "Valor de venda (R$)": 8.99,
     "imagem": "saponaceo_worker.png",
-    "Estoque": 1
+    "Estoque": 5
   },
   {
     "Produto": "SHAMPOO ATOMOTIVO 5L",
-    "Valor de venda (R$)": 39.9,
+    "Valor de venda (R$)": 50.99,
     "imagem": "shampooauto.png",
     "Estoque": 1
   },
   {
     "Produto": "SHAMPOO AUTOMOTIVO 1L",
-    "Valor de venda (R$)": 9.95,
+    "Valor de venda (R$)": 12.99,
     "imagem": "shampooauto.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "SILICONE GEL 180 GR",
-    "Valor de venda (R$)": 12.9,
+    "Valor de venda (R$)": 16.99,
     "imagem": "silicone_gel_180g.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "SILICONE GEL MONZA",
-    "Valor de venda (R$)": 14.9,
+    "Valor de venda (R$)": 18.99,
     "imagem": "silicone_gel_monza.png",
     "Estoque": 1
   },
   {
-    "Produto": "SODA CAUTICA",
-    "Valor de venda (R$)": 9.9,
+    "Produto": "SODA CAUSTICA",
+    "Valor de venda (R$)": 12.99,
     "imagem": "soda_caustica.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "SOLUPAN 1L",
-    "Valor de venda (R$)": 7.9,
+    "Valor de venda (R$)": 9.99,
     "imagem": "solupan500.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "SOLUPAN 5L",
-    "Valor de venda (R$)": 24.9,
+    "Valor de venda (R$)": 31.99,
     "imagem": "solupan500.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "TAPETE FEITO A MÃO",
-    "Valor de venda (R$)": 9.9,
-    "imagem": "tapete_mao.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "TIRA FERRUGEM 50ML",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 12.99,
     "imagem": "tiraferrugem.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "TOUCA CETIM ADULTO",
-    "Valor de venda (R$)": 5.0,
-    "imagem": "touca_cetim_adulto.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "TOUCA DE BANHO",
-    "Valor de venda (R$)": 2.9,
-    "imagem": "toucabanho.png",
-    "Estoque": 1
+    "Estoque": 3
   },
   {
     "Produto": "VARAL AÇO 20M",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "varalaco.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "VARAL INOX 40 PRENDEDORES",
-    "Valor de venda (R$)": 39.95,
+    "Valor de venda (R$)": 49.99,
     "imagem": "varalinox.png",
     "Estoque": 1
   },
   {
     "Produto": "VASELINA LIQUIDA GITANES 1L",
-    "Valor de venda (R$)": 29.9,
+    "Valor de venda (R$)": 37.99,
     "imagem": "vaselinaliquida.png",
     "Estoque": 1
   },
   {
-    "Produto": "VASSOURA ALEGRIA VARRE BEM",
-    "Valor de venda (R$)": 8.9,
-    "imagem": "vassoura_alegria.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "VASSOURA BULNEZ",
-    "Valor de venda (R$)": 3.9,
-    "imagem": "vassoura_bulnez.png",
-    "Estoque": 1
-  },
-  {
     "Produto": "VASSOURA CONDOR",
-    "Valor de venda (R$)": 3.9,
+    "Valor de venda (R$)": 4.99,
     "imagem": "vassouracondor.png",
-    "Estoque": 1
+    "Estoque": 7
   },
   {
     "Produto": "VASSOURA LIMPA CANTO",
-    "Valor de venda (R$)": 8.9,
+    "Valor de venda (R$)": 10.99,
     "imagem": "vasouralimpa.png",
-    "Estoque": 1
+    "Estoque": 13
   },
   {
     "Produto": "VASSOURA MULTIUSO",
-    "Valor de venda (R$)": 5.9,
+    "Valor de venda (R$)": 7.99,
     "imagem": "vassouramultiuso.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "VASSOURA PIAÇAVA BASE PLÁSTICA",
-    "Valor de venda (R$)": 14.9,
+    "Valor de venda (R$)": 18.99,
     "imagem": "piacavaplast.png",
     "Estoque": 1
   },
   {
     "Produto": "VASSOURA PIAÇAVA SINTÉTICA",
-    "Valor de venda (R$)": 8.9,
+    "Valor de venda (R$)": 11.99,
     "imagem": "piacavasin.png",
-    "Estoque": 1
+    "Estoque": 8
   },
   {
     "Produto": "VEDA ROSCA 18MMX10MTS",
-    "Valor de venda (R$)": 3.0,
+    "Valor de venda (R$)": 3.99,
     "imagem": "vedarosca.png",
-    "Estoque": 1
+    "Estoque": 10
   },
   {
     "Produto": "VELA N.3 12 GR C/8",
-    "Valor de venda (R$)": 9.9,
+    "Valor de venda (R$)": 12.99,
     "imagem": "vela.png",
     "Estoque": 1
   },
   {
     "Produto": "YELLOW CLEAN 1L",
-    "Valor de venda (R$)": 11.9,
+    "Valor de venda (R$)": 14.99,
     "imagem": "yellowclean.png",
-    "Estoque": 1
+    "Estoque": 5
   }
 ]

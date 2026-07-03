@@ -200,8 +200,12 @@ function renderizarProdutos(produtos, termoBuscado = '') {
         const wrapId = `wrap-img-${idx}`;
         const btnId  = `btn-container-${idx}`;
 
+        // Obtém o stock definido diretamente no JSON (padrão 0 caso omitido)
+        const estoqueDisponivel = item.Estoque !== undefined ? parseInt(item.Estoque) : 0;
+        const estaEsgotado = estoqueDisponivel <= 0;
+
         const card = document.createElement('div');
-        card.className = "bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition duration-200";
+        card.className = `bg-white p-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-md transition duration-200 ${estaEsgotado ? 'opacity-60 select-none' : ''}`;
         card.innerHTML = `
             <div>
                 <div id="${wrapId}"
@@ -211,11 +215,15 @@ function renderizarProdutos(produtos, termoBuscado = '') {
                     <i class="fas fa-spinner fa-spin text-indigo-300 text-xl pointer-events-none"></i>
                 </div>
                 <h3 class="text-xs font-bold text-gray-700 mt-2 line-clamp-2 uppercase h-8">${item.Produto}</h3>
+                
+                <p class="text-[10px] font-bold mt-1 ${estaEsgotado ? 'text-red-500' : 'text-emerald-600'}">
+                    ${estaEsgotado ? '<i class="fas fa-times-circle"></i> ESGOTADO' : `<i class="fas fa-boxes"></i> DISPONÍVEL: ${estoqueDisponivel} un`}
+                </p>
             </div>
             <div class="mt-2">
                 <p class="text-indigo-900 font-extrabold text-base">R$ ${preco.toFixed(2).replace('.', ',')}</p>
                 <div class="mt-2" id="${btnId}">
-                    ${renderizarBotaoAcao(item.Produto, preco, qtd, btnId)}
+                    ${renderizarBotaoAcao(item.Produto, preco, qtd, btnId, estoqueDisponivel)}
                 </div>
             </div>
         `;
@@ -225,8 +233,18 @@ function renderizarProdutos(produtos, termoBuscado = '') {
 }
 
 // ── Botões de ação ────────────────────────────────────────────────────────────
-function renderizarBotaoAcao(nome, preco, qtd, btnId = '') {
+function renderizarBotaoAcao(nome, preco, qtd, btnId = '', estoqueDisponivel = 0) {
     const nomeEsc = nome.replace(/'/g, "\\'");
+    
+    if (estoqueDisponivel <= 0) {
+        return `
+            <button disabled 
+                class="w-full bg-gray-200 text-gray-400 text-xs font-bold py-2 px-3 rounded-xl cursor-not-allowed flex items-center justify-center gap-1.5 shadow-xs">
+                <i class="fas fa-box-open text-[10px]"></i> Indisponível
+            </button>
+        `;
+    }
+
     if (qtd > 0) {
         return `
             <div class="flex items-center justify-between bg-indigo-50 rounded-xl p-1 border border-indigo-200">
@@ -247,7 +265,19 @@ function renderizarBotaoAcao(nome, preco, qtd, btnId = '') {
 }
 
 function alterarQuantidade(nome, preco, alterar, btnId) {
+    // Localiza o produto na lista original do JSON para extrair o teto máximo de stock
+    const produtoBase = listaProdutosOriginal.find(item => item.Produto === nome);
+    const estoqueMaximo = produtoBase && produtoBase.Estoque !== undefined ? parseInt(produtoBase.Estoque) : 0;
+
     const index = carrinho.findIndex(item => item.nome === nome);
+    let qtdAtualNoCarrinho = index > -1 ? carrinho[index].qtd : 0;
+
+    // Proteção Ativa contra extrapolação de stock físico
+    if (alterar > 0 && (qtdAtualNoCarrinho + alterar) > estoqueMaximo) {
+        alert(`Atenção: Só existem ${estoqueMaximo} unidades em stock para este produto.`);
+        return;
+    }
+
     if (index > -1) {
         carrinho[index].qtd += alterar;
         if (carrinho[index].qtd <= 0) carrinho.splice(index, 1);
@@ -268,10 +298,10 @@ function alterarQuantidade(nome, preco, alterar, btnId) {
                 </div>
             `;
             setTimeout(() => {
-                container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd, btnId);
+                container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd, btnId, estoqueMaximo);
             }, 700);
         } else {
-            container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd, btnId);
+            container.innerHTML = renderizarBotaoAcao(nome, preco, novaQtd, btnId, estoqueMaximo);
         }
     }
     atualizarInterfaceCarrinho();

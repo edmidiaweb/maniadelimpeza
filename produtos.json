@@ -116,7 +116,7 @@
   {
     "Produto": "AMACIANTE MON BIJOU 1L",
     "Valor de venda (R$)": 10.99,
-    "imagem": "amacmonbi1l.png",
+    "imagem": "amacmonb1l.png",
     "Estoque": 6
   },
   {
@@ -140,7 +140,7 @@
   {
     "Produto": "ANTIMOFO 130G",
     "Valor de venda (R$)": 10.99,
-    "imagem": "antimofo.png",
+    "imagem": "antimofo130.png",
     "Estoque": 5
   },
   {
@@ -464,25 +464,25 @@
   {
     "Produto": "ESPIRAL REPELENTE",
     "Valor de venda (R$)": 6.99,
-    "imagem": "espiral_repelente.png",
+    "imagem": "espiral.png",
     "Estoque": 2
   },
   {
     "Produto": "ESPONJA AÇO INOX",
     "Valor de venda (R$)": 3.99,
-    "imagem": "esponja_aco.png",
+    "imagem": "esponjaaco.png",
     "Estoque": 50
   },
   {
     "Produto": "ESPONJA LOUÇA ASSOLAN",
     "Valor de venda (R$)": 1.99,
-    "imagem": "esponja.png",
+    "imagem": "assolan.png",
     "Estoque": 33
   },
   {
     "Produto": "ESPONJA POLIESTER",
     "Valor de venda (R$)": 5.99,
-    "imagem": "esponja_poliester.png",
+    "imagem": "esponjapoli.png",
     "Estoque": 9
   },
   {

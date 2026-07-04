@@ -45,7 +45,7 @@
     "Produto": "AGULHA DESENTUPIR FOGÃO",
     "Valor de venda (R$)": 2.00,
     "imagem": "desenfogao.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "AJAX 500ML",
@@ -242,7 +242,7 @@
   {
     "Produto": "CONSULTAR OUTROS SERVIÇOS (entregas, serviços de informática)",
     "Valor de venda (R$)": 20.00,
-    "imagem": "outros_servicos.png",
+    "imagem": "outros.png",
     "Estoque": 997
   },
   {
@@ -500,7 +500,7 @@
   {
     "Produto": "FLANELA 28X28 BRANCA UN",
     "Valor de venda (R$)": 2.99,
-    "imagem": "flanbran.png.png",
+    "imagem": "flanbran.png",
     "Estoque": 43
   },
   {
@@ -542,7 +542,7 @@
   {
     "Produto": "KIT TESOURAS C/ 3",
     "Valor de venda (R$)": 25.99,
-    "imagem": "kit_tesouras.png",
+    "imagem": "tesoura.png",
     "Estoque": 2
   },
   {
@@ -572,13 +572,13 @@
   {
     "Produto": "LIMPA ALUMINIO 1L",
     "Valor de venda (R$)": 8.99,
-    "imagem": "limpaaluminio.png",
+    "imagem": "limpaaluminio5lt.png",
     "Estoque": 4
   },
   {
     "Produto": "LIMPA ALUMINIO 5L",
     "Valor de venda (R$)": 25.99,
-    "imagem": "limpaluminio5lt.png",
+    "imagem": "limpaluminio.png",
     "Estoque": 5
   },
   {
@@ -668,7 +668,7 @@
   {
     "Produto": "MARIDÃO 1L",
     "Valor de venda (R$)": 9.99,
-    "imagem": "Maridao.png",
+    "imagem": "maridao.png",
     "Estoque": 15
   },
   {
@@ -758,7 +758,7 @@
   {
     "Produto": "PANO DE PRATO COM BARRA",
     "Valor de venda (R$)": 4.99,
-    "imagem": "panodepratoombarra.png",
+    "imagem": "panodepratocombarra.png",
     "Estoque": 1
   },
   {

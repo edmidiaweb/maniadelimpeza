@@ -926,7 +926,7 @@
   {
     "Produto": "SABÃO CASEIRO EM BARRA / PEDRA 250G",
     "Valor de venda (R$)": 6.99,
-    "imagem": "sabao_caseiro.png",
+    "imagem": "sabaocaseiro.png",
     "Estoque": 56
   },
   {
@@ -948,15 +948,9 @@
     "Estoque": 5
   },
   {
-    "Produto": "SABÃO EM PEDRA COCO",
-    "Valor de venda (R$)": 3.99,
-    "imagem": "sabaoembarracoco.png",
-    "Estoque": 3
-  },
-  {
     "Produto": "SABÃO EM PEDRA COCO ZAVASKI",
     "Valor de venda (R$)": 5.99,
-    "imagem": "sabao_zavaski_coco.png",
+    "imagem": "sabaoembarracoco.png",
     "Estoque": 6
   },
   {
@@ -968,7 +962,7 @@
   {
     "Produto": "SABÃO EM PEDRA ZAVASKI C/5",
     "Valor de venda (R$)": 9.99,
-    "imagem": "sabaobarrazavaskiglicerinado.png.png",
+    "imagem": "sabaobarrazavaskiglicerinado.png",
     "Estoque": 14
   },
   {
@@ -986,13 +980,13 @@
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS 1L",
     "Valor de venda (R$)": 11.99,
-    "imagem": "sabao_liquido_1l.png",
+    "imagem": "sabaoliqazullr1lt.png.png",
     "Estoque": 4
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS DE COCO 1L",
     "Valor de venda (R$)": 11.99,
-    "imagem": "sabao_liquido_coco_1l.png",
+    "imagem": "sabaoliqcocolr1lt.png",
     "Estoque": 5
   },
   {
@@ -1008,9 +1002,9 @@
     "Estoque": 2
   },
   {
-    "Produto": "SABÃO LÍQUIDO LAVA ROUPAS OMO 1L",
+    "Produto": "SABÃO LÍQUIDO LAVA ROUPAS AROMA OMO 1L",
     "Valor de venda (R$)": 15.99,
-    "imagem": "sabaoomo1l.png",
+    "imagem": "sabaoliqazullr1lt.png",
     "Estoque": 9
   },
   {

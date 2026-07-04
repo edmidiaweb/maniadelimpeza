@@ -933,7 +933,13 @@
     "Produto": "SABÃO EM PASTA DE POTE 250G",
     "Valor de venda (R$)": 5.99,
     "imagem": "sabaopasta250g.png",
-    "Estoque": 1
+    "Estoque": 5
+  },
+  {
+    "Produto": "SABÃO EM PASTA PARA DAR BRILHO 250G",
+    "Valor de venda (R$)": 5.99,
+    "imagem": "sabaoempastabrilho.png",
+    "Estoque": 4
   },
   {
     "Produto": "SABÃO EM PASTA FUZETTO 250G",
@@ -944,7 +950,7 @@
   {
     "Produto": "SABÃO EM PEDRA COCO",
     "Valor de venda (R$)": 3.99,
-    "imagem": "sabao_pedra_coco.png",
+    "imagem": "sabaoembarracoco.png",
     "Estoque": 3
   },
   {
@@ -957,12 +963,12 @@
     "Produto": "SABÃO EM PEDRA YPE",
     "Valor de venda (R$)": 4.99,
     "imagem": "sabao_ype_pedra.png",
-    "Estoque": 1
+    "Estoque": 0
   },
   {
     "Produto": "SABÃO EM PEDRA ZAVASKI C/5",
     "Valor de venda (R$)": 9.99,
-    "imagem": "sabao_zavaski_c5.png",
+    "imagem": "sabaobarrazavaskiglicerinado.png.png",
     "Estoque": 14
   },
   {
@@ -975,13 +981,7 @@
     "Produto": "SABÃO EM PÓ TIXAN YPÊ",
     "Valor de venda (R$)": 23.99,
     "imagem": "sabao_tixan.png",
-    "Estoque": 1
-  },
-  {
-    "Produto": "SABÃO EM POTE ISADORA 200 GR",
-    "Valor de venda (R$)": 4.50,
-    "imagem": "sabao_isadora.png",
-    "Estoque": 5
+    "Estoque": 0
   },
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS 1L",
@@ -998,14 +998,14 @@
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS GOPABO COCO 5L",
     "Valor de venda (R$)": 27.99,
-    "imagem": "sabao_gopabo_5l.png",
+    "imagem": "sabaoliq5lgopabo.png",
     "Estoque": 2
   },
   {
-    "Produto": "SABÃO LIQUIDO LAVA ROUPAS JUGATHA 5L",
+    "Produto": "SABÃO LIQ LAVA ROUPAS JUGATHA 5L",
     "Valor de venda (R$)": 32.99,
-    "imagem": "sabao_jugatha_5l.png",
-    "Estoque": 0
+    "imagem": "sabaoliq5l.png",
+    "Estoque": 2
   },
   {
     "Produto": "SABÃO LÍQUIDO LAVA ROUPAS OMO 1L",
@@ -1016,7 +1016,7 @@
   {
     "Produto": "SABÃO LIQUIDO LAVA ROUPAS VALENCIA COCO 5L",
     "Valor de venda (R$)": 29.99,
-    "imagem": "sabao_valencia_5l.png",
+    "imagem": "sabaoliq5lvalencia.png",
     "Estoque": 1
   },
   {
@@ -1094,7 +1094,7 @@
   {
     "Produto": "SAPONACEO WORKER 200 ML",
     "Valor de venda (R$)": 8.99,
-    "imagem": "saponaceo_worker.png",
+    "imagem": "saponaceo.png",
     "Estoque": 5
   },
   {
@@ -1118,7 +1118,7 @@
   {
     "Produto": "SILICONE GEL MONZA",
     "Valor de venda (R$)": 18.99,
-    "imagem": "silicone_gel_monza.png",
+    "imagem": "siliconegelmonza.png",
     "Estoque": 1
   },
   {
@@ -1148,7 +1148,7 @@
   {
     "Produto": "VARAL AÇO 20M",
     "Valor de venda (R$)": 4.99,
-    "imagem": "varalaco.png",
+    "imagem": "varaldeaco.png",
     "Estoque": 10
   },
   {
@@ -1160,7 +1160,7 @@
   {
     "Produto": "VASELINA LIQUIDA GITANES 1L",
     "Valor de venda (R$)": 37.99,
-    "imagem": "vaselinaliquida.png",
+    "imagem": "vaselinaliq.png",
     "Estoque": 1
   },
   {
@@ -1206,7 +1206,7 @@
     "Estoque": 1
   },
   {
-    "Produto": "YELLOW CLEAN 1L",
+    "Produto": "YELLOW CLEAN 1L LIMPEZA PESADA",
     "Valor de venda (R$)": 14.99,
     "imagem": "yellowclean.png",
     "Estoque": 5

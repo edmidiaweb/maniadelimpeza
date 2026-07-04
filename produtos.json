@@ -1016,19 +1016,19 @@
   {
     "Produto": "SABONETE LIQUIDO FRUTAS VERMELHAS 500 ML",
     "Valor de venda (R$)": 8.99,
-    "imagem": "sabonete_frutas_vermelhas.png",
+    "imagem": "sabonetefrutasvermelhas.png",
     "Estoque": 9
   },
   {
     "Produto": "SABONETE LIQUIDO TALCO 500 ML",
     "Valor de venda (R$)": 7.99,
-    "imagem": "sabonete_talco.png",
+    "imagem": "sabonetetalco.png",
     "Estoque": 8
   },
   {
     "Produto": "SABONETE SIENE",
     "Valor de venda (R$)": 1.99,
-    "imagem": "sabonete_siene.png",
+    "imagem": "sabonetesiene.png",
     "Estoque": 23
   },
   {
@@ -1094,13 +1094,13 @@
   {
     "Produto": "SHAMPOO ATOMOTIVO 5L",
     "Valor de venda (R$)": 50.99,
-    "imagem": "shampooauto.png",
+    "imagem": "shampooauto5lt.png",
     "Estoque": 1
   },
   {
     "Produto": "SHAMPOO AUTOMOTIVO 1L",
     "Valor de venda (R$)": 12.99,
-    "imagem": "shampooauto.png",
+    "imagem": "shampooauto1lt.png",
     "Estoque": 3
   },
   {

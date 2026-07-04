@@ -7,31 +7,31 @@
   },
   {
     "Produto" : "ACETONA 80ML" ,
-    “Valor de venda (R$)” : 6,39 ,
+    “Valor de venda (R$)” : 5.99 ,
     "imagem" : "acetona.png" ,
     "Estoque" : 3
   } ,
   {
     "Produto" : "ÁGUA DE LENÇOL 500ML" ,
-    “Valor de venda (R$)” : 14,99 ,
+    “Valor de venda (R$)” : 14.99 ,
     "imagem" : "agualencol.png" ,
     "Estoque" : 12
   } ,
   {
     "Produto" : "ÁGUA OXIGENADA 100ML" ,
-    “Valor de venda (R$)” : 5,99 ,
+    “Valor de venda (R$)” : 5.99 ,
     "imagem" : "aguaoxi.png" ,
     "Estoque" : 3
   } ,
   {
     "Produto" : "ÁGUA SANITÁRIA AGIFACIL 1L" ,
-    “Valor de venda (R$)” : 4,99 ,
+    “Valor de venda (R$)” : 4.99 ,
     "imagem" : "aguasanagifacil1l.png" ,
     "Estoque" : 20
   } ,
   {
     "Produto" : "ÁGUA SANITÁRIA SUPREMA 2L" ,
-    “Valor de venda (R$)” : 6,99 ,
+    “Valor de venda (R$)” : 6.99 ,
     "imagem" : "aguasuprema2l.png" ,
     "Estoque" : 21
   },

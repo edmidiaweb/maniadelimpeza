@@ -1,8 +1,9 @@
 let carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
 let etapaAtual = 1;
 
-const TAXA_OUTROS_BAIRROS = 15;
+const TAXA_OUTROS_BAIRROS = 20;
 const MINIMO_FRETE_GRATIS = 30;
+const MINIMO_FRETE_GRATIS_OUTROS = 100;
 
 const tabelaTaxas = {
     "Umuarama": 5, "Iemanjá": 5, "Guapiranga": 5, "Coronel": 5,
@@ -47,7 +48,7 @@ function atualizarStepper(etapa) {
 function irParaEtapa(destino) {
     if (destino === 2 && !validarEtapa1()) return;
     if (destino === 3 && !validarEtapa2()) return;
-    if (destino === 3) preencherResumo();
+    if (destino === 3) preencherResSummary();
 
     document.getElementById(`etapa-${etapaAtual}`).classList.add('hidden');
     document.getElementById(`etapa-${destino}`).classList.remove('hidden');
@@ -84,7 +85,7 @@ function validarEtapa2() {
         }
         const confirma = document.getElementById('confirmaOutrosBairros').value;
         if (confirma !== 'sim') {
-            alert("Para continuar com entrega em outro bairro, confirme que aceita as condições (Pix exclusivo + taxa R$ 15,00).");
+            alert("Para continuar com entrega em outro bairro, confirme que aceita as condições (Pix exclusivo + taxa R$ 20,00).");
             return false;
         }
         document.getElementById('pagamento').value = 'Pix';
@@ -135,38 +136,58 @@ function atualizarResumoFinanceiro() {
     const labelProdutos = document.getElementById('valorProdutos');
     const labelTotalGeral = document.getElementById('valorTotalGeral');
     const banner = document.getElementById('bannerFrete');
+    const mensagemFreteOutros = document.getElementById('mensagemFreteOutros'); // Captura o elemento da Etapa 2
 
     const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
     labelProdutos.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
     labelTotalGeral.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
 
     const bairroSelecionado = document.getElementById('bairro')?.value || '';
-    const bairroOutro = document.getElementById('bairroOutro')?.value.trim() || '';
-    const confirmaOutros = document.getElementById('confirmaOutrosBairros')?.value || '';
-
     const possuiKit = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
-    const freteGratis = possuiKit || subtotal >= MINIMO_FRETE_GRATIS;
 
+    // LÓGICA DE ATUALIZAÇÃO DENTRO DA ETAPA 2 (Aviso "Outros Bairros")
+    if (mensagemFreteOutros) {
+        if (possuiKit || subtotal >= MINIMO_FRETE_GRATIS_OUTROS) {
+            mensagemFreteOutros.innerHTML = `🎉 <strong>Parabéns!</strong> Você atingiu o valor para frete GRÁTIS!`;
+            mensagemFreteOutros.className = "text-emerald-700 font-bold list-none -ml-5";
+        } else {
+            const faltamOutros = (MINIMO_FRETE_GRATIS_OUTROS - subtotal).toFixed(2).replace('.', ',');
+            mensagemFreteOutros.innerHTML = `⚠️ Faltam <strong>R$ ${faltamOutros}</strong> para o frete grátis!`;
+            mensagemFreteOutros.className = "text-amber-900 font-bold list-none -ml-5";
+        }
+    }
+
+    // LÓGICA DO BANNER DA ETAPA 1
     if (!bairroSelecionado) {
         banner.classList.add('hidden');
         return;
     }
 
     if (bairroSelecionado === 'Outros') {
-        banner.classList.add('hidden');
+        const freteGratisOutros = possuiKit || subtotal >= MINIMO_FRETE_GRATIS_OUTROS;
+        if (freteGratisOutros) {
+            banner.className = "flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3";
+            banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns!</strong> Você conseguiu frete grátis para Outros Bairros!</span>`;
+        } else {
+            const faltamOutros = (MINIMO_FRETE_GRATIS_OUTROS - subtotal).toFixed(2).replace('.', ',');
+            banner.className = "flex items-center gap-2 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 mb-3";
+            banner.innerHTML = `<i class="fas fa-truck text-amber-500"></i><span>Faltam <strong>R$ ${faltamOutros}</strong> para conseguir frete grátis em Outros Bairros!</span>`;
+        }
+        banner.classList.remove('hidden');
         return;
     }
+
+    const freteGratis = possuiKit || subtotal >= MINIMO_FRETE_GRATIS;
 
     if (freteGratis) {
         banner.className = "flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3";
         banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns!</strong> Você conseguiu frete grátis!</span>`;
-        banner.classList.remove('hidden');
     } else {
         const faltam = (MINIMO_FRETE_GRATIS - subtotal).toFixed(2).replace('.', ',');
         banner.className = "flex items-center gap-2 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 mb-3";
         banner.innerHTML = `<i class="fas fa-truck text-amber-500"></i><span>Faltam <strong>R$ ${faltam}</strong> para conseguir frete grátis!</span>`;
-        banner.classList.remove('hidden');
     }
+    banner.classList.remove('hidden');
 }
 
 function removerItemCarrinho(nomeDoProduto) {
@@ -243,12 +264,15 @@ function recuperarEnderecoSalvo() {
 
 function calcularTaxa(bairro, subtotal) {
     const possuiKit = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
-    if (bairro === 'Outros') return TAXA_OUTROS_BAIRROS;
+    if (bairro === 'Outros') {
+        if (possuiKit || subtotal >= MINIMO_FRETE_GRATIS_OUTROS) return 0;
+        return TAXA_OUTROS_BAIRROS;
+    }
     if (possuiKit || subtotal >= MINIMO_FRETE_GRATIS) return 0;
     return tabelaTaxas[bairro] || 0;
 }
 
-function preencherResumo() {
+function preencherResSummary() {
     const nome = document.getElementById('nomeRecebedor').value.trim();
     const rua = document.getElementById('rua').value.trim();
     const num = document.getElementById('numero').value.trim();
@@ -285,6 +309,17 @@ function preencherResumo() {
 
     document.getElementById('resumoPagamento').textContent = pag;
     document.getElementById('resumoTotal').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+    // -- INSERIR NO FINAL DA FUNÇÃO preencherResumo() --
+    
+    const containerPix = document.getElementById('containerPixDinamico');
+    if (pag === 'Pix') {
+        containerPix.classList.remove('hidden');
+        const codigoCopiaECola = gerarPixCopiaECola('fuilaebusquei@gmail.com', total);
+        document.getElementById('codigoPixGerado').value = codigoCopiaECola;
+    } else {
+        // Oculta o gerador se o pagamento for dinheiro ou cartão
+        containerPix.classList.add('hidden');
+    }
 }
 
 function confirmarPedido() {
@@ -316,7 +351,11 @@ function confirmarPedido() {
     const possuiKit = carrinho.some(i => i.nome.toUpperCase().trim() === "KIT LIMPEZA");
     let motivoTaxa;
     if (bairro === 'Outros') {
-        motivoTaxa = `R$ ${taxa.toFixed(2).replace('.', ',')} (outro bairro)`;
+        if (taxa === 0) {
+            motivoTaxa = possuiKit ? 'GRÁTIS (Kit Limpeza)' : 'GRÁTIS (Pedido acima de R$ 100)';
+        } else {
+            motivoTaxa = `R$ ${taxa.toFixed(2).replace('.', ',')} (outro bairro)`;
+        }
     } else if (taxa === 0) {
         motivoTaxa = possuiKit ? 'GRÁTIS (Kit Limpeza)' : 'GRÁTIS (Pedido acima de R$ 30)';
     } else {
@@ -334,8 +373,66 @@ function confirmarPedido() {
 
     if (pag === 'Dinheiro' && troco) msg += ` (troco para R$ ${troco})`;
 
-    // Inclusão da mensagem de Pix junto ao texto enviado para o WhatsApp
-    msg += `\n\n⚠️ *Para pagamentos via Pix o pedido será liberado após envio do comprovante.*\n🔑 *Chave pix: 01399172-7089*`;
+    window.open(`https://wa.me/5513996305218?text=${encodeURIComponent(msg)}`, '_blank');
+}
 
-    window.open(`https://wa.me/5513991727089?text=${encodeURIComponent(msg)}`, '_blank');
+// ==============================================
+// MOTOR DE GERAÇÃO "PIX COPIA E COLA" (OFFLINE)
+// ==============================================
+
+function gerarPixCopiaECola(chave, valor, txid = 'PEDIDOEXPRESS') {
+    const payloadFormatIndicator = '000201';
+    const pixGUI = '0014br.gov.bcb.pix';
+    const pixKey = `01${chave.length.toString().padStart(2, '0')}${chave}`;
+    const tag26Content = `${pixGUI}${pixKey}`;
+    const merchantAccountInformation = `26${tag26Content.length.toString().padStart(2, '0')}${tag26Content}`;
+    const merchantCategoryCode = '52040000';
+    const transactionCurrency = '5303986';
+    const transactionAmount = valor > 0 ? `54${valor.toFixed(2).length.toString().padStart(2, '0')}${valor.toFixed(2)}` : '';
+    const countryCode = '5802BR';
+    const merchantName = '5916Mania de Limpeza'; // Limite padronizado sem acentos
+    const merchantCity = '6008Itanhaem'; // Sem acentos
+    const additionalData = `05${txid.length.toString().padStart(2, '0')}${txid}`;
+    const additionalDataFieldTemplate = `62${additionalData.length.toString().padStart(2, '0')}${additionalData}`;
+
+    const payload = `${payloadFormatIndicator}${merchantAccountInformation}${merchantCategoryCode}${transactionCurrency}${transactionAmount}${countryCode}${merchantName}${merchantCity}${additionalDataFieldTemplate}6304`;
+
+    // Algoritmo CRC16-CCITT
+    let poly = 0x1021;
+    let crc = 0xFFFF;
+    for (let i = 0; i < payload.length; i++) {
+        crc ^= (payload.charCodeAt(i) << 8);
+        for (let j = 0; j < 8; j++) {
+            if ((crc & 0x8000) !== 0) {
+                crc = (crc << 1) ^ poly;
+            } else {
+                crc <<= 1;
+            }
+        }
+        crc &= 0xFFFF;
+    }
+    const crcHex = (crc >>> 0).toString(16).toUpperCase().padStart(4, '0');
+    return `${payload}${crcHex}`;
+}
+
+function copiarCodigoPix() {
+    const inputPix = document.getElementById('codigoPixGerado');
+    inputPix.select();
+    inputPix.setSelectionRange(0, 99999); // Para dispositivos móveis
+    document.execCommand('copy');
+
+    const btn = document.getElementById('btnCopiarPix');
+    const originalHTML = btn.innerHTML;
+    
+    // Feedback Visual
+    btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+    btn.classList.replace('bg-amber-500', 'bg-emerald-600');
+    btn.classList.replace('hover:bg-amber-600', 'hover:bg-emerald-700');
+
+    // Retorna ao estado normal após 3 segundos
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.classList.replace('bg-emerald-600', 'bg-amber-500');
+        btn.classList.replace('hover:bg-emerald-700', 'hover:bg-amber-600');
+    }, 3000);
 }

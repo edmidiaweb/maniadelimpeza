@@ -57,7 +57,7 @@
         <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4 text-sm text-blue-900">
             <p class="font-bold mb-1 flex items-center gap-2"><i class="fas fa-truck"></i> Condições de entrega</p>
             <p>Pedidos realizados até as 11h da manhã serão entregues a partir das 13h do mesmo dia. Pedidos realizados após as 11h serão entregues no dia seguinte pela manhã.<br></p>
-            <p class="mt-2">O frete grátis para compras acima de R$30 somente será válido para os bairros próximos da rodoviaria de Itanhaém.</p>
+            <p class="mt-2">O frete grátis para compras acima de R$30 somente será válido para os bairros próximos da rodoviaria de Itanhaém.<br>Para outros bairros dentro da cidade o frete será de R$20 para compras até R$99,99, acima deste valor o frete será grátis. </p>
         </div>
 
         <div id="etapa-1" class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
@@ -148,7 +148,8 @@
                         <i class="fas fa-exclamation-triangle text-amber-500"></i> Atenção — Entrega em outro bairro
                     </p>
                     <ul class="list-disc list-inside space-y-1 text-xs leading-relaxed">
-                        <li>A taxa de entrega para este bairro é de <strong>R$ 15,00</strong>.</li>
+                        <li>A taxa de entrega para este bairro é de <strong>R$ 20,00</strong>.</li>
+                        <li id="mensagemFreteOutros"><strong>Promoção:</strong> Frete GRÁTIS para compras acima de <strong>R$ 100,00</strong>!</li>
                         <li>O pagamento deve ser realizado <strong>exclusivamente via Pix</strong> antes da entrega.</li>
                     </ul>
                 </div>
@@ -174,10 +175,9 @@
             <div>
                 <label for="pagamento" class="block text-xs font-semibold text-gray-500 mb-1">Forma de Pagamento</label>
                 <select id="pagamento" onchange="verificarPagamento()"
-                    class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
-                    <option value="Pix">Pix (Rápido e Seguro)</option>
-                    <option value="Dinheiro">Dinheiro</option>
-                    <option value="Cartão">Cartão (Débito / Crédito na entrega)</option>
+                        class="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm text-gray-700 transition">
+                        <option value="Pix">Pix (Rápido e Seguro)</option>
+                        <option value="Dinheiro">Dinheiro</option>
                 </select>
             </div>
 
@@ -237,9 +237,21 @@
                 </div>
             </div>
 
-            <div class="mb-4 bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-900 flex items-start gap-2.5">
-                <i class="fas fa-info-circle text-amber-600 text-sm mt-0.5 animate-pulse"></i>
-                <p>Para pagamentos via Pix o pedido será liberado após envio do comprovante.<br><span class="font-bold">Chave pix: 01399172-7089.</span></p>
+            <div id="containerPixDinamico" class="mb-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 shadow-sm transition-all">
+                <div class="flex items-start gap-2.5 mb-3">
+                    <i class="fas fa-qrcode text-amber-600 text-lg mt-0.5 animate-bounce"></i>
+                    <div>
+                        <p class="font-bold text-sm mb-1">Pague via Pix e agilize a liberação!</p>
+                        <p>Copie o código abaixo com o valor já calculado e cole na opção "Pix Copia e Cola" do aplicativo do seu banco.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 bg-white border border-amber-300 p-1.5 rounded-lg">
+                    <input type="text" id="codigoPixGerado" readonly class="w-full bg-transparent outline-none text-gray-500 font-mono text-[10px] sm:text-xs truncate px-2" value="">
+                    <button onclick="copiarCodigoPix()" id="btnCopiarPix" class="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2.5 rounded-md transition duration-200 font-bold whitespace-nowrap flex items-center gap-2 text-xs shadow-sm">
+                        <i class="fas fa-copy"></i> Copiar Código
+                    </button>
+                </div>
+                <p class="mt-2 text-[10px] text-amber-700 font-semibold italic">* Chave recebedora: fuilaebusquei@gmail.com</p>
             </div>
 
             <div class="flex gap-3">

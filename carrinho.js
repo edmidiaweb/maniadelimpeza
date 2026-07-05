@@ -1,5 +1,6 @@
 let carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
 let etapaAtual = 1;
+let pedidoEnviado = false; // ← bloqueio de clique duplo
 
 const TAXA_OUTROS_BAIRROS = 20;
 const MINIMO_FRETE_GRATIS = 30;
@@ -90,6 +91,22 @@ function validarEtapa2() {
         }
         document.getElementById('pagamento').value = 'Pix';
         document.getElementById('containerTroco').classList.add('hidden');
+    }
+
+    // ── Validação do troco ────────────────────────────────────────────────────
+    const pag = document.getElementById('pagamento').value;
+    if (pag === 'Dinheiro') {
+        const trocoValor = document.getElementById('troco').value.trim();
+        if (trocoValor) {
+            const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
+            const taxa = calcularTaxa(bairro, subtotal);
+            const total = subtotal + taxa;
+            const trocoNum = parseFloat(trocoValor.replace(',', '.'));
+            if (!isNaN(trocoNum) && trocoNum < total) {
+                alert(`O valor do troco (R$ ${trocoNum.toFixed(2).replace('.', ',')}) é menor que o total do pedido (R$ ${total.toFixed(2).replace('.', ',')}). Por favor, corrija.`);
+                return false;
+            }
+        }
     }
 
     return true;
@@ -321,6 +338,16 @@ function preencherResSummary() {
 }
 
 function confirmarPedido() {
+    // ── Bloqueio de clique duplo ──────────────────────────────────────────────
+    if (pedidoEnviado) return;
+    pedidoEnviado = true;
+
+    const btnConfirmar = document.querySelector('button[onclick="confirmarPedido()"]');
+    if (btnConfirmar) {
+        btnConfirmar.disabled = true;
+        btnConfirmar.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abrindo WhatsApp...';
+    }
+
     const nome = document.getElementById('nomeRecebedor').value.trim();
     const rua = document.getElementById('rua').value.trim();
     const num = document.getElementById('numero').value.trim();
@@ -372,6 +399,10 @@ function confirmarPedido() {
     if (pag === 'Dinheiro' && troco) msg += ` (troco para R$ ${troco})`;
 
     window.open(`https://wa.me/5513996305218?text=${encodeURIComponent(msg)}`, '_blank');
+
+    // ── Limpar carrinho após envio ────────────────────────────────────────────
+    carrinho = [];
+    localStorage.removeItem('carrinho');
 }
 
 // ==============================================

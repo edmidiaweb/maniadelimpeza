@@ -148,7 +148,7 @@ function atualizarResumoFinanceiro() {
     // LÓGICA DE ATUALIZAÇÃO DENTRO DA ETAPA 2 (Aviso "Outros Bairros")
     if (mensagemFreteOutros) {
         if (possuiKit || subtotal >= MINIMO_FRETE_GRATIS_OUTROS) {
-            mensagemFreteOutros.innerHTML = `🎉 <strong>Parabéns!</strong> Você atingiu o valor para frete GRÁTIS!`;
+            mensagemFreteOutros.innerHTML = `🎉 <strong>Parabéns!</strong> Você atingiu o valor para frete GRÁTIS para bairros próximos da rodoviária!`;
             mensagemFreteOutros.className = "text-emerald-700 font-bold list-none -ml-5";
         } else {
             const faltamOutros = (MINIMO_FRETE_GRATIS_OUTROS - subtotal).toFixed(2).replace('.', ',');

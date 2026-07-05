@@ -1158,33 +1158,33 @@
     "Estoque": 1
   },
   {
-    "Produto": "VASSOURA CONDOR",
+    "Produto": "VASSOURA CONDOR S/ CABO",
     "Valor de venda (R$)": 4.99,
     "imagem": "vassouracondor.png",
     "Estoque": 7
   },
   {
-    "Produto": "VASSOURA LIMPA CANTO",
+    "Produto": "VASSOURA LIMPA CANTO S/ CABO",
     "Valor de venda (R$)": 10.99,
     "imagem": "vasouralimpa.png",
     "Estoque": 13
   },
   {
-    "Produto": "VASSOURA MULTIUSO",
+    "Produto": "VASSOURA MULTIUSO S/ CABO",
     "Valor de venda (R$)": 7.99,
     "imagem": "vassouramultiuso.png",
     "Estoque": 8
   },
   {
-    "Produto": "VASSOURA PIAÇAVA BASE PLÁSTICA",
+    "Produto": "VASSOURA PIAÇAVA BASE PLÁSTICA C/ CABO",
     "Valor de venda (R$)": 18.99,
     "imagem": "piacavaplast.png",
     "Estoque": 1
   },
   {
-    "Produto": "VASSOURA PIAÇAVA SINTÉTICA",
+    "Produto": "VASSOURA PIAÇAVA SINTÉTICA S/ CABO",
     "Valor de venda (R$)": 11.99,
-    "imagem": "piacavasin.png",
+    "imagem": "vassourapiacavasin.png",
     "Estoque": 8
   },
   {

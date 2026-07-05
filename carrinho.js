@@ -136,7 +136,7 @@ function atualizarResumoFinanceiro() {
     const labelProdutos = document.getElementById('valorProdutos');
     const labelTotalGeral = document.getElementById('valorTotalGeral');
     const banner = document.getElementById('bannerFrete');
-    const mensagemFreteOutros = document.getElementById('mensagemFreteOutros'); // Captura o elemento da Etapa 2
+    const mensagemFreteOutros = document.getElementById('mensagemFreteOutros');
 
     const subtotal = carrinho.reduce((acc, item) => acc + (item.preco * item.qtd), 0);
     labelProdutos.innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
@@ -145,10 +145,10 @@ function atualizarResumoFinanceiro() {
     const bairroSelecionado = document.getElementById('bairro')?.value || '';
     const possuiKit = carrinho.some(item => item.nome.toUpperCase().trim() === "KIT LIMPEZA");
 
-    // LÓGICA DE ATUALIZAÇÃO DENTRO DA ETAPA 2 (Aviso "Outros Bairros")
+    // Mensagem de frete dentro da Etapa 2 (aviso "Outros Bairros")
     if (mensagemFreteOutros) {
         if (possuiKit || subtotal >= MINIMO_FRETE_GRATIS_OUTROS) {
-            mensagemFreteOutros.innerHTML = `🎉 <strong>Parabéns!</strong> Você atingiu o valor para frete GRÁTIS para bairros próximos da rodoviária!`;
+            mensagemFreteOutros.innerHTML = `🎉 <strong>Parabéns! Você atingiu o valor mínimo para frete grátis para bairros mais distantes!</strong>`;
             mensagemFreteOutros.className = "text-emerald-700 font-bold list-none -ml-5";
         } else {
             const faltamOutros = (MINIMO_FRETE_GRATIS_OUTROS - subtotal).toFixed(2).replace('.', ',');
@@ -157,7 +157,7 @@ function atualizarResumoFinanceiro() {
         }
     }
 
-    // LÓGICA DO BANNER DA ETAPA 1
+    // Banner de frete da Etapa 1
     if (!bairroSelecionado) {
         banner.classList.add('hidden');
         return;
@@ -167,7 +167,7 @@ function atualizarResumoFinanceiro() {
         const freteGratisOutros = possuiKit || subtotal >= MINIMO_FRETE_GRATIS_OUTROS;
         if (freteGratisOutros) {
             banner.className = "flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3";
-            banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns!</strong> Você conseguiu frete grátis para Outros Bairros!</span>`;
+            banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns! Você atingiu o valor mínimo para frete grátis para bairros mais distantes!</strong></span>`;
         } else {
             const faltamOutros = (MINIMO_FRETE_GRATIS_OUTROS - subtotal).toFixed(2).replace('.', ',');
             banner.className = "flex items-center gap-2 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 mb-3";
@@ -181,7 +181,7 @@ function atualizarResumoFinanceiro() {
 
     if (freteGratis) {
         banner.className = "flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 mb-3";
-        banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns!</strong> Você conseguiu frete grátis!</span>`;
+        banner.innerHTML = `<i class="fas fa-check-circle text-emerald-500"></i><span>🎉 <strong>Parabéns! Você atingiu o valor mínimo para frete grátis para os bairros próximos da rodoviária!</strong></span>`;
     } else {
         const faltam = (MINIMO_FRETE_GRATIS - subtotal).toFixed(2).replace('.', ',');
         banner.className = "flex items-center gap-2 text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 mb-3";
@@ -309,15 +309,13 @@ function preencherResSummary() {
 
     document.getElementById('resumoPagamento').textContent = pag;
     document.getElementById('resumoTotal').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
-    // -- INSERIR NO FINAL DA FUNÇÃO preencherResumo() --
-    
+
     const containerPix = document.getElementById('containerPixDinamico');
     if (pag === 'Pix') {
         containerPix.classList.remove('hidden');
         const codigoCopiaECola = gerarPixCopiaECola('fuilaebusquei@gmail.com', total);
         document.getElementById('codigoPixGerado').value = codigoCopiaECola;
     } else {
-        // Oculta o gerador se o pagamento for dinheiro ou cartão
         containerPix.classList.add('hidden');
     }
 }
@@ -390,14 +388,13 @@ function gerarPixCopiaECola(chave, valor, txid = 'PEDIDOEXPRESS') {
     const transactionCurrency = '5303986';
     const transactionAmount = valor > 0 ? `54${valor.toFixed(2).length.toString().padStart(2, '0')}${valor.toFixed(2)}` : '';
     const countryCode = '5802BR';
-    const merchantName = '5916Mania de Limpeza'; // Limite padronizado sem acentos
-    const merchantCity = '6008Itanhaem'; // Sem acentos
+    const merchantName = '5916Mania de Limpeza';
+    const merchantCity = '6008Itanhaem';
     const additionalData = `05${txid.length.toString().padStart(2, '0')}${txid}`;
     const additionalDataFieldTemplate = `62${additionalData.length.toString().padStart(2, '0')}${additionalData}`;
 
     const payload = `${payloadFormatIndicator}${merchantAccountInformation}${merchantCategoryCode}${transactionCurrency}${transactionAmount}${countryCode}${merchantName}${merchantCity}${additionalDataFieldTemplate}6304`;
 
-    // Algoritmo CRC16-CCITT
     let poly = 0x1021;
     let crc = 0xFFFF;
     for (let i = 0; i < payload.length; i++) {
@@ -418,18 +415,16 @@ function gerarPixCopiaECola(chave, valor, txid = 'PEDIDOEXPRESS') {
 function copiarCodigoPix() {
     const inputPix = document.getElementById('codigoPixGerado');
     inputPix.select();
-    inputPix.setSelectionRange(0, 99999); // Para dispositivos móveis
+    inputPix.setSelectionRange(0, 99999);
     document.execCommand('copy');
 
     const btn = document.getElementById('btnCopiarPix');
     const originalHTML = btn.innerHTML;
-    
-    // Feedback Visual
+
     btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
     btn.classList.replace('bg-amber-500', 'bg-emerald-600');
     btn.classList.replace('hover:bg-amber-600', 'hover:bg-emerald-700');
 
-    // Retorna ao estado normal após 3 segundos
     setTimeout(() => {
         btn.innerHTML = originalHTML;
         btn.classList.replace('bg-emerald-600', 'bg-amber-500');

@@ -846,9 +846,15 @@
     "Estoque": 7
   },
   {
-    "Produto": "PRETINHO PNEU 1l",
+    "Produto": "PRETINHO PNEU 500ml",
     "Valor de venda (R$)": 16.99,
     "imagem": "pretinho500.png",
+    "Estoque": 0
+  },
+  {
+    "Produto": "PRETINHO LUXCAR 500ml (POR ENCOMENDA)",
+    "Valor de venda (R$)": 16.99,
+    "imagem": "pretinho500g.png",
     "Estoque": 0
   },
   {

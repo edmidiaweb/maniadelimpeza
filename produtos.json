@@ -666,6 +666,13 @@
     "Estoque": 6
   },
   {
+    "Produto": "LYSOFORM ORIGINAL 1Lt",
+    "Valor de venda (R$)": 24.99,
+    "imagem": "lysoform1lt.png",
+    "Estoque": 1
+  },
+  
+  {
     "Produto": "MARIDÃO 1L",
     "Valor de venda (R$)": 9.99,
     "imagem": "maridao.png",
@@ -1155,6 +1162,18 @@
     "Produto": "VARAL INOX 40 PRENDEDORES",
     "Valor de venda (R$)": 49.99,
     "imagem": "varalinox.png",
+    "Estoque": 1
+  },
+  {
+    "Produto": "VASELINA EM PASTA CONCARE 25G",
+    "Valor de venda (R$)": 14.99,
+    "imagem": "vaselina25g.png",
+    "Estoque": 1
+  },
+  {
+    "Produto": "VASELINA LIQUIDA CONCARE 100ML",
+    "Valor de venda (R$)": 14.99,
+    "imagem": "vaselina100ml.png",
     "Estoque": 1
   },
   {

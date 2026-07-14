@@ -120,7 +120,7 @@ function renderizarItensCarrinho() {
             <div class="text-center py-8 text-gray-400">
                 <i class="fas fa-shopping-cart text-3xl mb-2"></i>
                 <p>Seu carrinho está vazio.</p>
-                <a href="index.html" class="text-indigo-600 hover:underline font-semibold text-xs inline-block mt-2">Voltar para escolher produtos</a>
+                <a href="catalogo.html" class="text-indigo-600 hover:underline font-semibold text-xs inline-block mt-2">Voltar para escolher produtos</a>
             </div>`;
         atualizarResumoFinanceiro();
         document.getElementById('btnAvancarEtapa1').disabled = true;

@@ -1,0 +1,154 @@
+/* ===== Mania de Limpeza Express — Home ===== */
+
+.font-display {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ---------- Hero ---------- */
+.hero-bg {
+    position: relative;
+    background: linear-gradient(160deg, #1e1b4b 0%, #312e81 48%, #3730a3 100%);
+    overflow: hidden;
+}
+
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.hero-blob--one {
+    width: 340px;
+    height: 340px;
+    background: #10b981;
+    top: -120px;
+    right: -100px;
+}
+
+.hero-blob--two {
+    width: 260px;
+    height: 260px;
+    background: #6366f1;
+    bottom: -100px;
+    left: -80px;
+    opacity: 0.3;
+}
+
+.hero-enter {
+    animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter-delay-1 { animation-delay: 0.08s; }
+.hero-enter-delay-2 { animation-delay: 0.16s; }
+.hero-enter-delay-3 { animation-delay: 0.24s; }
+
+@keyframes hero-rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.badge-pulse {
+    position: relative;
+}
+.badge-pulse::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 9999px;
+    background: #34d399;
+    opacity: 0.55;
+    animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    z-index: -1;
+}
+@keyframes pulse-ring {
+    0%   { transform: scale(0.9); opacity: 0.5; }
+    70%  { transform: scale(1.35); opacity: 0; }
+    100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* ---------- Carousel ---------- */
+.carousel-viewport {
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.55s ease;
+}
+
+.carousel-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+}
+
+.carousel-slide-img {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel-slide:hover .carousel-slide-img {
+    transform: scale(1.04) rotate(-1deg);
+}
+
+.carousel-ribbon {
+    transform: rotate(-6deg);
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #c7d2fe;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-dot.is-active {
+    width: 26px;
+    background: #4f46e5;
+}
+
+.carousel-arrow {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.85);
+    transition: all 0.2s ease;
+}
+.carousel-arrow:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+/* ---------- Benefit / trust cards ---------- */
+.benefit-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(49, 46, 129, 0.18);
+}
+
+.timeline-track {
+    background: repeating-linear-gradient(to bottom, #c7d2fe 0, #c7d2fe 6px, transparent 6px, transparent 12px);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .hero-enter,
+    .badge-pulse::before,
+    .carousel-slide-img,
+    .benefit-card {
+        animation: none !important;
+        transition: none !important;
+    }
+    .carousel-slide:hover .carousel-slide-img {
+        transform: none;
+    }
+}

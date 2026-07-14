@@ -11,6 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
     atualizarUIOrdenacao();
 });
 
+// Reabrir a página pelo botão voltar/avançar do navegador (bfcache) mantém o
+// JS antigo em memória — releitura do carrinho salvo e recarrega os cards.
+window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+        carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        atualizarInterfaceCarrinho();
+        aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
+    }
+});
+
+// Mantém o catálogo sincronizado se o cliente adicionar/remover itens em outra aba.
+window.addEventListener('storage', (e) => {
+    if (e.key === 'carrinho') {
+        carrinho = JSON.parse(e.newValue || '[]');
+        atualizarInterfaceCarrinho();
+        aplicarFiltros(document.getElementById('searchBarDesktop').value || '');
+    }
+});
+
 // ── Carregamento ──────────────────────────────────────────────────────────────
 async function carregarProdutos() {
     try {
